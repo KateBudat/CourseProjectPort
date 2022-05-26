@@ -1,0 +1,6 @@
+# ninja log v5
+14	889	6752639173564547	CMakeFiles/CourseProjectPort.dir/WarShip.cpp.obj	b1e9775fd1bd8bc4
+17	905	6752639173744582	CMakeFiles/CourseProjectPort.dir/CargoShip.cpp.obj	8bba61e8f02c1b00
+6	908	6752639173794476	CMakeFiles/CourseProjectPort.dir/PassengerShip.cpp.obj	27bfea99c85f793d
+4	924	6752639173964396	CMakeFiles/CourseProjectPort.dir/BasicShip.cpp.obj	33069df596f6a340
+1	977	6752639174514411	CMakeFiles/CourseProjectPort.dir/main.cpp.obj	9fd561803f4b88c5
