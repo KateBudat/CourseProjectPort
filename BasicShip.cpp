@@ -13,7 +13,7 @@ BasicShip::BasicShip(const std::string& name, const std::string& homePort, int e
 
 std::string BasicShip::Info() const {
     return ("Назва корабля: " + name + ";\n" + "Назва порту приписки: " + homePort + ";\n" +
-            "Потужність двигуна: " + std::to_string(enginePower) + ";\n" + "Водотоннажність: " + std::to_string(displacement) + ";\n" +
+            "Потужність двигуна в кВт: " + std::to_string(enginePower) + ";\n" + "Водотоннажність в тоннах: " + std::to_string(displacement) + ";\n" +
             "Чисельність екіпажу: " + std::to_string(numberOfCrew)  + ";\n");
 }
 
