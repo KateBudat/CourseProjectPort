@@ -21,7 +21,7 @@ int PassengerShip::GetFullNumberOfPeople() const {
 }
 
 bool PassengerShip::isBoatsEnough() const {
-    return (GetFullBoatsCapacity() > GetFullNumberOfPeople());
+    return (GetFullBoatsCapacity() >= GetFullNumberOfPeople());
 }
 
 void PassengerShip::addBoats() {
