@@ -4,11 +4,11 @@ CargoShip::CargoShip(const std::string &name, const std::string &homePort, int e
                      int numberOfCrew, int loadCapacity) : BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
                      loadCapacity(loadCapacity) {
     if (loadCapacity <= 0)
-        throw std::invalid_argument("Load capacity can't be negative or zero!");
+        throw std::invalid_argument("Вантажопідйомність не може бути від’ємною або нульовою!");
 }
 
 std::string CargoShip::Info() const {
-    return (BasicShip::Info() + "Вантажопідйомність: " + std::to_string(loadCapacity) + ";\n");
+    return (BasicShip::Info() + "Вантажопідйомність в тонах: " + std::to_string(loadCapacity) + ";\n");
 }
 
 

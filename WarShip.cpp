@@ -13,13 +13,13 @@ std::string WarShip::Info() const {
             enumToString = "ракетний";
             break;
         case WeaponType::artillery:
-            enumToString = "артилерійська";
+            enumToString = "артилерійський";
             break;
         case WeaponType::torpedo:
-            enumToString = "торпедна";
+            enumToString = "торпедний";
             break;
         case WeaponType::mine:
-            enumToString = "мінна";
+            enumToString = "мінний";
             break;
         case WeaponType::antiSubmarine:
             enumToString = "протичовновий";

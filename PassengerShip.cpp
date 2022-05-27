@@ -5,11 +5,11 @@ PassengerShip::PassengerShip(const std::string &name, const std::string &homePor
         BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
         numberOfPassengers(numberOfPassengers), numberOfBoats(numberOfBoats), boatCapacity(boatCapacity) {
     if (numberOfPassengers < 0)
-        throw std::invalid_argument("numberOfPassengers can't be negative!");
+        throw std::invalid_argument("Кількість пасажирів не може бути від’ємною!");
     if (numberOfBoats < 0)
-        throw std::invalid_argument("Number of boats can't be negative!");
+        throw std::invalid_argument("Кількість човнів не може бути від’ємною!");
     if (boatCapacity <= 0)
-        throw std::invalid_argument("Boat capacity can't be negative or zero!");
+        throw std::invalid_argument("Місткість човна не може бути від’ємною або нульовою!");
 }
 
 int PassengerShip::GetFullBoatsCapacity() const {
@@ -17,12 +17,11 @@ int PassengerShip::GetFullBoatsCapacity() const {
 }
 
 int PassengerShip::GetFullNumberOfPeople() const {
-    return (numberOfPassengers + BasicShip::GetNumberOfCrew());
+    return (numberOfPassengers + GetNumberOfCrew());
 }
 
 bool PassengerShip::isBoatsEnough() const {
-    if (GetFullBoatsCapacity() < GetFullNumberOfPeople()) return false;
-    return true;
+    return (GetFullBoatsCapacity() > GetFullNumberOfPeople());
 }
 
 void PassengerShip::addBoats() {
@@ -31,9 +30,9 @@ void PassengerShip::addBoats() {
 }
 
 std::string PassengerShip::Info() const {
-    return (BasicShip::Info() + "Number of passengers: " + std::to_string(numberOfPassengers) +  ";\n" +
-            "Number of boats: " + std::to_string(numberOfBoats) + ";\n" +
-            "Boat's capacity: " + std::to_string(boatCapacity) + ";\n");
+    return (BasicShip::Info() + "Кількість пасажирів: " + std::to_string(numberOfPassengers) +  ";\n" +
+            "Кількість човнів: " + std::to_string(numberOfBoats) + ";\n" +
+            "Місткість човна: " + std::to_string(boatCapacity) + ";\n");
 }
 
 

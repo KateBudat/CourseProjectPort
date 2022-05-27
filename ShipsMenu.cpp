@@ -27,10 +27,9 @@ void ShipsMenu::menu()
                 case 1:
                     int choice2;
                     std::cout << "Який тип корабля створити?" << std::endl;
-                    std::cout << "1. Звичайний корабель" << std::endl;
-                    std::cout << "2. Пасажирське судно" << std::endl;
-                    std::cout << "3. Вантажне судно" << std::endl;
-                    std::cout << "4. Військовий корабель" << std::endl;
+                    std::cout << "1. Пасажирськеий судно" << std::endl;
+                    std::cout << "2. Вантажне судно" << std::endl;
+                    std::cout << "3. Військовий корабель" << std::endl;
                     std::cin >> choice2;
             }
         }
