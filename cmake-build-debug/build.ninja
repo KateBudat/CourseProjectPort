@@ -85,6 +85,12 @@ build CMakeFiles/CourseProjectPort.dir/ShipsMenu.cpp.obj: CXX_COMPILER__CoursePr
   OBJECT_DIR = CMakeFiles\CourseProjectPort.dir
   OBJECT_FILE_DIR = CMakeFiles\CourseProjectPort.dir
 
+build CMakeFiles/CourseProjectPort.dir/Port.cpp.obj: CXX_COMPILER__CourseProjectPort_Debug C$:/Users/Admin/CLionProjects/CourseProjectPort/Port.cpp || cmake_object_order_depends_target_CourseProjectPort
+  DEP_FILE = CMakeFiles\CourseProjectPort.dir\Port.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\CourseProjectPort.dir
+  OBJECT_FILE_DIR = CMakeFiles\CourseProjectPort.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target CourseProjectPort
@@ -93,7 +99,7 @@ build CMakeFiles/CourseProjectPort.dir/ShipsMenu.cpp.obj: CXX_COMPILER__CoursePr
 #############################################
 # Link the executable CourseProjectPort.exe
 
-build CourseProjectPort.exe: CXX_EXECUTABLE_LINKER__CourseProjectPort_Debug CMakeFiles/CourseProjectPort.dir/main.cpp.obj CMakeFiles/CourseProjectPort.dir/BasicShip.cpp.obj CMakeFiles/CourseProjectPort.dir/PassengerShip.cpp.obj CMakeFiles/CourseProjectPort.dir/CargoShip.cpp.obj CMakeFiles/CourseProjectPort.dir/WarShip.cpp.obj CMakeFiles/CourseProjectPort.dir/ShipsMenu.cpp.obj
+build CourseProjectPort.exe: CXX_EXECUTABLE_LINKER__CourseProjectPort_Debug CMakeFiles/CourseProjectPort.dir/main.cpp.obj CMakeFiles/CourseProjectPort.dir/BasicShip.cpp.obj CMakeFiles/CourseProjectPort.dir/PassengerShip.cpp.obj CMakeFiles/CourseProjectPort.dir/CargoShip.cpp.obj CMakeFiles/CourseProjectPort.dir/WarShip.cpp.obj CMakeFiles/CourseProjectPort.dir/ShipsMenu.cpp.obj CMakeFiles/CourseProjectPort.dir/Port.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CourseProjectPort.dir

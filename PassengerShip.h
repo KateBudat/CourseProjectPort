@@ -1,6 +1,7 @@
 #ifndef COURSEPROJECTPORT_PASSENGERSHIP_H
 #define COURSEPROJECTPORT_PASSENGERSHIP_H
 
+#include <string>
 #include "BasicShip.h"
 
 // пасажирський корабель
@@ -14,6 +15,12 @@ public:
     bool isBoatsEnough() const; // чи достатньо човнів на усіх людей
     std::string Info() const override; // інформація про пасажирський корабель
     void addBoats();
+
+    //модифікація кораблів
+    void ChangeNumberOfPassengers(const int& numberOfPassengers);
+    void ChangeNumberOfBoats(const int& numberOfBoats);
+    void ChangeBoatCapacity(const int& boatCapacity);
+
 
 private:
     int numberOfPassengers;

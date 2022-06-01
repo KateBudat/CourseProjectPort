@@ -14,6 +14,9 @@ public:
 
     std::string Info() const override; // інформація про військовий корабель
 
+    //модифікація кораблів
+    void ChangeWeaponType(const WeaponType &weaponType);
+
 private:
     WeaponType weaponType; // тип зброї
 };

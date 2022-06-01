@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include "WarShip.h"
 
 WarShip::WarShip(const std::string &name, const std::string &homePort, int enginePower, int displacement,
@@ -26,7 +27,11 @@ std::string WarShip::Info() const {
             break;
     }
 
-    return BasicShip::Info() + "Тип зброї: " + enumToString + ";/n";
+    return BasicShip::Info() + "Тип зброї: " + enumToString + ";\n";
+}
+
+void WarShip::ChangeWeaponType(const WeaponType &weaponType) {
+    this->weaponType = weaponType;
 }
 
 

@@ -2,8 +2,6 @@
 #define COURSEPROJECTPORT_BASICSHIP_H
 
 #include <string>
-#include <utility>
-#include <stdexcept>
 
 // базовий корабель
 class BasicShip {
@@ -15,6 +13,10 @@ public:
     int GetNumberOfCrew() const { return numberOfCrew; } // геттер чисельності екіпажу
     virtual std::string Info() const; // інформація про корабель
     virtual ~BasicShip() = default;
+
+    //модифікація кораблів
+    void ChangeEnginePower(const int& enginePower);
+    void ChangeNumberOfCrew(const int& numberOfCrew);
 
 private:
     const std::string name; // назва

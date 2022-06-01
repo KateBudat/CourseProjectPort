@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include "CargoShip.h"
 
 CargoShip::CargoShip(const std::string &name, const std::string &homePort, int enginePower, int displacement,
@@ -9,6 +10,10 @@ CargoShip::CargoShip(const std::string &name, const std::string &homePort, int e
 
 std::string CargoShip::Info() const {
     return (BasicShip::Info() + "Вантажопідйомність в тонах: " + std::to_string(loadCapacity) + ";\n");
+}
+
+void CargoShip::ChangeLoadCapacity(const int &loadCapacity) {
+    this->loadCapacity = loadCapacity;
 }
 
 

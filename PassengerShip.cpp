@@ -1,3 +1,4 @@
+#include <stdexcept>
 #include "PassengerShip.h"
 
 PassengerShip::PassengerShip(const std::string &name, const std::string &homePort, int enginePower, int displacement,
@@ -33,6 +34,18 @@ std::string PassengerShip::Info() const {
     return (BasicShip::Info() + "Кількість пасажирів: " + std::to_string(numberOfPassengers) +  ";\n" +
             "Кількість човнів: " + std::to_string(numberOfBoats) + ";\n" +
             "Місткість човна: " + std::to_string(boatCapacity) + ";\n");
+}
+
+void PassengerShip::ChangeNumberOfPassengers(const int &numberOfPassengers) {
+    this->numberOfPassengers = numberOfPassengers;
+}
+
+void PassengerShip::ChangeNumberOfBoats(const int &numberOfBoats) {
+    this->numberOfBoats = numberOfBoats;
+}
+
+void PassengerShip::ChangeBoatCapacity(const int &boatCapacity) {
+    this->boatCapacity = boatCapacity;
 }
 
 
