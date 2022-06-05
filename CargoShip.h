@@ -14,7 +14,7 @@ public:
     std::string Info() const override; // інформація про вантажний корабель
 
     //модифікація кораблів
-    void ChangeLoadCapacity(const int &loadCapacity);
+    void ChangeLoadCapacity(const int& loadCapacity);
 
 private:
     int loadCapacity; // вантажопідйомність

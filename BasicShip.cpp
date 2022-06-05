@@ -12,6 +12,10 @@ BasicShip::BasicShip(const std::string& name, const std::string& homePort, int e
         throw std::invalid_argument("Кількість екіпажу не може бути від'ємною або нульовою!");
 }
 
+int BasicShip::GetNumberOfCrew() const {
+    return numberOfCrew;
+}
+
 std::string BasicShip::Info() const {
     return ("Назва корабля: " + name + ";\n" + "Порт приписки: " + homePort + ";\n" +
             "Потужність двигуна в кВт: " + std::to_string(enginePower) + ";\n" + "Водотоннажність в тоннах: " + std::to_string(displacement) + ";\n" +
@@ -25,8 +29,3 @@ void BasicShip::ChangeEnginePower(const int &enginePower) {
 void BasicShip::ChangeNumberOfCrew(const int &numberOfCrew) {
     this->numberOfCrew = numberOfCrew;
 }
-
-
-
-
-

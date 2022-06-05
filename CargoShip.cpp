@@ -9,7 +9,7 @@ CargoShip::CargoShip(const std::string &name, const std::string &homePort, int e
 }
 
 std::string CargoShip::Info() const {
-    return (BasicShip::Info() + "Вантажопідйомність в тонах: " + std::to_string(loadCapacity) + ";\n");
+    return ("Тип корабля: вантажний;\n" + BasicShip::Info() + "Вантажопідйомність в тонах: " + std::to_string(loadCapacity) + ";\n");
 }
 
 void CargoShip::ChangeLoadCapacity(const int &loadCapacity) {

@@ -27,7 +27,7 @@ std::string WarShip::Info() const {
             break;
     }
 
-    return BasicShip::Info() + "Тип зброї: " + enumToString + ";\n";
+    return ("Тип корабля: військовий;\n" + BasicShip::Info() + "Тип зброї: " + enumToString + ";\n");
 }
 
 void WarShip::ChangeWeaponType(const WeaponType &weaponType) {
