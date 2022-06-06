@@ -334,7 +334,7 @@ void createPassengerShip(std::vector<PassengerShip*>& ships) {
     std::cin >> displacement;
     std::cout << "Чисельність екіпажу: " << std::endl;
     std::cin >> numberOfCrew;
-    std::cout << "Кількість пассжирів: " << std::endl;
+    std::cout << "Кількість пассажирів: " << std::endl;
     std::cin >> numberOfPassengers;
 
     std::cout << "Введіть кількість човнів: " << std::endl;

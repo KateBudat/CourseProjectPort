@@ -41,7 +41,7 @@ void PassengerShip::AddBoatsToSafeNumber() {
 }
 
 std::string PassengerShip::Info() const {
-    std::string boatsInfo;
+    std::string boatInfo, fullBoatsInfo;
     for (int i = 0; i < boats.size(); i++) {
         int nB = 0;
 
@@ -50,11 +50,12 @@ std::string PassengerShip::Info() const {
                 nB += 1;
             }
         }
-        boatsInfo += "Кількість човнів місткістю " + std::to_string(boats[i]->GetBoatCapacity()) + ": " + std::to_string(nB) + ";\n";
+        boatInfo = "Кількість човнів місткістю " + std::to_string(boats[i]->GetBoatCapacity()) + ": " + std::to_string(nB) + ";\n";
+        if (fullBoatsInfo.find(boatInfo) == std::string::npos) fullBoatsInfo+=boatInfo;
     }
 
-    return ("Тип корабля: пасажирський;\n" + BasicShip::Info() + "Кількість пасажирів: " + std::to_string(numberOfPassengers) +  ";\n" +
-            boatsInfo + "Сумарна кількість човнів: " + std::to_string(numberOfBoats) + ";\n");
+    return ("Тип корабля: пасажирський;\n" + BasicShip::Info() + "Кількість пасажирів: " + std::to_string(numberOfPassengers) +  ";\n"
+    +  "Сумарна кількість човнів: " + std::to_string(numberOfBoats) + ";\n" + fullBoatsInfo);
 }
 
 void PassengerShip::ChangeNumberOfPassengers(const int &numberOfPassengers) {

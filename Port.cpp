@@ -69,7 +69,7 @@ void Port::Print(ShipTypes sT) {
             }
 
             for (int i = 0; i < ships.size(); i++) {
-                std::cout << enumToString << ", які зарах знаходяться в порту: " << std::endl;
+                std::cout << enumToString << ", які зараз знаходяться в порту: " << std::endl;
                 if (getShipType(ships[i]) == sT) {
                     std::cout << "ID: " << i + 1 << ";" << std::endl;
                     std::cout << ships[i]->Info() << std::endl;
