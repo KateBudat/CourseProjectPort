@@ -1,7 +1,9 @@
-#include "Port.h"
-#include <stdexcept>
 #include <iostream>
-#include <algorithm>
+#include <stdexcept>
+#include <string>
+#include "Port.h"
+#include "BasicShip.h"
+
 
 Port::Port(const std::string& name, const int maxNumberOfShips) : name(name), maxNumberOfShips(maxNumberOfShips) {
     if (maxNumberOfShips <= 0)
@@ -27,21 +29,19 @@ void Port::ShipEnteredPort(BasicShip* bS) {
     else ships.push_back(bS);
 }
 
-void Port::ShipLeftPort(int ID) {
+void Port::ShipLeftPort(BasicShip* bS) {
 
-    if (ID < ships.size() && ID != 0) {
-        ships.erase(ships.begin() + ID - 1);
-    }
+    if (!ifShipAlreadyInThePort(bS))
+        throw std::invalid_argument("Такий корабель відсутній в порту!");
 
     else {
-        throw std::invalid_argument("Такий корабель відсутній в порту!");
+        ships.erase(std::find(ships.begin(), ships.end(), bS));
     }
-
 }
 
 void Port::Print(ShipTypes sT) {
     if (sT == ShipTypes::BasicShip) {
-        std::cout << "Кораблі, які зараз знаходяться в порту: " << std::endl;
+        std::cout << "--Кораблі, які зараз знаходяться в порту--" << std::endl;
         for (int i = 0; i < ships.size(); i++) {
             std::cout << "ID: " << i + 1 << ";" << std::endl;
             std::cout << ships[i]->Info() << std::endl;
@@ -49,7 +49,7 @@ void Port::Print(ShipTypes sT) {
         }
 
     else {
-        std::cout << "Кораблі, які зараз знаходяться в порту: " << std::endl;
+        std::cout << "--Кораблі, які зараз знаходяться в порту--" << std::endl;
             for (int i = 0; i < ships.size(); i++) {
                 if (getShipType(ships[i]) == sT) {
                     std::cout << "ID: " << i + 1 << ";" << std::endl;

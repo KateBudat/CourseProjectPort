@@ -1,9 +1,12 @@
-#include <stdexcept>
 #include <iostream>
+#include <stdexcept>
+#include <vector>
+#include <string>
 #include "PassengerShip.h"
+#include "Boat.h"
 
 PassengerShip::PassengerShip(const std::string &name, const std::string &homePort, int enginePower, int displacement,
-                             int numberOfCrew, int numberOfPassengers, std::vector<Boat*> boats) : BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
+                             int numberOfCrew, int numberOfPassengers, std::vector<Boat*>& boats) : BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
                              numberOfPassengers(numberOfPassengers), boats(boats) {
     if (numberOfPassengers < 0)
         throw std::invalid_argument("Кількість пасажирів не може бути від’ємною!");

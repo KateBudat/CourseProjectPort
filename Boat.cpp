@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <string>
 #include "Boat.h"
 
 Boat::Boat(const int boatCapacity) : boatCapacity(boatCapacity) {

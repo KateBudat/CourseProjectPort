@@ -1,4 +1,3 @@
-#include <stdexcept>
 #include "WarShip.h"
 
 WarShip::WarShip(const std::string &name, const std::string &homePort, int enginePower, int displacement,

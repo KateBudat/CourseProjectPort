@@ -1,6 +1,7 @@
 #ifndef COURSEPROJECTPORT_BOAT_H
 #define COURSEPROJECTPORT_BOAT_H
 
+#include <string>
 
 class Boat {
 public:

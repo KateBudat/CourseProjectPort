@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <string>
 #include "CargoShip.h"
 
 CargoShip::CargoShip(const std::string &name, const std::string &homePort, int enginePower, int displacement,

@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <string>
 #include "BasicShip.h"
 
 BasicShip::BasicShip(const std::string& name, const std::string& homePort, int enginePower, int displacement, int numberOfCrew):
