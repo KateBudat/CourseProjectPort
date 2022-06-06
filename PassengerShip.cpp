@@ -8,7 +8,6 @@ PassengerShip::PassengerShip(const std::string &name, const std::string &homePor
     if (numberOfPassengers < 0)
         throw std::invalid_argument("Кількість пасажирів не може бути від’ємною!");
 
-    this->numberOfBoats = boats.size();
 }
 
 int PassengerShip::GetFullBoatsCapacity() const {
@@ -55,7 +54,7 @@ std::string PassengerShip::Info() const {
     }
 
     return ("Тип корабля: пасажирський;\n" + BasicShip::Info() + "Кількість пасажирів: " + std::to_string(numberOfPassengers) +  ";\n"
-    +  "Сумарна кількість човнів: " + std::to_string(numberOfBoats) + ";\n" + fullBoatsInfo);
+    +  "Сумарна кількість човнів: " + std::to_string(boats.size()) + ";\n" + fullBoatsInfo);
 }
 
 void PassengerShip::ChangeNumberOfPassengers(const int &numberOfPassengers) {
@@ -80,7 +79,7 @@ void PassengerShip::AddBoats(Boat* b, int n) {
 void PassengerShip::PrintBoats() const {
     for (int i = 0; i < boats.size(); i++)
     {
-        std::cout << "ID човна: " << std::endl;
+        std::cout << "ID човна: " << i+1 << std::endl;
         std::cout << boats[i]->GetBoatInfo() << std::endl;
         std::cout << std::endl;
     }

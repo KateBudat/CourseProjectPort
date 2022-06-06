@@ -27,7 +27,6 @@ public:
 
 private:
     int numberOfPassengers;
-    int numberOfBoats;
     std::vector<Boat*> boats;
 };
 

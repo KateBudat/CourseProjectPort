@@ -4,9 +4,8 @@
 #include <algorithm>
 
 Port::Port(const std::string& name, const int maxNumberOfShips) : name(name), maxNumberOfShips(maxNumberOfShips) {
-    if (numberOfShips > maxNumberOfShips)
-        throw std::invalid_argument("Порт не може прийняти більше кораблів!");
-    this->numberOfShips = ships.size();
+    if (maxNumberOfShips <= 0)
+        throw std::invalid_argument("Порт не може приймати нульову чи негативну кількість кораблі!");
 }
 
 bool Port::ifShipAlreadyInThePort(BasicShip* bS) const {
@@ -20,10 +19,12 @@ ShipTypes Port::getShipType(BasicShip* bS) {
     else return ShipTypes::WarShip;
 }
 
-void Port::ShipEnteredPort(BasicShip* s) {
-    if (ifShipAlreadyInThePort(s))
+void Port::ShipEnteredPort(BasicShip* bS) {
+    if (ifShipAlreadyInThePort(bS))
         throw std::invalid_argument("Цей корабель вже в порту!");
-    else ships.push_back(s);
+    else if (ships.size() + 1 > maxNumberOfShips)
+        throw std::invalid_argument("Порт не може прийняти більше кораблів!");
+    else ships.push_back(bS);
 }
 
 void Port::ShipLeftPort(int ID) {
@@ -39,49 +40,28 @@ void Port::ShipLeftPort(int ID) {
 }
 
 void Port::Print(ShipTypes sT) {
-    if (ships.empty()) {
-        std::cout << "В порту нема кораблів." << std::endl;
-    }
-
-    else {
-        if (sT == ShipTypes::BasicShip) {
-            std::cout << "Кораблі, які зараз знаходяться в порту: " << std::endl;
-            for (int i = 0; i < ships.size(); i++) {
-                std::cout << "ID: " << i + 1 << ";" << std::endl;
-                std::cout << ships[i]->Info() << std::endl;
+    if (sT == ShipTypes::BasicShip) {
+        std::cout << "Кораблі, які зараз знаходяться в порту: " << std::endl;
+        for (int i = 0; i < ships.size(); i++) {
+            std::cout << "ID: " << i + 1 << ";" << std::endl;
+            std::cout << ships[i]->Info() << std::endl;
             }
         }
 
-        else {
-            std::string enumToString;
-            switch(sT) {
-                case ShipTypes::PassengerShip:
-                    enumToString = "Пасажирські кораблі";
-                    break;
-
-                case ShipTypes::CargoShip:
-                    enumToString = "Вантажні кораблі";
-                    break;
-
-                case ShipTypes::WarShip:
-                    enumToString = "Військові кораблі";
-                    break;
-            }
-
+    else {
+        std::cout << "Кораблі, які зараз знаходяться в порту: " << std::endl;
             for (int i = 0; i < ships.size(); i++) {
-                std::cout << enumToString << ", які зараз знаходяться в порту: " << std::endl;
                 if (getShipType(ships[i]) == sT) {
                     std::cout << "ID: " << i + 1 << ";" << std::endl;
                     std::cout << ships[i]->Info() << std::endl;
                 }
             }
-        }
     }
 }
 
 
 std::string Port::PortInfo() const {
-    return ("Назва порту: " + name + ";\n" + "Кількість кораблів зараз в порту: " + std::to_string(numberOfShips) + ";\n" +
+    return ("Назва порту: " + name + ";\n" + "Кількість кораблів зараз в порту: " + std::to_string(ships.size()) + ";\n" +
             "Максимальна кількість кораблів, які може прийняти порт: " + std::to_string(maxNumberOfShips) + ";\n");
 }
 
