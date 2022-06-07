@@ -627,7 +627,7 @@ void modifyPassengerShip(int choice, int ID, std::vector<PassengerShip*>& ships)
             std::cout << "Введіть ID човну, який ви хочете видалити: " << std::endl;
             int boatID;
             std::cin >> boatID;
-            ships[ID - 1]->DeleteBoat(boatID);
+            ships[ID - 1]->DeleteBoat(boatID - 1);
             break;
     }
 }

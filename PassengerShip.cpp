@@ -65,8 +65,8 @@ void PassengerShip::ChangeNumberOfPassengers(const int &numberOfPassengers) {
 }
 
 void PassengerShip::DeleteBoat(int ID) {
-    if (ID < boats.size() && ID != 0) {
-        boats.erase(boats.begin() + ID - 1);
+    if (ID <= boats.size() && ID >= 0) {
+        boats.erase(boats.begin() + ID);
     }
 
     else {
