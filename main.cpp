@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <Windows.h>
 #include "BasicShip.h"
 #include "PassengerShip.h"
 #include "CargoShip.h"
@@ -23,6 +24,7 @@ void modifyWarShip(int choice, int ID, std::vector<WarShip*>& ships);
 
 
 int main() {
+    SetConsoleOutputCP(1251);
 
     std::vector<PassengerShip*> passengerShips;
     std::vector<CargoShip*> cargoShips;

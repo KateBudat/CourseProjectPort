@@ -11,14 +11,14 @@ protected:
     BasicShip(const std::string& name, std::string& homePort, int enginePower, int displacement, int numberOfCrew);
 
 public:
-    std::string GetName() const;
+    std::string GetName() const; // геттер назви
     int GetNumberOfCrew() const; // геттер чисельності екіпажу
     virtual std::string Info() const; // інформація про корабель
     virtual ~BasicShip() = default;
 
     //модифікація кораблів
-    void ChangeEnginePower(const int& enginePower); // змінити потужність двигуна
     void ChangeHomePort(const std::string& homePort); // змінити порт приписки
+    void ChangeEnginePower(const int& enginePower); // змінити потужність двигуна
     void ChangeDisplacement(const int& displacement); // змінити водотонажність
     void ChangeNumberOfCrew(const int& numberOfCrew); // змінити кількість екіпажу
 
