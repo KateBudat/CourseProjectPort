@@ -1,6 +1,6 @@
 #include "WarShip.h"
 
-WarShip::WarShip(const std::string &name, const std::string &homePort, int enginePower, int displacement,
+WarShip::WarShip(const std::string &name, std::string &homePort, int enginePower, int displacement,
                  int numberOfCrew, WeaponType weaponType) : BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
                  weaponType(weaponType) {}
 

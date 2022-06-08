@@ -9,7 +9,7 @@ enum class WeaponType { missile, artillery, torpedo, mine, antiSubmarine };
 // військовий корабель
 class WarShip : public BasicShip {
 public:
-    WarShip(const std::string& name, const std::string& homePort, int enginePower, int displacement, int numberOfCrew,
+    WarShip(const std::string& name, std::string& homePort, int enginePower, int displacement, int numberOfCrew,
             WeaponType weaponType);
 
     std::string Info() const override; // інформація про військовий корабель
@@ -18,7 +18,7 @@ public:
     void ChangeWeaponType(const WeaponType &weaponType);
 
 private:
-    WeaponType weaponType; // тип зброї
+    WeaponType weaponType; // тип зброї3
 };
 
 

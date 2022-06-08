@@ -10,7 +10,7 @@
 class PassengerShip : public BasicShip {
 
 public:
-    PassengerShip(const std::string& name, const std::string& homePort, int enginePower, int displacement,
+    PassengerShip(const std::string& name, std::string& homePort, int enginePower, int displacement,
                   int numberOfCrew, int numberOfPassengers, std::vector<Boat*>& boats);
     int GetFullBoatsCapacity() const; // місткість усіх човнів
     int GetFullNumberOfPeople() const; // сума всіх людей на кораблі (пасажирів і екіпажу)

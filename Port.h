@@ -25,7 +25,7 @@ private:
     const std::string name;
     const int maxNumberOfShips; // максимальна кількість кораблів, які може прийняти порт
     std::vector <BasicShip*> ships;
-    ShipTypes getShipType(BasicShip* bS);
+    ShipTypes getShipType(BasicShip* bS); // удалить?
 };
 
 

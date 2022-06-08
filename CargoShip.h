@@ -8,7 +8,7 @@
 class CargoShip : public BasicShip {
 
 public:
-    CargoShip(const std::string& name, const std::string& homePort, int enginePower, int displacement,
+    CargoShip( const std::string& name, std::string& homePort, int enginePower, int displacement,
               int numberOfCrew, int loadCapacity);
 
     std::string Info() const override; // інформація про вантажний корабель

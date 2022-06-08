@@ -3,28 +3,32 @@
 
 #include <string>
 
+
 // базовий корабель
 class BasicShip {
 
 protected:
-    BasicShip(const std::string& name, const std::string& homePort, int enginePower, int displacement, int numberOfCrew);
+    BasicShip(const std::string& name, std::string& homePort, int enginePower, int displacement, int numberOfCrew);
 
 public:
+    std::string GetName() const;
     int GetNumberOfCrew() const; // геттер чисельності екіпажу
     virtual std::string Info() const; // інформація про корабель
     virtual ~BasicShip() = default;
 
     //модифікація кораблів
     void ChangeEnginePower(const int& enginePower); // змінити потужність двигуна
+    void ChangeHomePort(const std::string& homePort); // змінити порт приписки
+    void ChangeDisplacement(const int& displacement); // змінити водотонажність
     void ChangeNumberOfCrew(const int& numberOfCrew); // змінити кількість екіпажу
+
 
 private:
     const std::string name; // назва
-    const std::string homePort; // порт приписки
+    std::string homePort; // порт приписки
     int enginePower; // потужність двигуна
     int displacement; // водотоннажність
     int numberOfCrew; // чисельність екіпажу
-
 };
 
 

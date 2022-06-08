@@ -2,7 +2,7 @@
 #include <string>
 #include "CargoShip.h"
 
-CargoShip::CargoShip(const std::string &name, const std::string &homePort, int enginePower, int displacement,
+CargoShip::CargoShip(const std::string &name, std::string &homePort, int enginePower, int displacement,
                      int numberOfCrew, int loadCapacity) : BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
                      loadCapacity(loadCapacity) {
     if (loadCapacity <= 0)

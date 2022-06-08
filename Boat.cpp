@@ -7,6 +7,8 @@ Boat::Boat(const int boatCapacity) : boatCapacity(boatCapacity) {
         throw std::invalid_argument("Місткість човна не може бути нульвою або від'ємною!!");
     else if (boatCapacity > 150)
         throw std::invalid_argument("Місткість човна більша за 150 заборонена міжнародним кодексом!");
+    else if (boatCapacity < 25)
+        throw std::invalid_argument("Місткість човна менша за 25 заборонена міжнародним кодексом!");
 }
 
 int Boat::GetBoatCapacity() const {

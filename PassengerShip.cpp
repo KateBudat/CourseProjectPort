@@ -5,7 +5,7 @@
 #include "PassengerShip.h"
 #include "Boat.h"
 
-PassengerShip::PassengerShip(const std::string &name, const std::string &homePort, int enginePower, int displacement,
+PassengerShip::PassengerShip(const std::string &name, std::string &homePort, int enginePower, int displacement,
                              int numberOfCrew, int numberOfPassengers, std::vector<Boat*>& boats) : BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
                              numberOfPassengers(numberOfPassengers), boats(boats) {
     if (numberOfPassengers < 0)
@@ -33,11 +33,15 @@ bool PassengerShip::IsBoatsEnough() const {
 void PassengerShip::AddBoatsToSafeNumber() {
     while(!IsBoatsEnough()) {
         int peopleWithoutBoat = GetFullNumberOfPeople() - GetFullBoatsCapacity();
-        if (peopleWithoutBoat <= 150) {
-            boats.push_back(new Boat(peopleWithoutBoat));
+
+        if (peopleWithoutBoat > 150) {
+            boats.push_back(new Boat(150));
+        }
+        else if (peopleWithoutBoat < 25) {
+            boats.push_back(new Boat(25));
         }
         else {
-            boats.push_back(new Boat(150));
+            boats.push_back(new Boat(peopleWithoutBoat));
         }
     }
 }
@@ -47,8 +51,8 @@ std::string PassengerShip::Info() const {
     for (int i = 0; i < boats.size(); i++) {
         int nB = 0;
 
-        for (int j = 0; j < boats.size(); j++) {
-            if (boats[i]->GetBoatCapacity() == boats[j]->GetBoatCapacity()) {
+        for (auto boat : boats) {
+            if (boats[i]->GetBoatCapacity() == boat->GetBoatCapacity()) {
                 nB += 1;
             }
         }
@@ -68,7 +72,6 @@ void PassengerShip::DeleteBoat(int ID) {
     if (ID <= boats.size() && ID >= 0) {
         boats.erase(boats.begin() + ID);
     }
-
     else {
         throw std::invalid_argument("Такого човна не існує!");
     }
