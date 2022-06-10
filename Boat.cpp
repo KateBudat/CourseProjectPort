@@ -4,11 +4,11 @@
 
 Boat::Boat(const int boatCapacity) : boatCapacity(boatCapacity) {
     if (boatCapacity <= 0)
-        throw std::invalid_argument("РњС–СЃС‚РєС–СЃС‚СЊ С‡РѕРІРЅР° РЅРµ РјРѕР¶Рµ Р±СѓС‚Рё РЅСѓР»СЊРІРѕСЋ Р°Р±Рѕ РІС–Рґ'С”РјРЅРѕСЋ!!");
+        throw std::invalid_argument("Місткість човна не може бути нульвою або від'ємною!!");
     else if (boatCapacity > 150)
-        throw std::invalid_argument("РњС–СЃС‚РєС–СЃС‚СЊ С‡РѕРІРЅР° Р±С–Р»СЊС€Р° Р·Р° 150 Р·Р°Р±РѕСЂРѕРЅРµРЅР° РјС–Р¶РЅР°СЂРѕРґРЅРёРј РєРѕРґРµРєСЃРѕРј!");
+        throw std::invalid_argument("Місткість човна більша за 150 заборонена міжнародним кодексом!");
     else if (boatCapacity < 25)
-        throw std::invalid_argument("РњС–СЃС‚РєС–СЃС‚СЊ С‡РѕРІРЅР° РјРµРЅС€Р° Р·Р° 25 Р·Р°Р±РѕСЂРѕРЅРµРЅР° РјС–Р¶РЅР°СЂРѕРґРЅРёРј РєРѕРґРµРєСЃРѕРј!");
+        throw std::invalid_argument("Місткість човна менша за 25 заборонена міжнародним кодексом!");
 }
 
 int Boat::GetBoatCapacity() const {
@@ -16,5 +16,5 @@ int Boat::GetBoatCapacity() const {
 }
 
 std::string Boat::GetBoatInfo() const {
-    return ("РњС–СЃС‚РєС–СЃС‚СЊ С‡РѕРІРЅР°: " + std::to_string(boatCapacity));
+    return ("Місткість човна: " + std::to_string(boatCapacity));
 }

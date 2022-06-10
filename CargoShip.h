@@ -4,20 +4,20 @@
 #include <string>
 #include "BasicShip.h"
 
-// РІР°РЅС‚Р°Р¶РЅРёР№ РєРѕСЂР°Р±РµР»СЊ
+// вантажний корабель
 class CargoShip : public BasicShip {
 
 public:
-    CargoShip( const std::string& name, std::string& homePort, int enginePower, int displacement,
-              int numberOfCrew, int loadCapacity);
+    CargoShip(const std::string& name, std::string& homePort, int enginePower, int displacement,
+        int numberOfCrew, int loadCapacity);
 
-    std::string Info() const override; // С–РЅС„РѕСЂРјР°С†С–СЏ РїСЂРѕ РІР°РЅС‚Р°Р¶РЅРёР№ РєРѕСЂР°Р±РµР»СЊ
+    std::string Info() const override; // інформація про вантажний корабель
 
-    //РјРѕРґРёС„С–РєР°С†С–СЏ РєРѕСЂР°Р±Р»С–РІ
+    //модифікація кораблів
     void ChangeLoadCapacity(const int& loadCapacity);
 
 private:
-    int loadCapacity; // РІР°РЅС‚Р°Р¶РѕРїС–РґР№РѕРјРЅС–СЃС‚СЊ
+    int loadCapacity; // вантажопідйомність
 
 };
 

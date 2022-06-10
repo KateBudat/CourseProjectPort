@@ -5,14 +5,12 @@
 #include <string>
 #include "BasicShip.h"
 
-enum class ShipTypes { BasicShip, PassengerShip, CargoShip, WarShip };
-
 class Port {
 public:
     Port(const std::string& name, const int maxNumberOfShips);
-    void ShipEnteredPort(BasicShip* bS); // РєРѕСЂР°Р±РµР»СЊ Р·Р°Р№С€РѕРІ РІ РїРѕСЂС‚
-    void ShipLeftPort(BasicShip* bS); // РєРѕСЂР°Р±РµР»СЊ Р·Р°Р»РёС€РёРІ РїРѕСЂС‚
-    void Print(ShipTypes sT = ShipTypes::BasicShip);
+    void ShipEnteredPort(BasicShip* bS); // корабель зайшов в порт
+    void ShipLeftPort(BasicShip* bS); // корабель залишив порт
+    void Print();
 
     std::string GetPortName() const { return name; }
     int GetMaxNumber() const { return maxNumberOfShips; }
@@ -23,9 +21,8 @@ public:
 
 private:
     const std::string name;
-    const int maxNumberOfShips; // РјР°РєСЃРёРјР°Р»СЊРЅР° РєС–Р»СЊРєС–СЃС‚СЊ РєРѕСЂР°Р±Р»С–РІ, СЏРєС– РјРѕР¶Рµ РїСЂРёР№РЅСЏС‚Рё РїРѕСЂС‚
+    const int maxNumberOfShips; // максимальна кількість кораблів, які може прийняти порт
     std::vector <BasicShip*> ships;
-    ShipTypes getShipType(BasicShip* bS); // СѓРґР°Р»РёС‚СЊ?
 };
 
 

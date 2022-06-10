@@ -1,35 +1,35 @@
 #include "WarShip.h"
 
-WarShip::WarShip(const std::string &name, std::string &homePort, int enginePower, int displacement,
-                 int numberOfCrew, WeaponType weaponType) : BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
-                 weaponType(weaponType) {}
+WarShip::WarShip(const std::string& name, std::string& homePort, int enginePower, int displacement,
+    int numberOfCrew, WeaponType weaponType) : BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
+    weaponType(weaponType) {}
 
 std::string WarShip::Info() const {
 
     std::string enumToString;
     switch (weaponType)
     {
-        case WeaponType::missile:
-            enumToString = "Ñ€Ð°ÐºÐµÑ‚Ð½Ð¸Ð¹";
-            break;
-        case WeaponType::artillery:
-            enumToString = "Ð°Ñ€Ñ‚Ð¸Ð»ÐµÑ€Ñ–Ð¹ÑÑŒÐºÐ¸Ð¹";
-            break;
-        case WeaponType::torpedo:
-            enumToString = "Ñ‚Ð¾Ñ€Ð¿ÐµÐ´Ð½Ð¸Ð¹";
-            break;
-        case WeaponType::mine:
-            enumToString = "Ð¼Ñ–Ð½Ð½Ð¸Ð¹";
-            break;
-        case WeaponType::antiSubmarine:
-            enumToString = "Ð¿Ñ€Ð¾Ñ‚Ð¸Ñ‡Ð¾Ð²Ð½Ð¾Ð²Ð¸Ð¹";
-            break;
+    case WeaponType::missile:
+        enumToString = "ðàêåòíèé";
+        break;
+    case WeaponType::artillery:
+        enumToString = "àðòèëåð³éñüêèé";
+        break;
+    case WeaponType::torpedo:
+        enumToString = "òîðïåäíèé";
+        break;
+    case WeaponType::mine:
+        enumToString = "ì³ííèé";
+        break;
+    case WeaponType::antiSubmarine:
+        enumToString = "ïðîòè÷îâíîâèé";
+        break;
     }
 
-    return ("Ð¢Ð¸Ð¿ ÐºÐ¾Ñ€Ð°Ð±Ð»Ñ: Ð²Ñ–Ð¹ÑÑŒÐºÐ¾Ð²Ð¸Ð¹;\n" + BasicShip::Info() + "Ð¢Ð¸Ð¿ Ð·Ð±Ñ€Ð¾Ñ—: " + enumToString + ";\n");
+    return ("Òèï êîðàáëÿ: â³éñüêîâèé;\n" + BasicShip::Info() + "Òèï çáðî¿: " + enumToString + ";\n");
 }
 
-void WarShip::ChangeWeaponType(const WeaponType &weaponType) {
+void WarShip::ChangeWeaponType(const WeaponType& weaponType) {
     this->weaponType = weaponType;
 }
 

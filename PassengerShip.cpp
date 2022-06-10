@@ -5,19 +5,19 @@
 #include "PassengerShip.h"
 #include "Boat.h"
 
-PassengerShip::PassengerShip(const std::string &name, std::string &homePort, int enginePower, int displacement,
-                             int numberOfCrew, int numberOfPassengers, std::vector<Boat*>& boats) : BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
-                             numberOfPassengers(numberOfPassengers), boats(boats) {
+PassengerShip::PassengerShip(const std::string& name, std::string& homePort, int enginePower, int displacement,
+    int numberOfCrew, int numberOfPassengers, std::vector<Boat*>& boats) : BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
+    numberOfPassengers(numberOfPassengers), boats(boats) {
     if (numberOfPassengers < 0)
-        throw std::invalid_argument("–ö—ñ–ª—å–∫—ñ—Å—Ç—å –ø–∞—Å–∞–∂–∏—Ä—ñ–≤ –Ω–µ –º–æ–∂–µ –±—É—Ç–∏ –≤—ñ–¥‚Äô—î–º–Ω–æ—é!");
+        throw std::invalid_argument(" ≥Î¸Í≥ÒÚ¸ Ô‡Ò‡ÊË≥‚ ÌÂ ÏÓÊÂ ·ÛÚË ‚≥‰í∫ÏÌÓ˛!");
 
 }
 
 int PassengerShip::GetFullBoatsCapacity() const {
     int bC = 0;
-    for (int i = 0; i < boats.size(); i++)
+    for (auto boat : boats)
     {
-        bC += boats[i]->GetBoatCapacity();
+        bC += boat->GetBoatCapacity();
     }
     return bC;
 }
@@ -31,7 +31,7 @@ bool PassengerShip::IsBoatsEnough() const {
 }
 
 void PassengerShip::AddBoatsToSafeNumber() {
-    while(!IsBoatsEnough()) {
+    while (!IsBoatsEnough()) {
         int peopleWithoutBoat = GetFullNumberOfPeople() - GetFullBoatsCapacity();
 
         if (peopleWithoutBoat > 150) {
@@ -56,15 +56,15 @@ std::string PassengerShip::Info() const {
                 nB += 1;
             }
         }
-        boatInfo = "–ö—ñ–ª—å–∫—ñ—Å—Ç—å —á–æ–≤–Ω—ñ–≤ –º—ñ—Å—Ç–∫—ñ—Å—Ç—é " + std::to_string(boats[i]->GetBoatCapacity()) + ": " + std::to_string(nB) + ";\n";
-        if (fullBoatsInfo.find(boatInfo) == std::string::npos) fullBoatsInfo+=boatInfo;
+        boatInfo = " ≥Î¸Í≥ÒÚ¸ ˜Ó‚Ì≥‚ Ï≥ÒÚÍ≥ÒÚ˛ " + std::to_string(boats[i]->GetBoatCapacity()) + ": " + std::to_string(nB) + ";\n";
+        if (fullBoatsInfo.find(boatInfo) == std::string::npos) fullBoatsInfo += boatInfo;
     }
 
-    return ("–¢–∏–ø –∫–æ—Ä–∞–±–ª—è: –ø–∞—Å–∞–∂–∏—Ä—Å—å–∫–∏–π;\n" + BasicShip::Info() + "–ö—ñ–ª—å–∫—ñ—Å—Ç—å –ø–∞—Å–∞–∂–∏—Ä—ñ–≤: " + std::to_string(numberOfPassengers) +  ";\n"
-    +  "–°—É–º–∞—Ä–Ω–∞ –∫—ñ–ª—å–∫—ñ—Å—Ç—å —á–æ–≤–Ω—ñ–≤: " + std::to_string(boats.size()) + ";\n" + fullBoatsInfo);
+    return ("“ËÔ ÍÓ‡·Îˇ: Ô‡Ò‡ÊËÒ¸ÍËÈ;\n" + BasicShip::Info() + " ≥Î¸Í≥ÒÚ¸ Ô‡Ò‡ÊË≥‚: " + std::to_string(numberOfPassengers) + ";\n"
+        + "—ÛÏ‡Ì‡ Í≥Î¸Í≥ÒÚ¸ ˜Ó‚Ì≥‚: " + std::to_string(boats.size()) + ";\n" + fullBoatsInfo);
 }
 
-void PassengerShip::ChangeNumberOfPassengers(const int &numberOfPassengers) {
+void PassengerShip::ChangeNumberOfPassengers(const int& numberOfPassengers) {
     this->numberOfPassengers = numberOfPassengers;
 }
 
@@ -73,7 +73,7 @@ void PassengerShip::DeleteBoat(int ID) {
         boats.erase(boats.begin() + ID);
     }
     else {
-        throw std::invalid_argument("–¢–∞–∫–æ–≥–æ —á–æ–≤–Ω–∞ –Ω–µ —ñ—Å–Ω—É—î!");
+        throw std::invalid_argument("“‡ÍÓ„Ó ˜Ó‚Ì‡ ÌÂ ≥ÒÌÛ∫!");
     }
 }
 
@@ -85,7 +85,7 @@ void PassengerShip::AddBoats(Boat* b, int n) {
 void PassengerShip::PrintBoats() const {
     for (int i = 0; i < boats.size(); i++)
     {
-        std::cout << "ID —á–æ–≤–Ω–∞: " << i+1 << std::endl;
+        std::cout << "ID ˜Ó‚Ì‡: " << i + 1 << std::endl;
         std::cout << boats[i]->GetBoatInfo() << std::endl;
         std::cout << std::endl;
     }

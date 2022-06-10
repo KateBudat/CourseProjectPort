@@ -2,15 +2,15 @@
 #include <string>
 #include "BasicShip.h"
 
-BasicShip::BasicShip(const std::string& name, std::string& homePort, int enginePower, int displacement, int numberOfCrew):
-        name(name), homePort(homePort), enginePower(enginePower),
-        displacement(displacement), numberOfCrew(numberOfCrew) {
+BasicShip::BasicShip(const std::string& name, std::string& homePort, int enginePower, int displacement, int numberOfCrew) :
+    name(name), homePort(homePort), enginePower(enginePower),
+    displacement(displacement), numberOfCrew(numberOfCrew) {
     if (enginePower <= 0)
-        throw std::invalid_argument("ÐŸÐ¾Ñ‚ÑƒÐ¶Ð½Ñ–ÑÑ‚ÑŒ Ð´Ð²Ð¸Ð³ÑƒÐ½Ð° Ð½Ðµ Ð¼Ð¾Ð¶Ðµ Ð±ÑƒÑ‚Ð¸ Ð²Ñ–Ð´'Ñ”Ð¼Ð½Ð¾ÑŽ Ð°Ð±Ð¾ Ð½ÑƒÐ»ÑŒÐ¾Ð²Ð¾ÑŽ!");
+        throw std::invalid_argument("Ïîòóæí³ñòü äâèãóíà íå ìîæå áóòè â³ä'ºìíîþ àáî íóëüîâîþ!");
     if (displacement <= 0)
-        throw std::invalid_argument("Ð’Ð¾Ð´Ð¾Ñ‚Ð¾Ð½Ð½Ð°Ð¶Ð½Ñ–ÑÑ‚ÑŒ Ð½Ðµ Ð¼Ð¾Ð¶Ðµ Ð±ÑƒÑ‚Ð¸ Ð½ÐµÐ³Ð°Ñ‚Ð¸Ð²Ð½Ð¸Ð¼ Ð°Ð±Ð¾ Ð½ÑƒÐ»ÑŒÐ¾Ð²Ð¸Ð¼!");
+        throw std::invalid_argument("Âîäîòîííàæí³ñòü íå ìîæå áóòè íåãàòèâíèì àáî íóëüîâèì!");
     if (numberOfCrew <= 0)
-        throw std::invalid_argument("ÐšÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ ÐµÐºÑ–Ð¿Ð°Ð¶Ñƒ Ð½Ðµ Ð¼Ð¾Ð¶Ðµ Ð±ÑƒÑ‚Ð¸ Ð²Ñ–Ð´'Ñ”Ð¼Ð½Ð¾ÑŽ Ð°Ð±Ð¾ Ð½ÑƒÐ»ÑŒÐ¾Ð²Ð¾ÑŽ!");
+        throw std::invalid_argument("Ê³ëüê³ñòü åê³ïàæó íå ìîæå áóòè â³ä'ºìíîþ àáî íóëüîâîþ!");
 
 }
 
@@ -23,24 +23,24 @@ int BasicShip::GetNumberOfCrew() const {
 }
 
 std::string BasicShip::Info() const {
-    return ("ÐÐ°Ð·Ð²Ð° ÐºÐ¾Ñ€Ð°Ð±Ð»Ñ: " + name + ";\n" + "ÐŸÐ¾Ñ€Ñ‚ Ð¿Ñ€Ð¸Ð¿Ð¸ÑÐºÐ¸: " + homePort + ";\n" +
-            "ÐŸÐ¾Ñ‚ÑƒÐ¶Ð½Ñ–ÑÑ‚ÑŒ Ð´Ð²Ð¸Ð³ÑƒÐ½Ð° Ð² ÐºÐ’Ñ‚: " + std::to_string(enginePower) + ";\n" + "Ð’Ð¾Ð´Ð¾Ñ‚Ð¾Ð½Ð½Ð°Ð¶Ð½Ñ–ÑÑ‚ÑŒ Ð² Ñ‚Ð¾Ð½Ð½Ð°Ñ…: " + std::to_string(displacement) + ";\n" +
-            "Ð§Ð¸ÑÐµÐ»ÑŒÐ½Ñ–ÑÑ‚ÑŒ ÐµÐºÑ–Ð¿Ð°Ð¶Ñƒ: " + std::to_string(numberOfCrew)  + ";\n");
+    return ("Íàçâà êîðàáëÿ: " + name + ";\n" + "Ïîðò ïðèïèñêè: " + homePort + ";\n" +
+        "Ïîòóæí³ñòü äâèãóíà â êÂò: " + std::to_string(enginePower) + ";\n" + "Âîäîòîííàæí³ñòü â òîííàõ: " + std::to_string(displacement) + ";\n" +
+        "×èñåëüí³ñòü åê³ïàæó: " + std::to_string(numberOfCrew) + ";\n");
 }
 
 void BasicShip::ChangeHomePort(const std::string& homePort) {
     this->homePort = homePort;
 }
 
-void BasicShip::ChangeEnginePower(const int &enginePower) {
+void BasicShip::ChangeEnginePower(const int& enginePower) {
     this->enginePower = enginePower;
 }
 
-void BasicShip::ChangeDisplacement(const int &displacement) {
+void BasicShip::ChangeDisplacement(const int& displacement) {
     this->displacement = displacement;
 }
 
-void BasicShip::ChangeNumberOfCrew(const int &numberOfCrew) {
+void BasicShip::ChangeNumberOfCrew(const int& numberOfCrew) {
     this->numberOfCrew = numberOfCrew;
 }
 

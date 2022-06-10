@@ -25,17 +25,18 @@ void modifyWarShip(int choice, int ID, std::vector<WarShip*>& ships);
 
 int main() {
     SetConsoleOutputCP(1251);
+    SetConsoleCP(1251);
 
     std::vector<PassengerShip*> passengerShips;
     std::vector<CargoShip*> cargoShips;
     std::vector<WarShip*> warShips;
 
     std::vector<Port> ports = {
-            Port("–ü—ñ–≤–¥–µ–Ω–Ω–∏–π", 20),
-            Port("–û–¥–µ—Å—å–∫–∏–π", 50),
-            Port("–ß–æ—Ä–Ω–æ–º–æ—Ä—Å—å–∫–∏–π", 15),
-            Port("–†–µ–Ω—ñ–π—Å—å–∫–∏–π", 20),
-            Port("–ú–∏–∫–æ–ª–∞—ó–≤—Å—å–∫–∏–π", 20),
+            Port("œ≥‚‰ÂÌÌËÈ", 20),
+            Port("Œ‰ÂÒ¸ÍËÈ", 50),
+            Port("◊ÓÌÓÏÓÒ¸ÍËÈ", 15),
+            Port("–ÂÌ≥ÈÒ¸ÍËÈ", 20),
+            Port("ÃËÍÓÎ‡ø‚Ò¸ÍËÈ", 20),
             Port("Test", 1)
     };
 
@@ -43,158 +44,162 @@ int main() {
     do {
         try {
             std::cout << "----------------------------------------" << std::endl;
-            std::cout << "0. –í–∏—Ö—ñ–¥" << std::endl;
-            std::cout << "1. –°—Ç–≤–æ—Ä–∏—Ç–∏ –∫–æ—Ä–∞–±–µ–ª—å" << std::endl;
-            std::cout << "2. –ú–æ–¥–∏—Ñ—ñ–∫—É–≤–∞—Ç–∏ –∫–æ—Ä–∞–±–µ–ª—å" << std::endl;
-            std::cout << "3. –í–∏–¥–∞–ª–∏—Ç–∏ –∫–æ—Ä–∞–±–µ–ª—å" << std::endl;
-            std::cout << "4. –ü–æ–∫–∞–∑–∞—Ç–∏ –ø–æ–≤–Ω—É —ñ–Ω—Ñ–æ—Ä–º–∞—Ü—ñ—é –ø—Ä–æ –∫–æ—Ä–∞–±–ª—ñ" << std::endl;
-            std::cout << "5. –ö–µ—Ä—É–≤–∞—Ç–∏ –∫–æ—Ä–∞–±–ª–µ–º" << std::endl;
-            std::cout << "6. –ü–æ–∫–∞–∑–∞—Ç–∏ —ñ–Ω—Ñ–æ—Ä–º–∞—Ü—ñ—é –ø—Ä–æ –¥–æ—Å—Ç—É–ø–Ω—ñ –ø–æ—Ä—Ç–∏" << std::endl;
+            std::cout << "0. ¬Ëı≥‰" << std::endl;
+            std::cout << "1. —Ú‚ÓËÚË ÍÓ‡·ÂÎ¸" << std::endl;
+            std::cout << "2. ÃÓ‰ËÙ≥ÍÛ‚‡ÚË ÍÓ‡·ÂÎ¸" << std::endl;
+            std::cout << "3. ¬Ë‰‡ÎËÚË ÍÓ‡·ÂÎ¸" << std::endl;
+            std::cout << "4. œÓÍ‡Á‡ÚË ÔÓ‚ÌÛ ≥ÌÙÓÏ‡ˆ≥˛ ÔÓ ÍÓ‡·Î≥" << std::endl;
+            std::cout << "5.  ÂÛ‚‡ÚË ÍÓ‡·ÎÂÏ" << std::endl;
+            std::cout << "6. œÓÍ‡Á‡ÚË ≥ÌÙÓÏ‡ˆ≥˛ ÔÓ ‰ÓÒÚÛÔÌ≥ ÔÓÚË" << std::endl;
             std::cout << "----------------------------------------" << std::endl;
             std::cin >> choice;
+            std::cout << std::endl;
 
             switch (choice) {
+            case 1:
+                std::cout << "ﬂÍËÈ ÚËÔ ÍÓ‡·Îˇ ÒÚ‚ÓËÚË?" << std::endl;
+                std::cout << "1. œ‡Ò‡ÊËÒ¸ÍËÈ ÍÓ‡·ÂÎ¸" << std::endl;
+                std::cout << "2. ¬‡ÌÚ‡ÊÌÂ ÒÛ‰ÌÓ" << std::endl;
+                std::cout << "3. ¬≥ÈÒ¸ÍÓ‚ËÈ ÍÓ‡·ÂÎ¸" << std::endl;
+                int choiceCreate;
+                std::cin >> choiceCreate;
+                std::cout << std::endl;
+                switch (choiceCreate) {
                 case 1:
-                    std::cout << "–Ø–∫–∏–π —Ç–∏–ø –∫–æ—Ä–∞–±–ª—è —Å—Ç–≤–æ—Ä–∏—Ç–∏?" << std::endl;
-                    std::cout << "1. –ü–∞—Å–∞–∂–∏—Ä—Å—å–∫–∏–π –∫–æ—Ä–∞–±–µ–ª—å" << std::endl;
-                    std::cout << "2. –í–∞–Ω—Ç–∞–∂–Ω–µ —Å—É–¥–Ω–æ" << std::endl;
-                    std::cout << "3. –í—ñ–π—Å—å–∫–æ–≤–∏–π –∫–æ—Ä–∞–±–µ–ª—å" << std::endl;
-                    int choiceCreate;
-                    std::cin >> choiceCreate;
-                    switch (choiceCreate) {
-                        case 1:
-                            createPassengerShip(passengerShips);
-                            break;
-                        case 2:
-                            createCargoShip(cargoShips);
-                            break;
-                        case 3:
-                            createWarShip(warShips);
-                            break;
-                    }
+                    createPassengerShip(passengerShips);
                     break;
                 case 2:
-                    if (passengerShips.empty() && cargoShips.empty() && warShips.empty()) {
-                        std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞—î –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                        break;
-                    } else {
-                        std::cout << "–Ø–∫–∏–π —Ç–∏–ø –∫–æ—Ä–∞–±–ª—è –ø–æ—Ç—Ä—ñ–±–Ω–æ –º–æ–¥–∏—Ñ—ñ–∫—É–≤–∞—Ç–∏?" << std::endl;
-                        std::cout << "1. –ü–∞—Å–∞–∂–∏—Ä—Å—å–∫–∏–π –∫–æ—Ä–∞–±–µ–ª—å" << std::endl;
-                        std::cout << "2. –í–∞–Ω—Ç–∞–∂–Ω–µ —Å—É–¥–Ω–æ" << std::endl;
-                        std::cout << "3. –í—ñ–π—Å—å–∫–æ–≤–∏–π –∫–æ—Ä–∞–±–µ–ª—å" << std::endl;
-                        int choiceMod;
-                        std::cin >> choiceMod;
-                        switch (choiceMod) {
-                            case 1:
-                                if (passengerShips.empty()) {
-                                    std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞—î –ø–∞—Å–∞–∂–∏—Ä—Å—å–∫–∏—Ö –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                                    break;
-                                } else {
-                                    showPassengerShips(passengerShips);
-                                    std::cout << "–í–≤–µ–¥—ñ—Ç—å ID –∫–æ—Ä–∞–±–ª—è, —è–∫–∏–π —Ç—Ä–µ–±–∞ –º–æ–¥–∏—Ñ—ñ–∫—É–≤–∞—Ç–∏: " << std::endl;
-                                    int pSID;
-                                    std::cin >> pSID;
-                                    std::cout << "–Ø–∫ –π–æ–≥–æ –ø–æ—Ç—Ä—ñ–±–Ω–æ –º–æ–¥–∏—Ñ—ñ–∫—É–≤–∞—Ç–∏?" << std::endl;
-                                    std::cout << "1. –ó–º—ñ–Ω–∏—Ç–∏ –ø–æ—Ä—Ç –ø—Ä–∏–ø–∏—Å–∫–∏" << std::endl;
-                                    std::cout << "2. –ó–º—ñ–Ω–∏—Ç–∏ –ø–æ—Ç—É–∂–Ω—ñ—Å—Ç—å –¥–≤–∏–≥—É–Ω–∞" << std::endl;
-                                    std::cout << "3. –ó–º—ñ–Ω–∏—Ç–∏ –≤–æ–¥–æ—Ç–æ–Ω–∞–∂–Ω—ñ—Å—Ç—å" << std::endl;
-                                    std::cout << "4. –ó–º—ñ–Ω–∏—Ç–∏ –∫—ñ–ª—å–∫—ñ—Å—Ç—å –µ–∫—ñ–ø–∞–∂—É" << std::endl;
-                                    std::cout << "5. –ó–º—ñ–Ω–∏—Ç–∏ –∫—ñ–ª—å–∫—ñ—Å—Ç—å –ø–∞—Å–∞–∂–∏—Ä—ñ–≤" << std::endl;
-                                    std::cout << "6. –ó–±—ñ–ª—å—à–∏—Ç–∏ –∫—ñ–ª—å–∫—ñ—Å—Ç—å —á–æ–≤–Ω—ñ–≤" << std::endl;
-                                    std::cout << "7. –ó–º–µ–Ω—à–∏—Ç–∏ –∫—ñ–ª—å–∫—ñ—Å—Ç—å —á–æ–≤–Ω—ñ–≤" << std::endl;
-                                    int choiceModPS;
-                                    std::cin >> choiceModPS;
-                                    modifyPassengerShip(choiceModPS, pSID, passengerShips);
-                                    break;
-                                }
-                            case 2:
-                                if (cargoShips.empty()) {
-                                    std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞—î –≤–∞–Ω—Ç–∞–∂–Ω–∏—Ö –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                                    break;
-                                } else {
-                                    showCargoShips(cargoShips);
-                                    std::cout << "–í–≤–µ–¥—ñ—Ç—å ID –∫–æ—Ä–∞–±–ª—è, —è–∫–∏–π —Ç—Ä–µ–±–∞ –º–æ–¥–∏—Ñ—ñ–∫—É–≤–∞—Ç–∏: " << std::endl;
-                                    int cSID;
-                                    std::cin >> cSID;
-                                    std::cout << "–Ø–∫ –π–æ–≥–æ –ø–æ—Ç—Ä—ñ–±–Ω–æ –º–æ–¥–∏—Ñ—ñ–∫—É–≤–∞—Ç–∏?" << std::endl;
-                                    std::cout << "1. –ó–º—ñ–Ω–∏—Ç–∏ –ø–æ—Ä—Ç –ø—Ä–∏–ø–∏—Å–∫–∏" << std::endl;
-                                    std::cout << "2. –ó–º—ñ–Ω–∏—Ç–∏ –ø–æ—Ç—É–∂–Ω—ñ—Å—Ç—å –¥–≤–∏–≥—É–Ω–∞" << std::endl;
-                                    std::cout << "3. –ó–º—ñ–Ω–∏—Ç–∏ –≤–æ–¥–æ—Ç–æ–Ω–∞–∂–Ω—ñ—Å—Ç—å" << std::endl;
-                                    std::cout << "4. –ó–º—ñ–Ω–∏—Ç–∏ –∫—ñ–ª—å–∫—ñ—Å—Ç—å –µ–∫—ñ–ø–∞–∂—É" << std::endl;
-                                    std::cout << "5. –ó–º—ñ–Ω–∏—Ç–∏ –≤–∞–Ω—Ç–∞–∂–æ–ø—ñ–¥–π–æ–º–Ω—ñ—Å—Ç—å" << std::endl;
-                                    int choiceModCS;
-                                    std::cin >> choiceModCS;
-                                    modifyCargoShip(choiceModCS, cSID, cargoShips);
-                                    break;
-                                }
-                            case 3:
-                                if (warShips.empty()) {
-                                    std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞—î –≤—ñ–π—Å—å–∫–æ–≤–∏—Ö –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                                    break;
-                                } else {
-                                    showWarShips(warShips);
-                                    std::cout << "–í–≤–µ–¥—ñ—Ç—å ID –∫–æ—Ä–∞–±–ª—è, —è–∫–∏–π —Ç—Ä–µ–±–∞ –º–æ–¥–∏—Ñ—ñ–∫—É–≤–∞—Ç–∏: " << std::endl;
-                                    int wSID;
-                                    std::cin >> wSID;
-                                    std::cout << "1. –ó–º—ñ–Ω–∏—Ç–∏ –ø–æ—Ä—Ç –ø—Ä–∏–ø–∏—Å–∫–∏" << std::endl;
-                                    std::cout << "2. –ó–º—ñ–Ω–∏—Ç–∏ –ø–æ—Ç—É–∂–Ω—ñ—Å—Ç—å –¥–≤–∏–≥—É–Ω–∞" << std::endl;
-                                    std::cout << "3. –ó–º—ñ–Ω–∏—Ç–∏ –≤–æ–¥–æ—Ç–æ–Ω–∞–∂–Ω—ñ—Å—Ç—å" << std::endl;
-                                    std::cout << "4. –ó–º—ñ–Ω–∏—Ç–∏ –∫—ñ–ª—å–∫—ñ—Å—Ç—å –µ–∫—ñ–ø–∞–∂—É" << std::endl;
-                                    std::cout << "5. –ó–º—ñ–Ω–∏—Ç–∏ —Ç–∏–ø –∑–±—Ä–æ—ó" << std::endl;
-                                    int choiceModWS;
-                                    std::cin >> choiceModWS;
-                                    modifyWarShip(choiceModWS, wSID, warShips);
-                                    break;
-                                }
-                        }
-                        break;
-                    }
+                    createCargoShip(cargoShips);
+                    break;
                 case 3:
-                    if (passengerShips.empty() && cargoShips.empty() && warShips.empty()) {
-                        std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞—î –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                        break;
-                    } else {
-                        int choiceToDelete;
-                        std::cout << "–ö–æ—Ä–∞–±–µ–ª—å —è–∫–æ–≥–æ —Ç–∏–ø—É –≤–∏ –±–∞–∂–∞—î—Ç–µ –≤–∏–¥–∞–ª–∏—Ç–∏?" << std::endl;
-                        std::cout << "1. –ü–∞—Å–∞–∂–∏—Ä—Å—å–∫–∏–π –∫–æ—Ä–∞–±–µ–ª—å" << std::endl;
-                        std::cout << "2. –í–∞–Ω—Ç–∞–∂–Ω–µ —Å—É–¥–Ω–æ" << std::endl;
-                        std::cout << "3. –í—ñ–π—Å—å–∫–æ–≤–∏–π –∫–æ—Ä–∞–±–µ–ª—å" << std::endl;
-                        std::cin >> choiceToDelete;
-                        switch (choiceToDelete) {
-                            case 1:
-                                if (passengerShips.empty()) {
-                                    std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞ –ø–∞—Å–∞–∂–∏—Ä—Å—å–∫–∏—Ö –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                                    break;
-                                }
-                                else {
-                                    showPassengerShips(passengerShips);
-                                    std::cout << "–í–≤–µ–¥—ñ—Ç—å ID –∫–æ—Ä–∞–±–ª—è, —è–∫–∏–π —Ç—Ä–µ–±–∞ –≤–∏–¥–∞–ª–∏—Ç–∏: " << std::endl;
-                                    int pSID;
-                                    std::cin >> pSID;
-
-                                    bool checkIfShipInPort = false;
-                                    for (int i = 0; i < ports.size(); i++) {
-                                        if (ports[i].ifShipAlreadyInThePort(passengerShips[pSID - 1])) {
-                                            checkIfShipInPort = true;
-                                            std::cout << "–ö–æ—Ä–∞–±–µ–ª—å –∑–Ω–∞—Ö–æ–¥–∏—Ç—å—Å—è –≤ –ø–æ—Ä—Ç—É " << "\"" << ports[i].GetPortName()  << "\". " << std::endl;
-                                            std::cout << "–ó–∞–ª–∏—à–∏—Ç–∏ –ø–æ—Ä—Ç —ñ –≤–∏–¥–∞–ª–∏—Ç–∏ –∫–æ—Ä–∞–±–µ–ª—å?" << std::endl;
-                                            std::cout << "1. –¢–∞–∫" << std::endl;
-                                            std::cout << "2. –ù—ñ" << std::endl;
-                                            int choiceMove;
-                                            std::cin >> choiceMove;
-                                                if (choiceMove == 1) {
-                                                    ports[i].ShipLeftPort(passengerShips[pSID - 1]);
-                                                    delete passengerShips[pSID - 1];
-                                                    passengerShips.erase(passengerShips.begin() + pSID - 1);
-                                                    break;
-                                                }
-                                                else {
-                                                    break;
-                                                }
-                                            }
-                                        }
-
-                                    if (!checkIfShipInPort) {
+                    createWarShip(warShips);
+                    break;
+                }
+                break;
+            case 2:
+                if (passengerShips.empty() && cargoShips.empty() && warShips.empty()) {
+                    std::cout << "” ‚‡Ò ÌÂÏ‡∫ ÍÓ‡·Î≥‚!" << std::endl;
+                    break;
+                }
+                else {
+                    std::cout << "ﬂÍËÈ ÚËÔ ÍÓ‡·Îˇ ÔÓÚ≥·ÌÓ ÏÓ‰ËÙ≥ÍÛ‚‡ÚË?" << std::endl;
+                    std::cout << "1. œ‡Ò‡ÊËÒ¸ÍËÈ ÍÓ‡·ÂÎ¸" << std::endl;
+                    std::cout << "2. ¬‡ÌÚ‡ÊÌÂ ÒÛ‰ÌÓ" << std::endl;
+                    std::cout << "3. ¬≥ÈÒ¸ÍÓ‚ËÈ ÍÓ‡·ÂÎ¸" << std::endl;
+                    int choiceMod;
+                    std::cin >> choiceMod;
+                    std::cout << std::endl;
+                    switch (choiceMod) {
+                    case 1:
+                        if (passengerShips.empty()) {
+                            std::cout << "” ‚‡Ò ÌÂÏ‡∫ Ô‡Ò‡ÊËÒ¸ÍËı ÍÓ‡·Î≥‚!" << std::endl;
+                            break;
+                        }
+                        else {
+                            showPassengerShips(passengerShips);
+                            std::cout << "¬‚Â‰≥Ú¸ ID ÍÓ‡·Îˇ, ˇÍËÈ ÚÂ·‡ ÏÓ‰ËÙ≥ÍÛ‚‡ÚË: ";
+                            int pSID;
+                            std::cin >> pSID;
+                            std::cout << std::endl;
+                            std::cout << "ﬂÍ ÈÓ„Ó ÔÓÚ≥·ÌÓ ÏÓ‰ËÙ≥ÍÛ‚‡ÚË?" << std::endl;
+                            std::cout << "1. «Ï≥ÌËÚË ÔÓÚ ÔËÔËÒÍË" << std::endl;
+                            std::cout << "2. «Ï≥ÌËÚË ÔÓÚÛÊÌ≥ÒÚ¸ ‰‚Ë„ÛÌ‡" << std::endl;
+                            std::cout << "3. «Ï≥ÌËÚË ‚Ó‰ÓÚÓÌ‡ÊÌ≥ÒÚ¸" << std::endl;
+                            std::cout << "4. «Ï≥ÌËÚË Í≥Î¸Í≥ÒÚ¸ ÂÍ≥Ô‡ÊÛ" << std::endl;
+                            std::cout << "5. «Ï≥ÌËÚË Í≥Î¸Í≥ÒÚ¸ Ô‡Ò‡ÊË≥‚" << std::endl;
+                            std::cout << "6. «·≥Î¸¯ËÚË Í≥Î¸Í≥ÒÚ¸ ˜Ó‚Ì≥‚" << std::endl;
+                            std::cout << "7. «ÏÂÌ¯ËÚË Í≥Î¸Í≥ÒÚ¸ ˜Ó‚Ì≥‚" << std::endl;
+                            int choiceModPS;
+                            std::cin >> choiceModPS;
+                            std::cout << std::endl;
+                            modifyPassengerShip(choiceModPS, pSID, passengerShips);
+                            break;
+                        }
+                    case 2:
+                        if (cargoShips.empty()) {
+                            std::cout << "” ‚‡Ò ÌÂÏ‡∫ ‚‡ÌÚ‡ÊÌËı ÍÓ‡·Î≥‚!" << std::endl;
+                            break;
+                        }
+                        else {
+                            showCargoShips(cargoShips);
+                            std::cout << "¬‚Â‰≥Ú¸ ID ÍÓ‡·Îˇ, ˇÍËÈ ÚÂ·‡ ÏÓ‰ËÙ≥ÍÛ‚‡ÚË: ";
+                            int cSID;
+                            std::cin >> cSID;
+                            std::cout << std::endl;
+                            std::cout << "ﬂÍ ÈÓ„Ó ÔÓÚ≥·ÌÓ ÏÓ‰ËÙ≥ÍÛ‚‡ÚË?" << std::endl;
+                            std::cout << "1. «Ï≥ÌËÚË ÔÓÚ ÔËÔËÒÍË" << std::endl;
+                            std::cout << "2. «Ï≥ÌËÚË ÔÓÚÛÊÌ≥ÒÚ¸ ‰‚Ë„ÛÌ‡" << std::endl;
+                            std::cout << "3. «Ï≥ÌËÚË ‚Ó‰ÓÚÓÌ‡ÊÌ≥ÒÚ¸" << std::endl;
+                            std::cout << "4. «Ï≥ÌËÚË Í≥Î¸Í≥ÒÚ¸ ÂÍ≥Ô‡ÊÛ" << std::endl;
+                            std::cout << "5. «Ï≥ÌËÚË ‚‡ÌÚ‡ÊÓÔ≥‰ÈÓÏÌ≥ÒÚ¸" << std::endl;
+                            int choiceModCS;
+                            std::cin >> choiceModCS;
+                            std::cout << std::endl;
+                            modifyCargoShip(choiceModCS, cSID, cargoShips);
+                            break;
+                        }
+                    case 3:
+                        if (warShips.empty()) {
+                            std::cout << "” ‚‡Ò ÌÂÏ‡∫ ‚≥ÈÒ¸ÍÓ‚Ëı ÍÓ‡·Î≥‚!" << std::endl;
+                            break;
+                        }
+                        else {
+                            showWarShips(warShips);
+                            std::cout << "¬‚Â‰≥Ú¸ ID ÍÓ‡·Îˇ, ˇÍËÈ ÚÂ·‡ ÏÓ‰ËÙ≥ÍÛ‚‡ÚË: ";
+                            int wSID;
+                            std::cin >> wSID;
+                            std::cout << std::endl;
+                            std::cout << "1. «Ï≥ÌËÚË ÔÓÚ ÔËÔËÒÍË" << std::endl;
+                            std::cout << "2. «Ï≥ÌËÚË ÔÓÚÛÊÌ≥ÒÚ¸ ‰‚Ë„ÛÌ‡" << std::endl;
+                            std::cout << "3. «Ï≥ÌËÚË ‚Ó‰ÓÚÓÌ‡ÊÌ≥ÒÚ¸" << std::endl;
+                            std::cout << "4. «Ï≥ÌËÚË Í≥Î¸Í≥ÒÚ¸ ÂÍ≥Ô‡ÊÛ" << std::endl;
+                            std::cout << "5. «Ï≥ÌËÚË ÚËÔ Á·Óø" << std::endl;
+                            int choiceModWS;
+                            std::cin >> choiceModWS;
+                            std::cout << std::endl;
+                            modifyWarShip(choiceModWS, wSID, warShips);
+                            break;
+                        }
+                    }
+                    break;
+                }
+            case 3:
+                if (passengerShips.empty() && cargoShips.empty() && warShips.empty()) {
+                    std::cout << "” ‚‡Ò ÌÂÏ‡∫ ÍÓ‡·Î≥‚!" << std::endl;
+                    break;
+                }
+                else {
+                    int choiceToDelete;
+                    std::cout << " Ó‡·ÂÎ¸ ˇÍÓ„Ó ÚËÔÛ ‚Ë ·‡Ê‡∫ÚÂ ‚Ë‰‡ÎËÚË?" << std::endl;
+                    std::cout << "1. œ‡Ò‡ÊËÒ¸ÍËÈ ÍÓ‡·ÂÎ¸" << std::endl;
+                    std::cout << "2. ¬‡ÌÚ‡ÊÌÂ ÒÛ‰ÌÓ" << std::endl;
+                    std::cout << "3. ¬≥ÈÒ¸ÍÓ‚ËÈ ÍÓ‡·ÂÎ¸" << std::endl;
+                    std::cin >> choiceToDelete;
+                    std::cout << std::endl;
+                    switch (choiceToDelete) {
+                    case 1:
+                        if (passengerShips.empty()) {
+                            std::cout << "” ‚‡Ò ÌÂÏ‡ Ô‡Ò‡ÊËÒ¸ÍËı ÍÓ‡·Î≥‚!" << std::endl;
+                            break;
+                        }
+                        else {
+                            showPassengerShips(passengerShips);
+                            std::cout << "¬‚Â‰≥Ú¸ ID ÍÓ‡·Îˇ, ˇÍËÈ ÚÂ·‡ ‚Ë‰‡ÎËÚË: ";
+                            int pSID;
+                            std::cin >> pSID;
+                            std::cout << std::endl;
+                            bool checkIfShipInPort = false;
+                            for (int i = 0; i < ports.size(); i++) {
+                                if (ports[i].ifShipAlreadyInThePort(passengerShips[pSID - 1])) {
+                                    checkIfShipInPort = true;
+                                    std::cout << " Ó‡·ÂÎ¸ ÁÌ‡ıÓ‰ËÚ¸Òˇ ‚ ÔÓÚÛ " << "\"" << ports[i].GetPortName() << "\". " << std::endl;
+                                    std::cout << "«‡ÎË¯ËÚË ÔÓÚ ≥ ‚Ë‰‡ÎËÚË ÍÓ‡·ÂÎ¸?" << std::endl;
+                                    std::cout << "1. “‡Í" << std::endl;
+                                    std::cout << "2. Õ≥" << std::endl;
+                                    int choiceMove;
+                                    std::cin >> choiceMove;
+                                    if (choiceMove == 1) {
+                                        ports[i].ShipLeftPort(passengerShips[pSID - 1]);
                                         delete passengerShips[pSID - 1];
                                         passengerShips.erase(passengerShips.begin() + pSID - 1);
                                         break;
@@ -203,39 +208,40 @@ int main() {
                                         break;
                                     }
                                 }
-                            case 2:
-                                if (cargoShips.empty()) {
-                                    std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞ –≤–∞–Ω—Ç–∞–∂–Ω–∏—Ö –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                                    break;
-                                } else {
-                                    showCargoShips(cargoShips);
-                                    std::cout << "–í–≤–µ–¥—ñ—Ç—å ID –∫–æ—Ä–∞–±–ª—è, —è–∫–∏–π —Ç—Ä–µ–±–∞ –≤–∏–¥–∞–ª–∏—Ç–∏: " << std::endl;
-                                    int cSID;
-                                    std::cin >> cSID;
+                            }
 
-                                    bool checkIfShipInPort = false;
-                                    for (int i = 0; i < ports.size(); i++) {
-                                        if (ports[i].ifShipAlreadyInThePort(cargoShips[cSID - 1])) {
-                                            checkIfShipInPort = true;
-                                            std::cout << "–ö–æ—Ä–∞–±–µ–ª—å –∑–Ω–∞—Ö–æ–¥–∏—Ç—å—Å—è –≤ –ø–æ—Ä—Ç—É " << "\"" << ports[i].GetPortName()  << "\". " << std::endl;
-                                            std::cout << "–ó–∞–ª–∏—à–∏—Ç–∏ –ø–æ—Ä—Ç —ñ –≤–∏–¥–∞–ª–∏—Ç–∏ –∫–æ—Ä–∞–±–µ–ª—å?" << std::endl;
-                                            std::cout << "1. –¢–∞–∫" << std::endl;
-                                            std::cout << "2. –ù—ñ" << std::endl;
-                                            int choiceMove;
-                                            std::cin >> choiceMove;
-                                                if (choiceMove == 1) {
-                                                    ports[i].ShipLeftPort(cargoShips[cSID - 1]);
-                                                    delete cargoShips[cSID - 1];
-                                                    cargoShips.erase(cargoShips.begin() + cSID - 1);
-                                                    break;
-                                                }
-                                                else {
-                                                    break;
-                                                }
-                                        }
-                                    }
-
-                                    if (!checkIfShipInPort) {
+                            if (!checkIfShipInPort) {
+                                delete passengerShips[pSID - 1];
+                                passengerShips.erase(passengerShips.begin() + pSID - 1);
+                                break;
+                            }
+                            else {
+                                break;
+                            }
+                        }
+                    case 2:
+                        if (cargoShips.empty()) {
+                            std::cout << "” ‚‡Ò ÌÂÏ‡ ‚‡ÌÚ‡ÊÌËı ÍÓ‡·Î≥‚!" << std::endl;
+                            break;
+                        }
+                        else {
+                            showCargoShips(cargoShips);
+                            std::cout << "¬‚Â‰≥Ú¸ ID ÍÓ‡·Îˇ, ˇÍËÈ ÚÂ·‡ ‚Ë‰‡ÎËÚË: ";
+                            int cSID;
+                            std::cin >> cSID;
+                            std::cout << std::endl;
+                            bool checkIfShipInPort = false;
+                            for (int i = 0; i < ports.size(); i++) {
+                                if (ports[i].ifShipAlreadyInThePort(cargoShips[cSID - 1])) {
+                                    checkIfShipInPort = true;
+                                    std::cout << " Ó‡·ÂÎ¸ ÁÌ‡ıÓ‰ËÚ¸Òˇ ‚ ÔÓÚÛ " << "\"" << ports[i].GetPortName() << "\". " << std::endl;
+                                    std::cout << "«‡ÎË¯ËÚË ÔÓÚ ≥ ‚Ë‰‡ÎËÚË ÍÓ‡·ÂÎ¸?" << std::endl;
+                                    std::cout << "1. “‡Í" << std::endl;
+                                    std::cout << "2. Õ≥" << std::endl;
+                                    int choiceMove;
+                                    std::cin >> choiceMove;
+                                    if (choiceMove == 1) {
+                                        ports[i].ShipLeftPort(cargoShips[cSID - 1]);
                                         delete cargoShips[cSID - 1];
                                         cargoShips.erase(cargoShips.begin() + cSID - 1);
                                         break;
@@ -244,39 +250,40 @@ int main() {
                                         break;
                                     }
                                 }
-                            case 3:
-                                if (warShips.empty()) {
-                                    std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞ –≤—ñ–π—Å—å–∫–æ–≤–∏—Ö –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                                    break;
-                                } else {
-                                    showWarShips(warShips);
-                                    std::cout << "–í–≤–µ–¥—ñ—Ç—å ID –∫–æ—Ä–∞–±–ª—è, —è–∫–∏–π —Ç—Ä–µ–±–∞ –≤–∏–¥–∞–ª–∏—Ç–∏: " << std::endl;
-                                    int wSID;
-                                    std::cin >> wSID;
+                            }
 
-                                    bool checkIfShipInPort = false;
-                                    for (int i = 0; i < ports.size(); i++) {
-                                        if (ports[i].ifShipAlreadyInThePort(warShips[wSID - 1])) {
-                                            checkIfShipInPort = true;
-                                            std::cout << "–ö–æ—Ä–∞–±–µ–ª—å –∑–Ω–∞—Ö–æ–¥–∏—Ç—å—Å—è –≤ –ø–æ—Ä—Ç—É " << "\"" << ports[i].GetPortName()  << "\". " << std::endl;
-                                            std::cout << "–ó–∞–ª–∏—à–∏—Ç–∏ –ø–æ—Ä—Ç —ñ –≤–∏–¥–∞–ª–∏—Ç–∏ –∫–æ—Ä–∞–±–µ–ª—å?" << std::endl;
-                                            std::cout << "1. –¢–∞–∫" << std::endl;
-                                            std::cout << "2. –ù—ñ" << std::endl;
-                                            int choiceMove;
-                                            std::cin >> choiceMove;
-                                            if (choiceMove == 1) {
-                                                ports[i].ShipLeftPort(warShips[wSID - 1]);
-                                                delete warShips[wSID - 1];
-                                                warShips.erase(warShips.begin() + wSID - 1);
-                                                break;
-                                            }
-                                            else {
-                                                break;
-                                            }
-                                        }
-                                    }
-
-                                    if (!checkIfShipInPort) {
+                            if (!checkIfShipInPort) {
+                                delete cargoShips[cSID - 1];
+                                cargoShips.erase(cargoShips.begin() + cSID - 1);
+                                break;
+                            }
+                            else {
+                                break;
+                            }
+                        }
+                    case 3:
+                        if (warShips.empty()) {
+                            std::cout << "” ‚‡Ò ÌÂÏ‡ ‚≥ÈÒ¸ÍÓ‚Ëı ÍÓ‡·Î≥‚!" << std::endl;
+                            break;
+                        }
+                        else {
+                            showWarShips(warShips);
+                            std::cout << "¬‚Â‰≥Ú¸ ID ÍÓ‡·Îˇ, ˇÍËÈ ÚÂ·‡ ‚Ë‰‡ÎËÚË: ";
+                            int wSID;
+                            std::cin >> wSID;
+                            std::cout << std::endl;
+                            bool checkIfShipInPort = false;
+                            for (int i = 0; i < ports.size(); i++) {
+                                if (ports[i].ifShipAlreadyInThePort(warShips[wSID - 1])) {
+                                    checkIfShipInPort = true;
+                                    std::cout << " Ó‡·ÂÎ¸ ÁÌ‡ıÓ‰ËÚ¸Òˇ ‚ ÔÓÚÛ " << "\"" << ports[i].GetPortName() << "\". " << std::endl;
+                                    std::cout << "«‡ÎË¯ËÚË ÔÓÚ ≥ ‚Ë‰‡ÎËÚË ÍÓ‡·ÂÎ¸?" << std::endl;
+                                    std::cout << "1. “‡Í" << std::endl;
+                                    std::cout << "2. Õ≥" << std::endl;
+                                    int choiceMove;
+                                    std::cin >> choiceMove;
+                                    if (choiceMove == 1) {
+                                        ports[i].ShipLeftPort(warShips[wSID - 1]);
                                         delete warShips[wSID - 1];
                                         warShips.erase(warShips.begin() + wSID - 1);
                                         break;
@@ -285,209 +292,239 @@ int main() {
                                         break;
                                     }
                                 }
-                        }
-                        break;
-                    }
-                case 4:
-                    if (passengerShips.empty() && cargoShips.empty() && warShips.empty()) {
-                        std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞ –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                    } else {
+                            }
 
-                        if (passengerShips.empty()) {
-                            std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞ –ø–∞—Å–∞–∂–∏—Ä—Å—å–∫–∏—Ö –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                        } else {
-                            showPassengerShips(passengerShips);
-                        }
-
-                        if (cargoShips.empty()) {
-                            std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞ –≤–∞–Ω—Ç–∞–∂–Ω–∏—Ö –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                        } else {
-                            showCargoShips(cargoShips);
-                        }
-
-                        if (warShips.empty()) {
-                            std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞ –≤—ñ–π—Å—å–∫–æ–≤–∏—Ö –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                        } else {
-                            showWarShips(warShips);
+                            if (!checkIfShipInPort) {
+                                delete warShips[wSID - 1];
+                                warShips.erase(warShips.begin() + wSID - 1);
+                                break;
+                            }
+                            else {
+                                break;
+                            }
                         }
                     }
                     break;
-                case 5:
-                    if (passengerShips.empty() && cargoShips.empty() && warShips.empty()) {
-                        std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞ –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                    } else {
-                        std::cout << "–ö–æ—Ä–∞–±–ª–µ–º —è–∫–æ–≥–æ —Ç–∏–ø—É –≤–∏ –±—É–¥–µ—Ç–µ –∫–µ—Ä—É–≤–∞—Ç–∏?" << std::endl;
-                        std::cout << "1. –ü–∞—Å–∞–∂–∏—Ä—Å—å–∫–∏–º" << std::endl;
-                        std::cout << "2. –í–∞–Ω—Ç–∞–∂–Ω–∏–º" << std::endl;
-                        std::cout << "3. –í—ñ–π—Å—å–∫–æ–≤–∏–∏–º" << std::endl;
-                        int choiceDrive;
-                        std::cin >> choiceDrive;
-                        int portsID;
-                        switch (choiceDrive) {
-                            case 1:
-                                if (passengerShips.empty()) {
-                                    std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞ –ø–∞—Å–∞–∂–∏—Ä—Å—å–∫–∏—Ö –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                                } else {
-                                    showPassengerShips(passengerShips);
-                                    std::cout << "–í–≤–µ–¥—ñ—Ç—å ID –∫–æ—Ä–∞–±–ª—è, —è–∫–∏–º –≤–∏ –±—É–¥–µ—Ç–µ –∫–µ—Ä—É–≤–∞—Ç–∏: " << std::endl;
-                                    int pSID;
-                                    std::cin >> pSID;
+                }
+            case 4:
+                if (passengerShips.empty() && cargoShips.empty() && warShips.empty()) {
+                    std::cout << "” ‚‡Ò ÌÂÏ‡ ÍÓ‡·Î≥‚!" << std::endl;
+                }
+                else {
 
-                                    bool checkIfShipInPort = false;
-                                    for (int i = 0; i < ports.size(); i++) {
-                                        if (ports[i].ifShipAlreadyInThePort(passengerShips[pSID - 1])) {
-                                            checkIfShipInPort = true;
-                                            std::cout << "–ö–æ—Ä–∞–±–µ–ª—å –≤–∂–µ –∑–Ω–∞—Ö–æ–¥–∏—Ç—å—Å—è –≤ –ø–æ—Ä—Ç—É " << "\"" << ports[i].GetPortName()  << "\" " << std::endl;
-                                            std::cout << "–í–∏—Ä—É—à–∏—Ç—å –¥–æ —ñ–Ω—à–æ–≥–æ –ø–æ—Ä—Ç—É?" << std::endl;
-                                            std::cout << "1. –¢–∞–∫" << std::endl;
-                                            std::cout << "2. –ù—ñ" << std::endl;
-                                            std::cout << "3. –í–∏–π—Ç–∏ –∑ –ø–æ—Ä—Ç—É" << std::endl;
-                                            int choiceMove;
-                                            std::cin >> choiceMove;
-                                            if (choiceMove == 1) {
-                                                ports[i].ShipLeftPort(passengerShips[pSID - 1]);
-                                                std::cout << "–û–±–µ—Ä—ñ—Ç—å –ø–æ—Ä—Ç, –≤ —è–∫–∏–π –≤–∏ –±–∞–∂–∞—î—Ç–µ –≤—ñ–¥–ø—Ä–∞–≤–∏—Ç–∏ –∫–æ—Ä–∞–±–µ–ª—å: "<< std::endl;
-                                                showPorts(ports);
-                                                std::cin >> portsID;
-                                                ports[portsID - 1].ShipEnteredPort(passengerShips[pSID - 1]);
-                                                std::cout << "–í—ñ—Ç–∞—é! –ö–æ—Ä–∞–±–µ–ª—å –∑–∞–π—à–æ–≤ –≤ –ø–æ—Ä—Ç!" << std::endl;
-                                                break;
-                                            }
-                                            else if (choiceMove == 3)
-                                            {
-                                                ports[i].ShipLeftPort(passengerShips[pSID - 1]);
-                                                std::cout << "–ö–æ—Ä–∞–±–µ–ª—å –≤–∏–π—à–æ–≤ –∑ –ø–æ—Ä—Ç—É " << "\"" << ports[i].GetPortName()  << "\"" << std::endl;
-                                                break;
-                                            }
-                                            else {
-                                                break;
-                                            }
-                                        }
-                                    }
-                                    if (checkIfShipInPort) {
-                                        break;
-                                    } else {
-                                        showPorts(ports);
-                                        std::cout << "–û–±–µ—Ä—ñ—Ç—å –ø–æ—Ä—Ç, –≤ —è–∫–∏–π –≤–∏ –±–∞–∂–∞—î—Ç–µ –≤—ñ–¥–ø—Ä–∞–≤–∏—Ç–∏ –∫–æ—Ä–∞–±–µ–ª—å: " << std::endl;
-                                        std::cin >> portsID;
-                                        ports[portsID - 1].ShipEnteredPort(passengerShips[pSID - 1]);
-                                        std::cout << "–í—ñ—Ç–∞—é! –ö–æ—Ä–∞–±–µ–ª—å –∑–∞–π—à–æ–≤ –≤ –ø–æ—Ä—Ç!" << std::endl;
-                                        break;
-                                    }
-                                }
-
-                            case 2:
-                                if (cargoShips.empty()) {
-                                    std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞ –≤–∞–Ω—Ç–∞–∂–Ω–∏—Ö –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                                } else {
-                                    showCargoShips(cargoShips);
-                                    std::cout << "–í–≤–µ–¥—ñ—Ç—å ID –∫–æ—Ä–∞–±–ª—è, —è–∫–∏–º –≤–∏ –±—É–¥–µ—Ç–µ –∫–µ—Ä—É–≤–∞—Ç–∏: " << std::endl;
-                                    int cSID;
-                                    std::cin >> cSID;
-
-                                    bool checkIfShipInPort = false;
-                                    for (int i = 0; i < ports.size(); i++) {
-                                        if (ports[i].ifShipAlreadyInThePort(cargoShips[cSID - 1])) {
-                                            checkIfShipInPort = true;
-                                            std::cout << "–ö–æ—Ä–∞–±–µ–ª—å –≤–∂–µ –∑–Ω–∞—Ö–æ–¥–∏—Ç—å—Å—è –≤ –ø–æ—Ä—Ç—É " << "\"" << ports[i].GetPortName()  << "\" " << std::endl;
-                                            std::cout << "–í–∏—Ä—É—à–∏—Ç—å –¥–æ —ñ–Ω—à–æ–≥–æ –ø–æ—Ä—Ç—É?" << std::endl;
-                                            std::cout << "1. –¢–∞–∫" << std::endl;
-                                            std::cout << "2. –ù—ñ" << std::endl;
-                                            std::cout << "3. –í–∏–π—Ç–∏ –∑ –ø–æ—Ä—Ç—É" << std::endl;
-                                            int choiceMove;
-                                            std::cin >> choiceMove;
-                                            if (choiceMove == 1) {
-                                                ports[i].ShipLeftPort(cargoShips[cSID - 1]);
-                                                std::cout << "–û–±–µ—Ä—ñ—Ç—å –ø–æ—Ä—Ç, –≤ —è–∫–∏–π –≤–∏ –±–∞–∂–∞—î—Ç–µ –≤—ñ–¥–ø—Ä–∞–≤–∏—Ç–∏ –∫–æ—Ä–∞–±–µ–ª—å: " << std::endl;
-                                                showPorts(ports);
-                                                std::cin >> portsID;
-                                                ports[portsID - 1].ShipEnteredPort(cargoShips[cSID - 1]);
-                                                std::cout << "–í—ñ—Ç–∞—é! –ö–æ—Ä–∞–±–µ–ª—å –∑–∞–π—à–æ–≤ –≤ –ø–æ—Ä—Ç!" << std::endl;
-                                                break;
-                                            }
-                                            else if (choiceMove == 3)
-                                            {
-                                                ports[i].ShipLeftPort(cargoShips[cSID - 1]);
-                                                std::cout << "–ö–æ—Ä–∞–±–µ–ª—å –≤–∏–π—à–æ–≤ –∑ –ø–æ—Ä—Ç—É " << "\"" << ports[i].GetPortName()  << "\"" << std::endl;
-                                                break;
-                                            }
-                                            else {
-                                                break;
-                                            }
-                                        }
-                                    }
-                                    if (checkIfShipInPort) {
-                                        break;
-                                    } else {
-                                        showPorts(ports);
-                                        std::cout << "–û–±–µ—Ä—ñ—Ç—å –ø–æ—Ä—Ç, –≤ —è–∫–∏–π –≤–∏ –±–∞–∂–∞—î—Ç–µ –≤—ñ–¥–ø—Ä–∞–≤–∏—Ç–∏ –∫–æ—Ä–∞–±–µ–ª—å: " << std::endl;
-                                        std::cin >> portsID;
-                                        ports[portsID - 1].ShipEnteredPort(cargoShips[cSID - 1]);
-                                        std::cout << "–í—ñ—Ç–∞—é! –ö–æ—Ä–∞–±–µ–ª—å –∑–∞–π—à–æ–≤ –≤ –ø–æ—Ä—Ç!" << std::endl;
-                                        break;
-                                    }
-                                }
-                            case 3:
-                                if (warShips.empty()) {
-                                    std::cout << "–£ –≤–∞—Å –Ω–µ–º–∞ –≤—ñ–π—Å—å–∫–æ–≤–∏—Ö –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-                                } else {
-                                    showWarShips(warShips);
-                                    std::cout << "–í–≤–µ–¥—ñ—Ç—å ID –∫–æ—Ä–∞–±–ª—è, —è–∫–∏–º –≤–∏ –±—É–¥–µ—Ç–µ –∫–µ—Ä—É–≤–∞—Ç–∏: " << std::endl;
-                                    int wSID;
-                                    std::cin >> wSID;
-
-                                    bool checkIfShipInPort = false;
-                                    for (int i = 0; i < ports.size(); i++) {
-                                        if (ports[i].ifShipAlreadyInThePort(warShips[wSID - 1])) {
-                                            checkIfShipInPort = true;
-                                            std::cout << "–ö–æ—Ä–∞–±–µ–ª—å –≤–∂–µ –∑–Ω–∞—Ö–æ–¥–∏—Ç—å—Å—è –≤ –ø–æ—Ä—Ç—É " << "\"" << ports[i].GetPortName()  << "\" " << std::endl;
-                                            std::cout << "–í–∏—Ä—É—à–∏—Ç—å –¥–æ —ñ–Ω—à–æ–≥–æ –ø–æ—Ä—Ç—É?" << std::endl;
-                                            std::cout << "1. –¢–∞–∫" << std::endl;
-                                            std::cout << "2. –ù—ñ" << std::endl;
-                                            std::cout << "3. –í–∏–π—Ç–∏ –∑ –ø–æ—Ä—Ç—É" << std::endl;
-                                            int choiceMove;
-                                            std::cin >> choiceMove;
-                                            if (choiceMove == 1) {
-                                                ports[i].ShipLeftPort(warShips[wSID - 1]);
-                                                std::cout << "–û–±–µ—Ä—ñ—Ç—å –ø–æ—Ä—Ç, –≤ —è–∫–∏–π –≤–∏ –±–∞–∂–∞—î—Ç–µ –≤—ñ–¥–ø—Ä–∞–≤–∏—Ç–∏ –∫–æ—Ä–∞–±–µ–ª—å: "
-                                                          << std::endl;
-                                                showPorts(ports);
-                                                std::cin >> portsID;
-                                                ports[portsID - 1].ShipEnteredPort(warShips[wSID - 1]);
-                                                std::cout << "–í—ñ—Ç–∞—é! –ö–æ—Ä–∞–±–µ–ª—å –∑–∞–π—à–æ–≤ –≤ –ø–æ—Ä—Ç!" << std::endl;
-                                                break;
-                                            }
-                                            else if (choiceMove == 3)
-                                            {
-                                                ports[i].ShipLeftPort(warShips[wSID - 1]);
-                                                std::cout << "–ö–æ—Ä–∞–±–µ–ª—å –≤–∏–π—à–æ–≤ –∑ –ø–æ—Ä—Ç—É " << "\"" << ports[i].GetPortName()  << "\"" << std::endl;
-                                                break;
-                                            }
-                                            else {
-                                                break;
-                                            }
-                                        }
-                                    }
-                                    if (checkIfShipInPort) {
-                                        break;
-                                    } else {
-                                        showPorts(ports);
-                                        std::cout << "–û–±–µ—Ä—ñ—Ç—å –ø–æ—Ä—Ç, –≤ —è–∫–∏–π –≤–∏ –±–∞–∂–∞—î—Ç–µ –≤—ñ–¥–ø—Ä–∞–≤–∏—Ç–∏ –∫–æ—Ä–∞–±–µ–ª—å: "
-                                                  << std::endl;
-                                        std::cin >> portsID;
-                                        ports[portsID - 1].ShipEnteredPort(warShips[wSID - 1]);
-                                        std::cout << "–í—ñ—Ç–∞—é! –ö–æ—Ä–∞–±–µ–ª—å –∑–∞–π—à–æ–≤ –≤ –ø–æ—Ä—Ç!" << std::endl;
-                                        break;
-                                    }
-                                }
-                        }
-                        case 6:
-                            showPorts(ports);
-                            break;
+                    if (passengerShips.empty()) {
+                        std::cout << "” ‚‡Ò ÌÂÏ‡ Ô‡Ò‡ÊËÒ¸ÍËı ÍÓ‡·Î≥‚!" << std::endl;
                     }
+                    else {
+                        showPassengerShips(passengerShips);
+                    }
+
+                    if (cargoShips.empty()) {
+                        std::cout << "” ‚‡Ò ÌÂÏ‡ ‚‡ÌÚ‡ÊÌËı ÍÓ‡·Î≥‚!" << std::endl;
+                    }
+                    else {
+                        showCargoShips(cargoShips);
+                    }
+
+                    if (warShips.empty()) {
+                        std::cout << "” ‚‡Ò ÌÂÏ‡ ‚≥ÈÒ¸ÍÓ‚Ëı ÍÓ‡·Î≥‚!" << std::endl;
+                    }
+                    else {
+                        showWarShips(warShips);
+                    }
+                }
+                break;
+            case 5:
+                if (passengerShips.empty() && cargoShips.empty() && warShips.empty()) {
+                    std::cout << "” ‚‡Ò ÌÂÏ‡ ÍÓ‡·Î≥‚!" << std::endl;
+                }
+                else {
+                    std::cout << " Ó‡·ÎÂÏ ˇÍÓ„Ó ÚËÔÛ ‚Ë ·Û‰ÂÚÂ ÍÂÛ‚‡ÚË?" << std::endl;
+                    std::cout << "1. œ‡Ò‡ÊËÒ¸ÍËÏ" << std::endl;
+                    std::cout << "2. ¬‡ÌÚ‡ÊÌËÏ" << std::endl;
+                    std::cout << "3. ¬≥ÈÒ¸ÍÓ‚ËËÏ" << std::endl;
+                    int choiceDrive;
+                    std::cin >> choiceDrive;
+                    std::cout << std::endl;
+                    int portsID;
+                    switch (choiceDrive) {
+                    case 1:
+                        if (passengerShips.empty()) {
+                            std::cout << "” ‚‡Ò ÌÂÏ‡ Ô‡Ò‡ÊËÒ¸ÍËı ÍÓ‡·Î≥‚!" << std::endl;
+                        }
+                        else {
+                            showPassengerShips(passengerShips);
+                            std::cout << "¬‚Â‰≥Ú¸ ID ÍÓ‡·Îˇ, ˇÍËÏ ‚Ë ·Û‰ÂÚÂ ÍÂÛ‚‡ÚË: ";
+                            int pSID;
+                            std::cin >> pSID;
+                            std::cout << std::endl;
+                            bool checkIfShipInPort = false;
+                            for (int i = 0; i < ports.size(); i++) {
+                                if (ports[i].ifShipAlreadyInThePort(passengerShips[pSID - 1])) {
+                                    checkIfShipInPort = true;
+                                    std::cout << " Ó‡·ÂÎ¸ ‚ÊÂ ÁÌ‡ıÓ‰ËÚ¸Òˇ ‚ ÔÓÚÛ " << "\"" << ports[i].GetPortName() << "\" " << std::endl;
+                                    std::cout << "¬ËÛ¯ËÚ¸ ‰Ó ≥Ì¯Ó„Ó ÔÓÚÛ?" << std::endl;
+                                    std::cout << "1. “‡Í" << std::endl;
+                                    std::cout << "2. Õ≥" << std::endl;
+                                    std::cout << "3. ¬ËÈÚË Á ÔÓÚÛ" << std::endl;
+                                    int choiceMove;
+                                    std::cin >> choiceMove;
+                                    std::cout << std::endl;
+                                    if (choiceMove == 1) {
+                                        ports[i].ShipLeftPort(passengerShips[pSID - 1]);
+                                        std::cout << "Œ·Â≥Ú¸ ÔÓÚ, ‚ ˇÍËÈ ‚Ë ·‡Ê‡∫ÚÂ ‚≥‰Ô‡‚ËÚË ÍÓ‡·ÂÎ¸: ";
+                                        showPorts(ports);
+                                        std::cin >> portsID;
+                                        std::cout << std::endl;
+                                        ports[portsID - 1].ShipEnteredPort(passengerShips[pSID - 1]);                              
+                                        std::cout << "¬≥Ú‡˛!  Ó‡·ÂÎ¸ Á‡È¯Ó‚ ‚ ÔÓÚ!" << std::endl;
+                                        break;
+                                    }
+                                    else if (choiceMove == 3)
+                                    {
+                                        ports[i].ShipLeftPort(passengerShips[pSID - 1]);
+                                        std::cout << " Ó‡·ÂÎ¸ ‚ËÈ¯Ó‚ Á ÔÓÚÛ " << "\"" << ports[i].GetPortName() << "\"" << std::endl;
+                                        break;
+                                    }
+                                    else {
+                                        break;
+                                    }
+                                }
+                            }
+                            if (checkIfShipInPort) {
+                                break;
+                            }
+                            else {
+                                showPorts(ports);
+                                std::cout << "Œ·Â≥Ú¸ ÔÓÚ, ‚ ˇÍËÈ ‚Ë ·‡Ê‡∫ÚÂ ‚≥‰Ô‡‚ËÚË ÍÓ‡·ÂÎ¸: ";
+                                std::cin >> portsID;
+                                std::cout << std::endl;
+                                ports[portsID - 1].ShipEnteredPort(passengerShips[pSID - 1]);
+                                std::cout << "¬≥Ú‡˛!  Ó‡·ÂÎ¸ Á‡È¯Ó‚ ‚ ÔÓÚ!" << std::endl;
+                                break;
+                            }
+                        }
+
+                    case 2:
+                        if (cargoShips.empty()) {
+                            std::cout << "” ‚‡Ò ÌÂÏ‡ ‚‡ÌÚ‡ÊÌËı ÍÓ‡·Î≥‚!" << std::endl;
+                        }
+                        else {
+                            showCargoShips(cargoShips);
+                            std::cout << "¬‚Â‰≥Ú¸ ID ÍÓ‡·Îˇ, ˇÍËÏ ‚Ë ·Û‰ÂÚÂ ÍÂÛ‚‡ÚË: ";
+                            int cSID;
+                            std::cin >> cSID;
+                            std::cout << std::endl;
+                            bool checkIfShipInPort = false;
+                            for (int i = 0; i < ports.size(); i++) {
+                                if (ports[i].ifShipAlreadyInThePort(cargoShips[cSID - 1])) {
+                                    checkIfShipInPort = true;
+                                    std::cout << " Ó‡·ÂÎ¸ ‚ÊÂ ÁÌ‡ıÓ‰ËÚ¸Òˇ ‚ ÔÓÚÛ " << "\"" << ports[i].GetPortName() << "\" " << std::endl;
+                                    std::cout << "¬ËÛ¯ËÚ¸ ‰Ó ≥Ì¯Ó„Ó ÔÓÚÛ?" << std::endl;
+                                    std::cout << "1. “‡Í" << std::endl;
+                                    std::cout << "2. Õ≥" << std::endl;
+                                    std::cout << "3. ¬ËÈÚË Á ÔÓÚÛ" << std::endl;
+                                    int choiceMove;
+                                    std::cin >> choiceMove;
+                                    std::cout << std::endl;
+                                    if (choiceMove == 1) {
+                                        ports[i].ShipLeftPort(cargoShips[cSID - 1]);
+                                        std::cout << "Œ·Â≥Ú¸ ÔÓÚ, ‚ ˇÍËÈ ‚Ë ·‡Ê‡∫ÚÂ ‚≥‰Ô‡‚ËÚË ÍÓ‡·ÂÎ¸: ";
+                                        showPorts(ports);
+                                        std::cin >> portsID;
+                                        std::cout << std::endl;
+                                        ports[portsID - 1].ShipEnteredPort(cargoShips[cSID - 1]);
+                                        std::cout << "¬≥Ú‡˛!  Ó‡·ÂÎ¸ Á‡È¯Ó‚ ‚ ÔÓÚ!" << std::endl;
+                                        break;
+                                    }
+                                    else if (choiceMove == 3)
+                                    {
+                                        ports[i].ShipLeftPort(cargoShips[cSID - 1]);
+                                        std::cout << " Ó‡·ÂÎ¸ ‚ËÈ¯Ó‚ Á ÔÓÚÛ " << "\"" << ports[i].GetPortName() << "\"" << std::endl;
+                                        break;
+                                    }
+                                    else {
+                                        break;
+                                    }
+                                }
+                            }
+                            if (checkIfShipInPort) {
+                                break;
+                            }
+                            else {
+                                showPorts(ports);
+                                std::cout << "Œ·Â≥Ú¸ ÔÓÚ, ‚ ˇÍËÈ ‚Ë ·‡Ê‡∫ÚÂ ‚≥‰Ô‡‚ËÚË ÍÓ‡·ÂÎ¸: ";
+                                std::cin >> portsID;
+                                std::cout << std::endl;
+                                ports[portsID - 1].ShipEnteredPort(cargoShips[cSID - 1]);
+                                std::cout << "¬≥Ú‡˛!  Ó‡·ÂÎ¸ Á‡È¯Ó‚ ‚ ÔÓÚ!" << std::endl;
+                                break;
+                            }
+                        }
+                    case 3:
+                        if (warShips.empty()) {
+                            std::cout << "” ‚‡Ò ÌÂÏ‡ ‚≥ÈÒ¸ÍÓ‚Ëı ÍÓ‡·Î≥‚!" << std::endl;
+                        }
+                        else {
+                            showWarShips(warShips);
+                            std::cout << "¬‚Â‰≥Ú¸ ID ÍÓ‡·Îˇ, ˇÍËÏ ‚Ë ·Û‰ÂÚÂ ÍÂÛ‚‡ÚË: ";
+                            int wSID;
+                            std::cin >> wSID;
+                            std::cout << std::endl;
+                            bool checkIfShipInPort = false;
+                            for (int i = 0; i < ports.size(); i++) {
+                                if (ports[i].ifShipAlreadyInThePort(warShips[wSID - 1])) {
+                                    checkIfShipInPort = true;
+                                    std::cout << " Ó‡·ÂÎ¸ ‚ÊÂ ÁÌ‡ıÓ‰ËÚ¸Òˇ ‚ ÔÓÚÛ " << "\"" << ports[i].GetPortName() << "\" " << std::endl;
+                                    std::cout << "¬ËÛ¯ËÚ¸ ‰Ó ≥Ì¯Ó„Ó ÔÓÚÛ?" << std::endl;
+                                    std::cout << "1. “‡Í" << std::endl;
+                                    std::cout << "2. Õ≥" << std::endl;
+                                    std::cout << "3. ¬ËÈÚË Á ÔÓÚÛ" << std::endl;
+                                    int choiceMove;
+                                    std::cin >> choiceMove;
+                                    std::cout << std::endl;
+                                    if (choiceMove == 1) {
+                                        ports[i].ShipLeftPort(warShips[wSID - 1]);
+                                        std::cout << "Œ·Â≥Ú¸ ÔÓÚ, ‚ ˇÍËÈ ‚Ë ·‡Ê‡∫ÚÂ ‚≥‰Ô‡‚ËÚË ÍÓ‡·ÂÎ¸: ";
+                                        showPorts(ports);
+                                        std::cin >> portsID;
+                                        std::cout << std::endl;
+                                        ports[portsID - 1].ShipEnteredPort(warShips[wSID - 1]);
+                                        std::cout << "¬≥Ú‡˛!  Ó‡·ÂÎ¸ Á‡È¯Ó‚ ‚ ÔÓÚ!" << std::endl;
+                                        break;
+                                    }
+                                    else if (choiceMove == 3)
+                                    {
+                                        ports[i].ShipLeftPort(warShips[wSID - 1]);
+                                        std::cout << " Ó‡·ÂÎ¸ ‚ËÈ¯Ó‚ Á ÔÓÚÛ " << "\"" << ports[i].GetPortName() << "\"" << std::endl;
+                                        break;
+                                    }
+                                    else {
+                                        break;
+                                    }
+                                }
+                            }
+                            if (checkIfShipInPort) {
+                                break;
+                            }
+                            else {
+                                showPorts(ports);
+                                std::cout << "Œ·Â≥Ú¸ ÔÓÚ, ‚ ˇÍËÈ ‚Ë ·‡Ê‡∫ÚÂ ‚≥‰Ô‡‚ËÚË ÍÓ‡·ÂÎ¸: ";
+                                std::cin >> portsID;
+                                std::cout << std::endl;
+                                ports[portsID - 1].ShipEnteredPort(warShips[wSID - 1]);
+                                std::cout << "¬≥Ú‡˛!  Ó‡·ÂÎ¸ Á‡È¯Ó‚ ‚ ÔÓÚ!" << std::endl;
+                                break;
+                            }
+                        }
+                    }
+            case 6:
+                showPorts(ports);
+                break;
+                }
             }
         }
-        catch(std::invalid_argument& ia)
+        catch (std::invalid_argument& ia)
         {
             std::cerr << ia.what() << std::endl;
         }
@@ -498,38 +535,31 @@ int main() {
 }
 
 void showPorts(std::vector<Port>& ports) {
-    for(int i = 0; i < ports.size(); i++) {
-        std::cout << "ID –ø–æ—Ä—Ç—É: " << i + 1<< std::endl;
+    for (int i = 0; i < ports.size(); i++) {
+        std::cout << "ID ÔÓÚÛ: " << i + 1 << std::endl;
         std::cout << ports[i].PortInfo();
-        if (ports[i].GetNumberOfShips() == 0)
-        {
-            std::cout << "–í –ø–æ—Ä—Ç—É –∑–∞—Ä–∞–∑ –Ω–µ–º–∞ –∫–æ—Ä–∞–±–ª—ñ–≤!" << std::endl;
-            std::cout << std::endl;
-        }
-        else {
-            ports[i].Print();
-        }
+        ports[i].Print();
     }
 }
 
 void showPassengerShips(std::vector<PassengerShip*>& ships) {
-    std::cout << "---–ü–∞—Å–∞–∂–∏—Ä—Å—å–∫—ñ –∫–æ—Ä–∞–±–ª—ñ---"<< std::endl;
+    std::cout << "---œ‡Ò‡ÊËÒ¸Í≥ ÍÓ‡·Î≥---" << std::endl;
     for (unsigned i = 0; i < ships.size(); i++) {
-        std::cout << "ID –∫–æ—Ä–∞–±–ª—è: " << i + 1 << std::endl;
+        std::cout << "ID ÍÓ‡·Îˇ: " << i + 1 << std::endl;
         std::cout << ships[i]->Info() << std::endl;
     }
 }
 void showCargoShips(std::vector<CargoShip*>& ships) {
-    std::cout << "---–í–∞–Ω—Ç–∞–∂–Ω—ñ –∫–æ—Ä–∞–±–ª—ñ---"<< std::endl;
+    std::cout << "---¬‡ÌÚ‡ÊÌ≥ ÍÓ‡·Î≥---" << std::endl;
     for (unsigned i = 0; i < ships.size(); i++) {
-        std::cout << "ID –∫–æ—Ä–∞–±–ª—è: " << i + 1 << std::endl;
+        std::cout << "ID ÍÓ‡·Îˇ: " << i + 1 << std::endl;
         std::cout << ships[i]->Info() << std::endl;
     }
 }
 void showWarShips(std::vector<WarShip*>& ships) {
-    std::cout << "---–í—ñ–π—Å—å–∫–æ–≤—ñ –∫–æ—Ä–∞–±–ª—ñ---"<< std::endl;
+    std::cout << "---¬≥ÈÒ¸ÍÓ‚≥ ÍÓ‡·Î≥---" << std::endl;
     for (unsigned i = 0; i < ships.size(); i++) {
-        std::cout << "ID –∫–æ—Ä–∞–±–ª—è: " << i + 1 << std::endl;
+        std::cout << "ID ÍÓ‡·Îˇ: " << i + 1 << std::endl;
         std::cout << ships[i]->Info() << std::endl;
     }
 }
@@ -545,56 +575,60 @@ void createPassengerShip(std::vector<PassengerShip*>& ships) {
 
     int numberOfBoats;
 
-    std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–∞—Å—Ç–ø—É–Ω—ñ –¥–∞–Ω—ñ –≤–∞—à–æ–≥–æ –∫–æ—Ä–∞–±–ª—è: " << std::endl;
-    std::cout << "–ù–∞–∑–≤–∞ –∫–æ—Ä–∞–±–ª—è: " << std::endl;
+    std::cout << "--¬‚Â‰≥Ú¸ ‰‡Ì≥ ‚‡¯Ó„Ó ÍÓ‡·Îˇ--" << std::endl;
+    std::cout << "Õ‡Á‚‡ ÍÓ‡·Îˇ: ";
     std::cin >> name;
-    for (auto ship: ships)
+    for (auto ship : ships)
     {
-        if (name == ship->GetName()){
-            std::cout << "–ü–∞—Å–∞–∂–∏—Ä—Å—å–∫–∏–π –∫–æ—Ä–∞–±–µ–ª—å –∑ —Ç–∞–∫–æ—é –Ω–∞–∑–≤–æ—é –≤–∂–µ —ñ—Å–Ω—É—î!" << std::endl;
-            return ;
+        if (name == ship->GetName()) {
+            std::cout << "œ‡Ò‡ÊËÒ¸ÍËÈ ÍÓ‡·ÂÎ¸ Á Ú‡ÍÓ˛ Ì‡Á‚Ó˛ ‚ÊÂ ≥ÒÌÛ∫!" << std::endl;
+            return;
         }
     }
-    std::cout << "–ü–æ—Ä—Ç –ø—Ä–∏–ø–∏—Å–∫–∏: " << std::endl;
+    std::cout << "œÓÚ ÔËÔËÒÍË: ";
     std::cin >> homePort;
-    std::cout << "–ü–æ—Ç—É–∂–Ω—ñ—Å—Ç—å –¥–≤–∏–≥—É–Ω–∞ –≤ –∫–í—Ç: " << std::endl;
+    std::cout << "œÓÚÛÊÌ≥ÒÚ¸ ‰‚Ë„ÛÌ‡ ‚ Í¬Ú: ";
     std::cin >> enginePower;
-    std::cout << "–í–æ–¥–æ—Ç–æ–Ω–Ω–∞–∂–Ω—ñ—Å—Ç—å –≤ —Ç–æ–Ω–Ω–∞—Ö: " << std::endl;
+    std::cout << "¬Ó‰ÓÚÓÌÌ‡ÊÌ≥ÒÚ¸ ‚ ÚÓÌÌ‡ı: ";
     std::cin >> displacement;
-    std::cout << "–ß–∏—Å–µ–ª—å–Ω—ñ—Å—Ç—å –µ–∫—ñ–ø–∞–∂—É: " << std::endl;
+    std::cout << "◊ËÒÂÎ¸Ì≥ÒÚ¸ ÂÍ≥Ô‡ÊÛ: ";
     std::cin >> numberOfCrew;
-    std::cout << "–ö—ñ–ª—å–∫—ñ—Å—Ç—å –ø–∞—Å—Å–∞–∂–∏—Ä—ñ–≤: " << std::endl;
+    std::cout << " ≥Î¸Í≥ÒÚ¸ Ô‡ÒÒ‡ÊË≥‚: ";
     std::cin >> numberOfPassengers;
-
-    std::cout << "-- –ü–æ–ø–µ—Ä–µ–¥–∂–µ–Ω–Ω—è! –Ø–∫—â–æ —á–æ–≤–Ω—ñ–≤ –±—É–¥–µ –Ω–µ–¥–æ—Å—Ç–∞—Ç–Ω—å–æ –¥–ª—è –≤—Å—ñ—Ö –ª—é–¥–µ–π –Ω–∞ –±–æ—Ä—Ç—É, –ø—Ä–æ–≥—Ä–∞–º–∞ –∞–≤—Ç–æ–º–∞—Ç–∏—á–Ω–æ –¥–æ–¥–∞—Å—Ç—å –Ω–µ–¥–æ—Å—Ç–∞—Ç–Ω—é –∫—ñ–ª—å–∫—ñ—Å—Ç—å --" << std::endl;
-    std::cout << "–í–≤–µ–¥—ñ—Ç—å –∫—ñ–ª—å–∫—ñ—Å—Ç—å —á–æ–≤–Ω—ñ–≤: " << std::endl;
+    std::cout << std::endl;
+    std::cout << "œÓÔÂÂ‰ÊÂÌÌˇ!!! ƒ‡Î≥ ÚÂ·‡ ‚‚ÂÒÚË Í≥Î¸Í≥ÒÚ¸ ˜Ó‚Ì≥‚. ﬂÍ˘Ó ˜Ó‚Ì≥‚ ·Û‰Â ÌÂ‰ÓÒÚ‡ÚÌ¸Ó ‰Îˇ ‚Ò≥ı Î˛‰ÂÈ Ì‡ ·ÓÚÛ, ÔÓ„‡Ï‡ ‡‚ÚÓÏ‡ÚË˜ÌÓ ‰Ó‰‡ÒÚ¸ ÌÂ‰ÓÒÚ‡ÚÌ˛ Í≥Î¸Í≥ÒÚ¸" << std::endl;
+    std::cout << std::endl;
+    std::cout << " ≥Î¸Í≥ÒÚ¸ ˜Ó‚Ì≥‚: ";
     std::cin >> numberOfBoats;
+    std::cout << std::endl;
+    
     if (numberOfBoats == 1) {
         int capacity;
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –º—ñ—Å—Ç–∫—ñ—Å—Ç—å —á–æ–≤–Ω–∞: " << std::endl;
-            std::cin >> capacity;
-            boats.push_back(new Boat(capacity));
+        std::cout << "Ã≥ÒÚÍ≥ÒÚ¸ ˜Ó‚Ì‡: ";
+        std::cin >> capacity;
+        boats.push_back(new Boat(capacity));
     }
 
     else {
-        std::cout << "–ó—Ä–æ–±–∏—Ç–∏ —á–æ–≤–Ω–∏ –æ–¥–Ω–∞–∫–æ–≤–æ—ó –º—ñ—Å—Ç–∫–æ—Å—Ç—ñ?" << std::endl;
-        std::cout << "1. –¢–∞–∫" << std::endl;
-        std::cout << "2. –ù—ñ, —è –≤–≤–µ–¥—É –º—ñ—Å—Ç–∫—ñ—Å—Ç—å –≤—Å—ñ—Ö —á–æ–≤–Ω—ñ–≤ —Å–∞–º–æ—Å—Ç—ñ–π–Ω–æ" << std::endl;
+        std::cout << "«Ó·ËÚË ˜Ó‚ÌË Ó‰Ì‡ÍÓ‚Óø Ï≥ÒÚÍÓÒÚ≥?" << std::endl;
+        std::cout << "1. “‡Í" << std::endl;
+        std::cout << "2. Õ≥, ˇ ‚‚Â‰Û Ï≥ÒÚÍ≥ÒÚ¸ ‚Ò≥ı ˜Ó‚Ì≥‚ Ò‡ÏÓÒÚ≥ÈÌÓ" << std::endl;
         int choiceBoat;
         std::cin >> choiceBoat;
-
+        std::cout << std::endl;
         int capacity;
         if (choiceBoat == 1) {
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –º—ñ—Å—Ç–∫—ñ—Å—Ç—å —á–æ–≤–Ω–∞: " << std::endl;
+            std::cout << "Ã≥ÒÚÍ≥ÒÚ¸ ˜Ó‚Ì‡: ";
             std::cin >> capacity;
             for (int i = 0; i < numberOfBoats; i++) {
                 boats.push_back(new Boat(capacity));
             }
-        } else if (choiceBoat == 2) {
+        }
+        else if (choiceBoat == 2) {
             while (numberOfBoats > 0) {
-                std::cout << "–ú—ñ—Å—Ç–∫—ñ—Å—Ç—å —á–æ–≤–Ω–∞: " << std::endl;
+                std::cout << "Ã≥ÒÚÍ≥ÒÚ¸ ˜Ó‚Ì‡: ";
                 std::cin >> capacity;
-                std::cout << "–ö—ñ–ª—å–∫—ñ—Å—Ç—å —á–æ–≤–Ω—ñ–≤ –∑ –º—ñ—Å—Ç–∫—ñ—Å—Ç—é " << capacity << ":" << std::endl;
+                std::cout << " ≥Î¸Í≥ÒÚ¸ ˜Ó‚Ì≥‚ Á Ï≥ÒÚÍ≥ÒÚ˛ " << capacity << ": ";
                 int numBoatsWithSameCapacity;
                 std::cin >> numBoatsWithSameCapacity;
                 for (int i = 0; i < numBoatsWithSameCapacity; i++) {
@@ -602,14 +636,15 @@ void createPassengerShip(std::vector<PassengerShip*>& ships) {
                 }
                 numberOfBoats -= numBoatsWithSameCapacity;
                 if (numberOfBoats > 0)
-                    std::cout << "–ö—ñ–ª—å–∫—Å—Ç—å —á–æ–≤–Ω—ñ–≤, —â–æ –∑–∞–ª–∏—à–∏–ª–æ—Å—å —Å—Ç–≤–æ—Ä–∏—Ç–∏: " << numberOfBoats << std::endl;
+                    std::cout << " ≥Î¸ÍÒÚ¸ ˜Ó‚Ì≥‚, ˘Ó Á‡ÎË¯ËÎÓÒ¸ ÒÚ‚ÓËÚË: " << numberOfBoats << std::endl;
             }
         }
     }
 
     ships.push_back(new PassengerShip(name, homePort, enginePower, displacement, numberOfCrew, numberOfPassengers, boats));
-    ships[ships.size()-1]->AddBoatsToSafeNumber();
-    std::cout<< "–í—ñ—Ç–∞—é!! –ë—É–ª–æ —Å—Ç–≤–æ—Ä–µ–Ω–æ –ø–∞—Å–∞–∂–∏—Ä—Å—å–∫–∏–π –∫–æ—Ä–∞–±–µ–ª—å!"<<std::endl;
+    ships[ships.size() - 1]->AddBoatsToSafeNumber();
+    std::cout << std::endl;
+    std::cout << "¬≥Ú‡˛!! ¡ÛÎÓ ÒÚ‚ÓÂÌÓ Ô‡Ò‡ÊËÒ¸ÍËÈ ÍÓ‡·ÂÎ¸!" << std::endl;
 }
 void createCargoShip(std::vector<CargoShip*>& ships) {
     std::string name;
@@ -619,29 +654,30 @@ void createCargoShip(std::vector<CargoShip*>& ships) {
     int numberOfCrew;
     int loadCapacity;
 
-    std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–∞—Å—Ç–ø—É–Ω—ñ –¥–∞–Ω—ñ –≤–∞—à–æ–≥–æ –∫–æ—Ä–∞–±–ª—è: " << std::endl;
-    std::cout << "–ù–∞–∑–≤–∞ –∫–æ—Ä–∞–±–ª—è: " << std::endl;
+    std::cout << "--¬‚Â‰≥Ú¸ ‰‡Ì≥ ‚‡¯Ó„Ó ÍÓ‡·Îˇ--" << std::endl;
+    std::cout << "Õ‡Á‚‡ ÍÓ‡·Îˇ: ";
     std::cin >> name;
-    for (auto ship: ships)
+    for (auto ship : ships)
     {
-        if (name == ship->GetName()){
-            std::cout << "–í–∞–Ω—Ç–∞–∂–Ω–∏–π –∫–æ—Ä–∞–±–µ–ª—å –∑ —Ç–∞–∫–æ—é –Ω–∞–∑–≤–æ—é –≤–∂–µ —ñ—Å–Ω—É—î!" << std::endl;
-            return ;
+        if (name == ship->GetName()) {
+            std::cout << "¬‡ÌÚ‡ÊÌËÈ ÍÓ‡·ÂÎ¸ Á Ú‡ÍÓ˛ Ì‡Á‚Ó˛ ‚ÊÂ ≥ÒÌÛ∫!" << std::endl;
+            return;
         }
     }
-    std::cout << "–ü–æ—Ä—Ç –ø—Ä–∏–ø–∏—Å–∫–∏: " << std::endl;
+    std::cout << "œÓÚ ÔËÔËÒÍË: ";
     std::cin >> homePort;
-    std::cout << "–ü–æ—Ç—É–∂–Ω—ñ—Å—Ç—å –¥–≤–∏–≥—É–Ω–∞ –≤ –∫–í—Ç: " << std::endl;
+    std::cout << "œÓÚÛÊÌ≥ÒÚ¸ ‰‚Ë„ÛÌ‡ ‚ Í¬Ú: ";
     std::cin >> enginePower;
-    std::cout << "–í–æ–¥–æ—Ç–æ–Ω–Ω–∞–∂–Ω—ñ—Å—Ç—å –≤ —Ç–æ–Ω–Ω–∞—Ö: " << std::endl;
+    std::cout << "¬Ó‰ÓÚÓÌÌ‡ÊÌ≥ÒÚ¸ ‚ ÚÓÌÌ‡ı: ";
     std::cin >> displacement;
-    std::cout << "–ß–∏—Å–µ–ª—å–Ω—ñ—Å—Ç—å –µ–∫—ñ–ø–∞–∂—É: " << std::endl;
+    std::cout << "◊ËÒÂÎ¸Ì≥ÒÚ¸ ÂÍ≥Ô‡ÊÛ: ";
     std::cin >> numberOfCrew;
-    std::cout << "–í–∞–Ω—Ç–∞–∂–æ–ø—ñ–¥–π–æ–º–Ω—ñ—Å—Ç—å –≤ —Ç–æ–Ω–∞—Ö: " << std::endl;
+    std::cout << "¬‡ÌÚ‡ÊÓÔ≥‰ÈÓÏÌ≥ÒÚ¸ ‚ ÚÓÌ‡ı: ";
     std::cin >> loadCapacity;
 
     ships.push_back(new CargoShip(name, homePort, enginePower, displacement, numberOfCrew, loadCapacity));
-    std::cout<< "–í—ñ—Ç–∞—é!! –ë—É–ª–æ —Å—Ç–≤–æ—Ä–µ–Ω–æ –≤–∞–Ω—Ç–∞–∂–Ω–∏–π –∫–æ—Ä–∞–±–µ–ª—å!"<<std::endl;
+    std::cout << std::endl;
+    std::cout << "¬≥Ú‡˛!! ¡ÛÎÓ ÒÚ‚ÓÂÌÓ ‚‡ÌÚ‡ÊÌËÈ ÍÓ‡·ÂÎ¸!" << std::endl;
 }
 void createWarShip(std::vector<WarShip*>& ships) {
     std::string name;
@@ -651,213 +687,219 @@ void createWarShip(std::vector<WarShip*>& ships) {
     int numberOfCrew;
     WeaponType weaponType;
 
-    std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–∞—Å—Ç–ø—É–Ω—ñ –¥–∞–Ω—ñ –≤–∞—à–æ–≥–æ –∫–æ—Ä–∞–±–ª—è: " << std::endl;
-    std::cout << "–ù–∞–∑–≤–∞ –∫–æ—Ä–∞–±–ª—è: " << std::endl;
+    std::cout << "--¬‚Â‰≥Ú¸ ‰‡Ì≥ ‚‡¯Ó„Ó ÍÓ‡·Îˇ--" << std::endl;
+    std::cout << "Õ‡Á‚‡ ÍÓ‡·Îˇ: ";
     std::cin >> name;
-    for (auto ship: ships)
+    for (auto ship : ships)
     {
-        if (name == ship->GetName()){
-            std::cout << "–í—ñ–π—Å—å–∫–æ–≤–∏–π –∫–æ—Ä–∞–±–µ–ª—å –∑ —Ç–∞–∫–æ—é –Ω–∞–∑–≤–æ—é –≤–∂–µ —ñ—Å–Ω—É—î!" << std::endl;
-            return ;
+        if (name == ship->GetName()) {
+            std::cout << "¬≥ÈÒ¸ÍÓ‚ËÈ ÍÓ‡·ÂÎ¸ Á Ú‡ÍÓ˛ Ì‡Á‚Ó˛ ‚ÊÂ ≥ÒÌÛ∫!" << std::endl;
+            return;
         }
     }
-    std::cout << "–ü–æ—Ä—Ç –ø—Ä–∏–ø–∏—Å–∫–∏: " << std::endl;
+    std::cout << "œÓÚ ÔËÔËÒÍË: ";
     std::cin >> homePort;
-    std::cout << "–ü–æ—Ç—É–∂–Ω—ñ—Å—Ç—å –¥–≤–∏–≥—É–Ω–∞ –≤ –∫–í—Ç: " << std::endl;
+    std::cout << "œÓÚÛÊÌ≥ÒÚ¸ ‰‚Ë„ÛÌ‡ ‚ Í¬Ú: ";
     std::cin >> enginePower;
-    std::cout << "–í–æ–¥–æ—Ç–æ–Ω–Ω–∞–∂–Ω—ñ—Å—Ç—å –≤ —Ç–æ–Ω–Ω–∞—Ö: " << std::endl;
+    std::cout << "¬Ó‰ÓÚÓÌÌ‡ÊÌ≥ÒÚ¸ ‚ ÚÓÌÌ‡ı: ";
     std::cin >> displacement;
-    std::cout << "–ß–∏—Å–µ–ª—å–Ω—ñ—Å—Ç—å –µ–∫—ñ–ø–∞–∂—É: " << std::endl;
+    std::cout << "◊ËÒÂÎ¸Ì≥ÒÚ¸ ÂÍ≥Ô‡ÊÛ: ";
     std::cin >> numberOfCrew;
-    std::cout << "–í–∏–±–µ—Ä—ñ—Ç—å —Ç–∏–ø –∑–±—Ä–æ—ó: " << std::endl;
-    std::cout << "1. –†–∞–∫–µ—Ç–Ω–∏–π" << std::endl;
-    std::cout << "2. –ê—Ä—Ç–∏–ª–µ—Ä—ñ–π—Å—å–∫–∏–π" << std::endl;
-    std::cout << "3. –¢–æ—Ä–ø–µ–¥–Ω–∏–π" << std::endl;
-    std::cout << "4. –ú—ñ–Ω–Ω–∏–π" << std::endl;
-    std::cout << "5. –ü—Ä–æ—Ç–∏—á–æ–≤–Ω–æ–≤–æ—ó" << std::endl;
+    std::cout << "---Œ·Â≥Ú¸ ÚËÔ Á·Óø--- " << std::endl;
+    std::cout << "1. –‡ÍÂÚÌËÈ" << std::endl;
+    std::cout << "2. ¿ÚËÎÂ≥ÈÒ¸ÍËÈ" << std::endl;
+    std::cout << "3. “ÓÔÂ‰ÌËÈ" << std::endl;
+    std::cout << "4. Ã≥ÌÌËÈ" << std::endl;
+    std::cout << "5. œÓÚË˜Ó‚ÌÓ‚Óø" << std::endl;
     int weaponChoice;
     std::cin >> weaponChoice;
     switch (weaponChoice)
     {
-        case 1:
-            weaponType = WeaponType::missile;
-            break;
-        case 2:
-            weaponType = WeaponType::artillery;
-            break;
-        case 3:
-            weaponType = WeaponType::torpedo;
-            break;
-        case 4:
-            weaponType = WeaponType::mine;
-            break;
-        case 5:
-            weaponType = WeaponType::antiSubmarine;
-            break;
+    case 1:
+        weaponType = WeaponType::missile;
+        break;
+    case 2:
+        weaponType = WeaponType::artillery;
+        break;
+    case 3:
+        weaponType = WeaponType::torpedo;
+        break;
+    case 4:
+        weaponType = WeaponType::mine;
+        break;
+    case 5:
+        weaponType = WeaponType::antiSubmarine;
+        break;
     }
     ships.push_back(new WarShip(name, homePort, enginePower, displacement, numberOfCrew, weaponType));
-    std::cout<< "–í—ñ—Ç–∞—é!! –°—Ç–≤–æ—Ä–µ–Ω–æ –≤—ñ–π—Å—å–∫–æ–≤–∏–π –∫–æ—Ä–∞–±–µ–ª—å!"<<std::endl;
+    std::cout << std::endl;
+    std::cout << "¬≥Ú‡˛!! —Ú‚ÓÂÌÓ ‚≥ÈÒ¸ÍÓ‚ËÈ ÍÓ‡·ÂÎ¸!" << std::endl;
 }
 
 void modifyPassengerShip(int choice, int ID, std::vector<PassengerShip*>& ships) {
     switch (choice) {
-        case 1: {
-            std::string newHomePort;
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤–∏–π –ø–æ—Ä—Ç –ø—Ä–∏–ø–∏—Å–∫–∏: " << std::endl;
-            std::cin >> newHomePort;
-            ships[ID - 1]->ChangeHomePort(newHomePort);
-            break;
+    case 1: {
+        std::string newHomePort;
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚ËÈ ÔÓÚ ÔËÔËÒÍË: ";
+        std::cin >> newHomePort;
+        ships[ID - 1]->ChangeHomePort(newHomePort);
+        break;
+    }
+    case 2:
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚Û ÔÓÚÛÊÌ≥ÒÚ¸ ‰‚Ë„ÛÌ‡: ";
+        int newEnginePower;
+        std::cin >> newEnginePower;
+        ships[ID - 1]->ChangeEnginePower(newEnginePower);
+        break;
+    case 3:
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚Û ‚Ó‰ÓÚÓÌ‡ÊÌ≥ÒÚ¸: ";
+        int newDisplacement;
+        std::cin >> newDisplacement;
+        ships[ID - 1]->ChangeDisplacement(newDisplacement);
+        break;
+    case 4:
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚Û Í≥Î¸Í≥ÒÚ¸ ÂÍ≥Ô‡ÊÛ: ";
+        int newNumberOfCrew;
+        std::cin >> newNumberOfCrew;
+        ships[ID - 1]->ChangeNumberOfCrew(newNumberOfCrew);
+        break;
+    case 5:
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚Û Í≥Î¸Í≥ÒÚ¸ Ô‡Ò‡ÊË≥‚: ";
+        int newNumberOfPassengers;
+        std::cin >> newNumberOfPassengers;
+        ships[ID - 1]->ChangeNumberOfPassengers(newNumberOfPassengers);
+        break;
+    case 6:
+        std::cout << "—Í≥Î¸ÍË ˜Ó‚Ì≥‚ ‚Ë ·‡Ê‡∫ÚÂ ‰Ó‰‡ÚË Ì‡ ÍÓ‡·ÂÎ¸?" << std::endl;
+        int numBoats;
+        std::cin >> numBoats;
+        std::cout << std::endl;
+        if (numBoats == 1) {
+            std::cout << "¬‚Â‰≥Ú¸ Ï≥ÒÚÍ≥ÒÚ¸ ˜Ó‚Ì‡: ";
+            int capacity;
+            std::cin >> capacity;
+            ships[ID - 1]->AddBoats(new Boat(capacity), 1);
         }
-        case 2:
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤—É –ø–æ—Ç—É–∂–Ω—ñ—Å—Ç—å –¥–≤–∏–≥—É–Ω–∞: " << std::endl;
-            int newEnginePower;
-            std::cin >> newEnginePower;
-            ships[ID - 1]->ChangeEnginePower(newEnginePower);
-            break;
-        case 3:
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤—É –≤–æ–¥–æ—Ç–æ–Ω–∞–∂–Ω—ñ—Å—Ç—å: " << std::endl;
-            int newDisplacement;
-            std::cin >> newDisplacement;
-            ships[ID - 1]->ChangeDisplacement(newDisplacement);
-            break;
-        case 4:
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤—É –∫—ñ–ª—å–∫—ñ—Å—Ç—å –µ–∫—ñ–ø–∞–∂—É: " << std::endl;
-            int newNumberOfCrew;
-            std::cin >> newNumberOfCrew;
-            ships[ID - 1]->ChangeNumberOfCrew(newNumberOfCrew);
-            break;
-        case 5:
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤—É –∫—ñ–ª—å–∫—ñ—Å—Ç—å –ø–∞—Å–∞–∂–∏—Ä—ñ–≤: " << std::endl;
-            int newNumberOfPassengers;
-            std::cin >> newNumberOfPassengers;
-            ships[ID - 1]->ChangeNumberOfPassengers(newNumberOfPassengers);
-            break;
-        case 6:
-            std::cout << "–°–∫—ñ–ª—å–∫–∏ —á–æ–≤–Ω—ñ–≤ –≤–∏ –±–∞–∂–∞—î—Ç–µ –¥–æ–¥–∞—Ç–∏ –Ω–∞ –∫–æ—Ä–∞–±–µ–ª—å?" << std::endl;
-            int numBoats;
-            std::cin >> numBoats;
-            if (numBoats == 1) {
-                std::cout << "–í–≤–µ–¥—ñ—Ç—å –º—ñ—Å—Ç–∫—ñ—Å—Ç—å —á–æ–≤–Ω–∞: " << std::endl;
+
+        else {
+            while (numBoats)
+            {
+                std::cout << "Ã≥ÒÚÍ≥ÒÚ¸ ˜Ó‚Ì‡: ";
                 int capacity;
                 std::cin >> capacity;
-                ships[ID - 1]->AddBoats(new Boat(capacity), 1);
+                std::cout << " ≥Î¸Í≥ÒÚ¸ ˜Ó‚Ì≥‚ Á Ï≥ÒÚÍ≥ÒÚ˛ " << capacity << ": ";
+                int numBoatsWithSameCapacity;
+                std::cin >> numBoatsWithSameCapacity;
+                ships[ID - 1]->AddBoats(new Boat(capacity), numBoatsWithSameCapacity);
+                numBoats -= numBoatsWithSameCapacity;
+                if (numBoats > 0)
+                    std::cout << " ≥Î¸ÍÒÚ¸ ˜Ó‚Ì≥‚, ˘Ó Á‡ÎË¯ËÎÓÒ¸ ÒÚ‚ÓËÚË: " << numBoats << std::endl;
             }
-
-            else {
-                while(numBoats)
-                {
-                    std::cout << "–ú—ñ—Å—Ç–∫—ñ—Å—Ç—å —á–æ–≤–Ω–∞: " << std::endl;
-                    int capacity;
-                    std::cin >> capacity;
-                    std::cout << "–ö—ñ–ª—å–∫—ñ—Å—Ç—å —á–æ–≤–Ω—ñ–≤ –∑ –º—ñ—Å—Ç–∫—ñ—Å—Ç—é " << capacity << " :"<< std::endl;
-                    int numBoatsWithSameCapacity;
-                    std::cin >> numBoatsWithSameCapacity;
-                    ships[ID - 1]->AddBoats(new Boat(capacity), numBoatsWithSameCapacity);
-                    numBoats -= numBoatsWithSameCapacity;
-                }
-            }
-            break;
-        case 7:
-            std::cout << "-- –ü–æ–ø–µ—Ä–µ–¥–∂–µ–Ω–Ω—è! –Ø–∫—â–æ —á–æ–≤–Ω—ñ–≤ –±—É–¥–µ –Ω–µ–¥–æ—Å—Ç–∞—Ç–Ω—å–æ –¥–ª—è –≤—Å—ñ—Ö –ª—é–¥–µ–π –Ω–∞ –±–æ—Ä—Ç—É, –ø—Ä–æ–≥—Ä–∞–º–∞ –∞–≤—Ç–æ–º–∞—Ç–∏—á–Ω–æ –¥–æ–¥–∞—Å—Ç—å –Ω–µ–¥–æ—Å—Ç–∞—Ç–Ω—é –∫—ñ–ª—å–∫—ñ—Å—Ç—å --" << std::endl;
-            ships[ID - 1]->PrintBoats();
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å ID —á–æ–≤–Ω—É, —è–∫–∏–π –≤–∏ —Ö–æ—á–µ—Ç–µ –≤–∏–¥–∞–ª–∏—Ç–∏: " << std::endl;
-            int boatID;
-            std::cin >> boatID;
-            ships[ID - 1]->DeleteBoat(boatID - 1);
-            break;
+        }
+        break;
+    case 7:
+        std::cout << std::endl;
+        std::cout << "œÓÔÂÂ‰ÊÂÌÌˇ!!! ﬂÍ˘Ó ˜Ó‚Ì≥‚ ·Û‰Â ÌÂ‰ÓÒÚ‡ÚÌ¸Ó ‰Îˇ ‚Ò≥ı Î˛‰ÂÈ Ì‡ ·ÓÚÛ, ÔÓ„‡Ï‡ ‡‚ÚÓÏ‡ÚË˜ÌÓ ‰Ó‰‡ÒÚ¸ ÌÂ‰ÓÒÚ‡ÚÌ˛ Í≥Î¸Í≥ÒÚ¸" << std::endl;
+        std::cout << std::endl;        
+        ships[ID - 1]->PrintBoats();
+        std::cout << "¬‚Â‰≥Ú¸ ID ˜Ó‚ÌÛ, ˇÍËÈ ‚Ë ıÓ˜ÂÚÂ ‚Ë‰‡ÎËÚË: ";
+        int boatID;
+        std::cin >> boatID;
+        ships[ID - 1]->DeleteBoat(boatID - 1);
+        break;
     }
 }
 void modifyCargoShip(int choice, int ID, std::vector<CargoShip*>& ships) {
     switch (choice) {
-        case 1: {
-            std::string newHomePort;
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤–∏–π –ø–æ—Ä—Ç –ø—Ä–∏–ø–∏—Å–∫–∏: " << std::endl;
-            std::cin >> newHomePort;
-            ships[ID - 1]->ChangeHomePort(newHomePort);
-            break;
-        }
-        case 2:
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤—É –ø–æ—Ç—É–∂–Ω—ñ—Å—Ç—å –¥–≤–∏–≥—É–Ω–∞: " << std::endl;
-            int newEnginePower;
-            std::cin >> newEnginePower;
-            ships[ID - 1]->ChangeEnginePower(newEnginePower);
-            break;
-        case 3:
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤—É –≤–æ–¥–æ—Ç–æ–Ω–∞–∂–Ω—ñ—Å—Ç—å: " << std::endl;
-            int newDisplacement;
-            std::cin >> newDisplacement;
-            ships[ID - 1]->ChangeDisplacement(newDisplacement);
-            break;
-        case 4:
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤—É –∫—ñ–ª—å–∫—ñ—Å—Ç—å –µ–∫—ñ–ø–∞–∂—É: " << std::endl;
-            int newNumberOfCrew;
-            std::cin >> newNumberOfCrew;
-            ships[ID - 1]->ChangeNumberOfCrew(newNumberOfCrew);
-            break;
-        case 5:
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤—É –≤–∞–Ω—Ç–∞–∂–æ–ø—ñ–¥–π–æ–º–Ω—ñ—Å—Ç—å: " << std::endl;
-            int newLoadCapacity;
-            std::cin >> newLoadCapacity;
-            ships[ID - 1]->ChangeLoadCapacity(newLoadCapacity);
-            break;
+    case 1: {
+        std::string newHomePort;
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚ËÈ ÔÓÚ ÔËÔËÒÍË: ";
+        std::cin >> newHomePort;
+        ships[ID - 1]->ChangeHomePort(newHomePort);
+        break;
+    }
+    case 2:
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚Û ÔÓÚÛÊÌ≥ÒÚ¸ ‰‚Ë„ÛÌ‡: ";
+        int newEnginePower;
+        std::cin >> newEnginePower;
+        ships[ID - 1]->ChangeEnginePower(newEnginePower);
+        break;
+    case 3:
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚Û ‚Ó‰ÓÚÓÌ‡ÊÌ≥ÒÚ¸: ";
+        int newDisplacement;
+        std::cin >> newDisplacement;
+        ships[ID - 1]->ChangeDisplacement(newDisplacement);
+        break;
+    case 4:
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚Û Í≥Î¸Í≥ÒÚ¸ ÂÍ≥Ô‡ÊÛ: ";
+        int newNumberOfCrew;
+        std::cin >> newNumberOfCrew;
+        ships[ID - 1]->ChangeNumberOfCrew(newNumberOfCrew);
+        break;
+    case 5:
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚Û ‚‡ÌÚ‡ÊÓÔ≥‰ÈÓÏÌ≥ÒÚ¸: ";
+        int newLoadCapacity;
+        std::cin >> newLoadCapacity;
+        ships[ID - 1]->ChangeLoadCapacity(newLoadCapacity);
+        break;
     }
 }
 void modifyWarShip(int choice, int ID, std::vector<WarShip*>& ships) {
     switch (choice) {
-        case 1: {
-            std::string newHomePort;
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤–∏–π –ø–æ—Ä—Ç –ø—Ä–∏–ø–∏—Å–∫–∏: " << std::endl;
-            std::cin >> newHomePort;
-            ships[ID - 1]->ChangeHomePort(newHomePort);
+    case 1: {
+        std::string newHomePort;
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚ËÈ ÔÓÚ ÔËÔËÒÍË: ";
+        std::cin >> newHomePort;
+        ships[ID - 1]->ChangeHomePort(newHomePort);
+        break;
+    }
+    case 2:
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚Û ÔÓÚÛÊÌ≥ÒÚ¸ ‰‚Ë„ÛÌ‡: ";
+        int newEnginePower;
+        std::cin >> newEnginePower;
+        ships[ID - 1]->ChangeEnginePower(newEnginePower);
+        break;
+    case 3:
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚Û ‚Ó‰ÓÚÓÌ‡ÊÌ≥ÒÚ¸: ";
+        int newDisplacement;
+        std::cin >> newDisplacement;
+        ships[ID - 1]->ChangeDisplacement(newDisplacement);
+        break;
+    case 4:
+        std::cout << "¬‚Â‰≥Ú¸ ÌÓ‚Û Í≥Î¸Í≥ÒÚ¸ ÂÍ≥Ô‡ÊÛ: ";
+        int newNumberOfCrew;
+        std::cin >> newNumberOfCrew;
+        ships[ID - 1]->ChangeNumberOfCrew(newNumberOfCrew);
+        break;
+    case 5:
+        std::cout << "---Œ·Â≥Ú¸ ÌÓ‚ËÈ ÚËÔ Á·Óø--- " << std::endl;
+        std::cout << "1. –‡ÍÂÚÌËÈ" << std::endl;
+        std::cout << "2. ¿ÚËÎÂ≥ÈÒ¸ÍËÈ" << std::endl;
+        std::cout << "3. “ÓÔÂ‰ÌËÈ" << std::endl;
+        std::cout << "4. Ã≥ÌÌËÈ" << std::endl;
+        std::cout << "5. œÓÚË˜Ó‚ÌÓ‚Óø" << std::endl;
+        int weaponChoice;
+        WeaponType newWeaponType;
+        std::cin >> weaponChoice;
+        switch (weaponChoice)
+        {
+        case 1:
+            newWeaponType = WeaponType::missile;
             break;
-        }
         case 2:
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤—É –ø–æ—Ç—É–∂–Ω—ñ—Å—Ç—å –¥–≤–∏–≥—É–Ω–∞: " << std::endl;
-            int newEnginePower;
-            std::cin >> newEnginePower;
-            ships[ID - 1]->ChangeEnginePower(newEnginePower);
+            newWeaponType = WeaponType::artillery;
             break;
         case 3:
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤—É –≤–æ–¥–æ—Ç–æ–Ω–∞–∂–Ω—ñ—Å—Ç—å: " << std::endl;
-            int newDisplacement;
-            std::cin >> newDisplacement;
-            ships[ID - 1]->ChangeDisplacement(newDisplacement);
+            newWeaponType = WeaponType::torpedo;
             break;
         case 4:
-            std::cout << "–í–≤–µ–¥—ñ—Ç—å –Ω–æ–≤—É –∫—ñ–ª—å–∫—ñ—Å—Ç—å –µ–∫—ñ–ø–∞–∂—É: " << std::endl;
-            int newNumberOfCrew;
-            std::cin >> newNumberOfCrew;
-            ships[ID - 1]->ChangeNumberOfCrew(newNumberOfCrew);
+            newWeaponType = WeaponType::mine;
             break;
         case 5:
-            std::cout << "---–û–±–µ—Ä—ñ—Ç—å —Ç–∏–ø –∑–±—Ä–æ—ó--- " << std::endl;
-            std::cout << "1. –†–∞–∫–µ—Ç–Ω–∏–π" << std::endl;
-            std::cout << "2. –ê—Ä—Ç–∏–ª–µ—Ä—ñ–π—Å—å–∫–∏–π" << std::endl;
-            std::cout << "3. –¢–æ—Ä–ø–µ–¥–Ω–∏–π" << std::endl;
-            std::cout << "4. –ú—ñ–Ω–Ω–∏–π" << std::endl;
-            std::cout << "5. –ü—Ä–æ—Ç–∏—á–æ–≤–Ω–æ–≤–æ—ó" << std::endl;
-            int weaponChoice;
-            WeaponType newWeaponType;
-            std::cin >> weaponChoice;
-            switch (weaponChoice)
-            {
-                case 1:
-                    newWeaponType = WeaponType::missile;
-                    break;
-                case 2:
-                    newWeaponType = WeaponType::artillery;
-                    break;
-                case 3:
-                    newWeaponType = WeaponType::torpedo;
-                    break;
-                case 4:
-                    newWeaponType = WeaponType::mine;
-                    break;
-                case 5:
-                    newWeaponType = WeaponType::antiSubmarine;
-                    break;
-            }
-            ships[ID - 1]->ChangeWeaponType(newWeaponType);
+            newWeaponType = WeaponType::antiSubmarine;
             break;
+        }
+        ships[ID - 1]->ChangeWeaponType(newWeaponType);
+        break;
     }
 }
