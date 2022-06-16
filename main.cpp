@@ -32,11 +32,11 @@ int main() {
     std::vector<WarShip*> warShips;
 
     std::vector<Port> ports = {
-            Port("Південний", 20),
-            Port("Одеський", 50),
-            Port("Чорноморський", 15),
-            Port("Ренійський", 20),
-            Port("Миколаївський", 20),
+            Port("РџС–РІРґРµРЅРЅРёР№", 20),
+            Port("РћРґРµСЃСЊРєРёР№", 50),
+            Port("Р§РѕСЂРЅРѕРјРѕСЂСЃСЊРєРёР№", 15),
+            Port("Р РµРЅС–Р№СЃСЊРєРёР№", 20),
+            Port("РњРёРєРѕР»Р°С—РІСЃСЊРєРёР№", 20),
             Port("Test", 1)
     };
 
@@ -44,23 +44,23 @@ int main() {
     do {
         try {
             std::cout << "----------------------------------------" << std::endl;
-            std::cout << "0. Вихід" << std::endl;
-            std::cout << "1. Створити корабель" << std::endl;
-            std::cout << "2. Модифікувати корабель" << std::endl;
-            std::cout << "3. Видалити корабель" << std::endl;
-            std::cout << "4. Показати повну інформацію про кораблі" << std::endl;
-            std::cout << "5. Керувати кораблем" << std::endl;
-            std::cout << "6. Показати інформацію про доступні порти" << std::endl;
+            std::cout << "0. Р’РёС…С–Рґ" << std::endl;
+            std::cout << "1. РЎС‚РІРѕСЂРёС‚Рё РєРѕСЂР°Р±РµР»СЊ" << std::endl;
+            std::cout << "2. РњРѕРґРёС„С–РєСѓРІР°С‚Рё РєРѕСЂР°Р±РµР»СЊ" << std::endl;
+            std::cout << "3. Р’РёРґР°Р»РёС‚Рё РєРѕСЂР°Р±РµР»СЊ" << std::endl;
+            std::cout << "4. РџРѕРєР°Р·Р°С‚Рё РїРѕРІРЅСѓ С–РЅС„РѕСЂРјР°С†С–СЋ РїСЂРѕ РєРѕСЂР°Р±Р»С–" << std::endl;
+            std::cout << "5. РљРµСЂСѓРІР°С‚Рё РєРѕСЂР°Р±Р»РµРј" << std::endl;
+            std::cout << "6. РџРѕРєР°Р·Р°С‚Рё С–РЅС„РѕСЂРјР°С†С–СЋ РїСЂРѕ РґРѕСЃС‚СѓРїРЅС– РїРѕСЂС‚Рё" << std::endl;
             std::cout << "----------------------------------------" << std::endl;
             std::cin >> choice;
             std::cout << std::endl;
 
             switch (choice) {
                 case 1:
-                    std::cout << "Який тип корабля створити?" << std::endl;
-                    std::cout << "1. Пасажирський корабель" << std::endl;
-                    std::cout << "2. Вантажне судно" << std::endl;
-                    std::cout << "3. Військовий корабель" << std::endl;
+                    std::cout << "РЇРєРёР№ С‚РёРї РєРѕСЂР°Р±Р»СЏ СЃС‚РІРѕСЂРёС‚Рё?" << std::endl;
+                    std::cout << "1. РџР°СЃР°Р¶РёСЂСЃСЊРєРёР№ РєРѕСЂР°Р±РµР»СЊ" << std::endl;
+                    std::cout << "2. Р’Р°РЅС‚Р°Р¶РЅРµ СЃСѓРґРЅРѕ" << std::endl;
+                    std::cout << "3. Р’С–Р№СЃСЊРєРѕРІРёР№ РєРѕСЂР°Р±РµР»СЊ" << std::endl;
                     int choiceCreate;
                     std::cin >> choiceCreate;
                     std::cout << std::endl;
@@ -78,39 +78,39 @@ int main() {
                     break;
                 case 2:
                     if (passengerShips.empty() && cargoShips.empty() && warShips.empty()) {
-                        std::cout << "У вас немає кораблів!" << std::endl;
+                        std::cout << "РЈ РІР°СЃ РЅРµРјР°С” РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                         std::cout << std::endl;
                         break;
                     }
                     else {
-                        std::cout << "Який тип корабля потрібно модифікувати?" << std::endl;
-                        std::cout << "1. Пасажирський корабель" << std::endl;
-                        std::cout << "2. Вантажне судно" << std::endl;
-                        std::cout << "3. Військовий корабель" << std::endl;
+                        std::cout << "РЇРєРёР№ С‚РёРї РєРѕСЂР°Р±Р»СЏ РїРѕС‚СЂС–Р±РЅРѕ РјРѕРґРёС„С–РєСѓРІР°С‚Рё?" << std::endl;
+                        std::cout << "1. РџР°СЃР°Р¶РёСЂСЃСЊРєРёР№ РєРѕСЂР°Р±РµР»СЊ" << std::endl;
+                        std::cout << "2. Р’Р°РЅС‚Р°Р¶РЅРµ СЃСѓРґРЅРѕ" << std::endl;
+                        std::cout << "3. Р’С–Р№СЃСЊРєРѕРІРёР№ РєРѕСЂР°Р±РµР»СЊ" << std::endl;
                         int choiceMod;
                         std::cin >> choiceMod;
                         std::cout << std::endl;
                         switch (choiceMod) {
                             case 1:
                                 if (passengerShips.empty()) {
-                                    std::cout << "У вас немає пасажирських кораблів!" << std::endl;
+                                    std::cout << "РЈ РІР°СЃ РЅРµРјР°С” РїР°СЃР°Р¶РёСЂСЃСЊРєРёС… РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                                     std::cout << std::endl;
                                     break;
                                 }
                                 else {
                                     showPassengerShips(passengerShips);
-                                    std::cout << "Введіть ID корабля, який треба модифікувати: ";
+                                    std::cout << "Р’РІРµРґС–С‚СЊ ID РєРѕСЂР°Р±Р»СЏ, СЏРєРёР№ С‚СЂРµР±Р° РјРѕРґРёС„С–РєСѓРІР°С‚Рё: ";
                                     int pSID;
                                     std::cin >> pSID;
                                     std::cout << std::endl;
-                                    std::cout << "Як його потрібно модифікувати?" << std::endl;
-                                    std::cout << "1. Змінити порт приписки" << std::endl;
-                                    std::cout << "2. Змінити потужність двигуна" << std::endl;
-                                    std::cout << "3. Змінити водотонажність" << std::endl;
-                                    std::cout << "4. Змінити кількість екіпажу" << std::endl;
-                                    std::cout << "5. Змінити кількість пасажирів" << std::endl;
-                                    std::cout << "6. Збільшити кількість човнів" << std::endl;
-                                    std::cout << "7. Зменшити кількість човнів" << std::endl;
+                                    std::cout << "РЇРє Р№РѕРіРѕ РїРѕС‚СЂС–Р±РЅРѕ РјРѕРґРёС„С–РєСѓРІР°С‚Рё?" << std::endl;
+                                    std::cout << "1. Р—РјС–РЅРёС‚Рё РїРѕСЂС‚ РїСЂРёРїРёСЃРєРё" << std::endl;
+                                    std::cout << "2. Р—РјС–РЅРёС‚Рё РїРѕС‚СѓР¶РЅС–СЃС‚СЊ РґРІРёРіСѓРЅР°" << std::endl;
+                                    std::cout << "3. Р—РјС–РЅРёС‚Рё РІРѕРґРѕС‚РѕРЅР°Р¶РЅС–СЃС‚СЊ" << std::endl;
+                                    std::cout << "4. Р—РјС–РЅРёС‚Рё РєС–Р»СЊРєС–СЃС‚СЊ РµРєС–РїР°Р¶Сѓ" << std::endl;
+                                    std::cout << "5. Р—РјС–РЅРёС‚Рё РєС–Р»СЊРєС–СЃС‚СЊ РїР°СЃР°Р¶РёСЂС–РІ" << std::endl;
+                                    std::cout << "6. Р—Р±С–Р»СЊС€РёС‚Рё РєС–Р»СЊРєС–СЃС‚СЊ С‡РѕРІРЅС–РІ" << std::endl;
+                                    std::cout << "7. Р—РјРµРЅС€РёС‚Рё РєС–Р»СЊРєС–СЃС‚СЊ С‡РѕРІРЅС–РІ" << std::endl;
                                     int choiceModPS;
                                     std::cin >> choiceModPS;
                                     std::cout << std::endl;
@@ -119,22 +119,22 @@ int main() {
                                 }
                             case 2:
                                 if (cargoShips.empty()) {
-                                    std::cout << "У вас немає вантажних кораблів!" << std::endl;
+                                    std::cout << "РЈ РІР°СЃ РЅРµРјР°С” РІР°РЅС‚Р°Р¶РЅРёС… РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                                     std::cout << std::endl;
                                     break;
                                 }
                                 else {
                                     showCargoShips(cargoShips);
-                                    std::cout << "Введіть ID корабля, який треба модифікувати: ";
+                                    std::cout << "Р’РІРµРґС–С‚СЊ ID РєРѕСЂР°Р±Р»СЏ, СЏРєРёР№ С‚СЂРµР±Р° РјРѕРґРёС„С–РєСѓРІР°С‚Рё: ";
                                     int cSID;
                                     std::cin >> cSID;
                                     std::cout << std::endl;
-                                    std::cout << "Як його потрібно модифікувати?" << std::endl;
-                                    std::cout << "1. Змінити порт приписки" << std::endl;
-                                    std::cout << "2. Змінити потужність двигуна" << std::endl;
-                                    std::cout << "3. Змінити водотонажність" << std::endl;
-                                    std::cout << "4. Змінити кількість екіпажу" << std::endl;
-                                    std::cout << "5. Змінити вантажопідйомність" << std::endl;
+                                    std::cout << "РЇРє Р№РѕРіРѕ РїРѕС‚СЂС–Р±РЅРѕ РјРѕРґРёС„С–РєСѓРІР°С‚Рё?" << std::endl;
+                                    std::cout << "1. Р—РјС–РЅРёС‚Рё РїРѕСЂС‚ РїСЂРёРїРёСЃРєРё" << std::endl;
+                                    std::cout << "2. Р—РјС–РЅРёС‚Рё РїРѕС‚СѓР¶РЅС–СЃС‚СЊ РґРІРёРіСѓРЅР°" << std::endl;
+                                    std::cout << "3. Р—РјС–РЅРёС‚Рё РІРѕРґРѕС‚РѕРЅР°Р¶РЅС–СЃС‚СЊ" << std::endl;
+                                    std::cout << "4. Р—РјС–РЅРёС‚Рё РєС–Р»СЊРєС–СЃС‚СЊ РµРєС–РїР°Р¶Сѓ" << std::endl;
+                                    std::cout << "5. Р—РјС–РЅРёС‚Рё РІР°РЅС‚Р°Р¶РѕРїС–РґР№РѕРјРЅС–СЃС‚СЊ" << std::endl;
                                     int choiceModCS;
                                     std::cin >> choiceModCS;
                                     std::cout << std::endl;
@@ -143,21 +143,21 @@ int main() {
                                 }
                             case 3:
                                 if (warShips.empty()) {
-                                    std::cout << "У вас немає військових кораблів!" << std::endl;
+                                    std::cout << "РЈ РІР°СЃ РЅРµРјР°С” РІС–Р№СЃСЊРєРѕРІРёС… РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                                     std::cout << std::endl;
                                     break;
                                 }
                                 else {
                                     showWarShips(warShips);
-                                    std::cout << "Введіть ID корабля, який треба модифікувати: ";
+                                    std::cout << "Р’РІРµРґС–С‚СЊ ID РєРѕСЂР°Р±Р»СЏ, СЏРєРёР№ С‚СЂРµР±Р° РјРѕРґРёС„С–РєСѓРІР°С‚Рё: ";
                                     int wSID;
                                     std::cin >> wSID;
                                     std::cout << std::endl;
-                                    std::cout << "1. Змінити порт приписки" << std::endl;
-                                    std::cout << "2. Змінити потужність двигуна" << std::endl;
-                                    std::cout << "3. Змінити водотонажність" << std::endl;
-                                    std::cout << "4. Змінити кількість екіпажу" << std::endl;
-                                    std::cout << "5. Змінити тип зброї" << std::endl;
+                                    std::cout << "1. Р—РјС–РЅРёС‚Рё РїРѕСЂС‚ РїСЂРёРїРёСЃРєРё" << std::endl;
+                                    std::cout << "2. Р—РјС–РЅРёС‚Рё РїРѕС‚СѓР¶РЅС–СЃС‚СЊ РґРІРёРіСѓРЅР°" << std::endl;
+                                    std::cout << "3. Р—РјС–РЅРёС‚Рё РІРѕРґРѕС‚РѕРЅР°Р¶РЅС–СЃС‚СЊ" << std::endl;
+                                    std::cout << "4. Р—РјС–РЅРёС‚Рё РєС–Р»СЊРєС–СЃС‚СЊ РµРєС–РїР°Р¶Сѓ" << std::endl;
+                                    std::cout << "5. Р—РјС–РЅРёС‚Рё С‚РёРї Р·Р±СЂРѕС—" << std::endl;
                                     int choiceModWS;
                                     std::cin >> choiceModWS;
                                     std::cout << std::endl;
@@ -169,28 +169,28 @@ int main() {
                     }
                 case 3:
                     if (passengerShips.empty() && cargoShips.empty() && warShips.empty()) {
-                        std::cout << "У вас немає кораблів!" << std::endl;
+                        std::cout << "РЈ РІР°СЃ РЅРµРјР°С” РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                         std::cout << std::endl;
                         break;
                     }
                     else {
                         int choiceToDelete;
-                        std::cout << "Корабель якого типу ви бажаєте видалити?" << std::endl;
-                        std::cout << "1. Пасажирський корабель" << std::endl;
-                        std::cout << "2. Вантажне судно" << std::endl;
-                        std::cout << "3. Військовий корабель" << std::endl;
+                        std::cout << "РљРѕСЂР°Р±РµР»СЊ СЏРєРѕРіРѕ С‚РёРїСѓ РІРё Р±Р°Р¶Р°С”С‚Рµ РІРёРґР°Р»РёС‚Рё?" << std::endl;
+                        std::cout << "1. РџР°СЃР°Р¶РёСЂСЃСЊРєРёР№ РєРѕСЂР°Р±РµР»СЊ" << std::endl;
+                        std::cout << "2. Р’Р°РЅС‚Р°Р¶РЅРµ СЃСѓРґРЅРѕ" << std::endl;
+                        std::cout << "3. Р’С–Р№СЃСЊРєРѕРІРёР№ РєРѕСЂР°Р±РµР»СЊ" << std::endl;
                         std::cin >> choiceToDelete;
                         std::cout << std::endl;
                         switch (choiceToDelete) {
                             case 1:
                                 if (passengerShips.empty()) {
-                                    std::cout << "У вас нема пасажирських кораблів!" << std::endl;
+                                    std::cout << "РЈ РІР°СЃ РЅРµРјР° РїР°СЃР°Р¶РёСЂСЃСЊРєРёС… РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                                     std::cout << std::endl;
                                     break;
                                 }
                                 else {
                                     showPassengerShips(passengerShips);
-                                    std::cout << "Введіть ID корабля, який треба видалити: ";
+                                    std::cout << "Р’РІРµРґС–С‚СЊ ID РєРѕСЂР°Р±Р»СЏ, СЏРєРёР№ С‚СЂРµР±Р° РІРёРґР°Р»РёС‚Рё: ";
                                     int pSID;
                                     std::cin >> pSID;
                                     std::cout << std::endl;
@@ -198,10 +198,10 @@ int main() {
                                     for (int i = 0; i < ports.size(); i++) {
                                         if (ports[i].ifShipAlreadyInThePort(passengerShips[pSID - 1])) {
                                             checkIfShipInPort = true;
-                                            std::cout << "Корабель знаходиться в порту " << "\"" << ports[i].GetPortName() << "\". " << std::endl;
-                                            std::cout << "Залишити порт і видалити корабель?" << std::endl;
-                                            std::cout << "1. Так" << std::endl;
-                                            std::cout << "2. Ні" << std::endl;
+                                            std::cout << "РљРѕСЂР°Р±РµР»СЊ Р·РЅР°С…РѕРґРёС‚СЊСЃСЏ РІ РїРѕСЂС‚Сѓ " << "\"" << ports[i].GetPortName() << "\". " << std::endl;
+                                            std::cout << "Р—Р°Р»РёС€РёС‚Рё РїРѕСЂС‚ С– РІРёРґР°Р»РёС‚Рё РєРѕСЂР°Р±РµР»СЊ?" << std::endl;
+                                            std::cout << "1. РўР°Рє" << std::endl;
+                                            std::cout << "2. РќС–" << std::endl;
                                             int choiceMove;
                                             std::cin >> choiceMove;
                                             if (choiceMove == 1) {
@@ -227,13 +227,13 @@ int main() {
                                 }
                             case 2:
                                 if (cargoShips.empty()) {
-                                    std::cout << "У вас нема вантажних кораблів!" << std::endl;
+                                    std::cout << "РЈ РІР°СЃ РЅРµРјР° РІР°РЅС‚Р°Р¶РЅРёС… РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                                     std::cout << std::endl;
                                     break;
                                 }
                                 else {
                                     showCargoShips(cargoShips);
-                                    std::cout << "Введіть ID корабля, який треба видалити: ";
+                                    std::cout << "Р’РІРµРґС–С‚СЊ ID РєРѕСЂР°Р±Р»СЏ, СЏРєРёР№ С‚СЂРµР±Р° РІРёРґР°Р»РёС‚Рё: ";
                                     int cSID;
                                     std::cin >> cSID;
                                     std::cout << std::endl;
@@ -241,10 +241,10 @@ int main() {
                                     for (int i = 0; i < ports.size(); i++) {
                                         if (ports[i].ifShipAlreadyInThePort(cargoShips[cSID - 1])) {
                                             checkIfShipInPort = true;
-                                            std::cout << "Корабель знаходиться в порту " << "\"" << ports[i].GetPortName() << "\". " << std::endl;
-                                            std::cout << "Залишити порт і видалити корабель?" << std::endl;
-                                            std::cout << "1. Так" << std::endl;
-                                            std::cout << "2. Ні" << std::endl;
+                                            std::cout << "РљРѕСЂР°Р±РµР»СЊ Р·РЅР°С…РѕРґРёС‚СЊСЃСЏ РІ РїРѕСЂС‚Сѓ " << "\"" << ports[i].GetPortName() << "\". " << std::endl;
+                                            std::cout << "Р—Р°Р»РёС€РёС‚Рё РїРѕСЂС‚ С– РІРёРґР°Р»РёС‚Рё РєРѕСЂР°Р±РµР»СЊ?" << std::endl;
+                                            std::cout << "1. РўР°Рє" << std::endl;
+                                            std::cout << "2. РќС–" << std::endl;
                                             int choiceMove;
                                             std::cin >> choiceMove;
                                             if (choiceMove == 1) {
@@ -270,13 +270,13 @@ int main() {
                                 }
                             case 3:
                                 if (warShips.empty()) {
-                                    std::cout << "У вас нема військових кораблів!" << std::endl;
+                                    std::cout << "РЈ РІР°СЃ РЅРµРјР° РІС–Р№СЃСЊРєРѕРІРёС… РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                                     std::cout << std::endl;
                                     break;
                                 }
                                 else {
                                     showWarShips(warShips);
-                                    std::cout << "Введіть ID корабля, який треба видалити: ";
+                                    std::cout << "Р’РІРµРґС–С‚СЊ ID РєРѕСЂР°Р±Р»СЏ, СЏРєРёР№ С‚СЂРµР±Р° РІРёРґР°Р»РёС‚Рё: ";
                                     int wSID;
                                     std::cin >> wSID;
                                     std::cout << std::endl;
@@ -284,10 +284,10 @@ int main() {
                                     for (int i = 0; i < ports.size(); i++) {
                                         if (ports[i].ifShipAlreadyInThePort(warShips[wSID - 1])) {
                                             checkIfShipInPort = true;
-                                            std::cout << "Корабель знаходиться в порту " << "\"" << ports[i].GetPortName() << "\". " << std::endl;
-                                            std::cout << "Залишити порт і видалити корабель?" << std::endl;
-                                            std::cout << "1. Так" << std::endl;
-                                            std::cout << "2. Ні" << std::endl;
+                                            std::cout << "РљРѕСЂР°Р±РµР»СЊ Р·РЅР°С…РѕРґРёС‚СЊСЃСЏ РІ РїРѕСЂС‚Сѓ " << "\"" << ports[i].GetPortName() << "\". " << std::endl;
+                                            std::cout << "Р—Р°Р»РёС€РёС‚Рё РїРѕСЂС‚ С– РІРёРґР°Р»РёС‚Рё РєРѕСЂР°Р±РµР»СЊ?" << std::endl;
+                                            std::cout << "1. РўР°Рє" << std::endl;
+                                            std::cout << "2. РќС–" << std::endl;
                                             int choiceMove;
                                             std::cin >> choiceMove;
                                             if (choiceMove == 1) {
@@ -316,13 +316,13 @@ int main() {
                     }
                 case 4:
                     if (passengerShips.empty() && cargoShips.empty() && warShips.empty()) {
-                        std::cout << "У вас нема кораблів!" << std::endl;
+                        std::cout << "РЈ РІР°СЃ РЅРµРјР° РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                         std::cout << std::endl;
                     }
                     else {
 
                         if (passengerShips.empty()) {
-                            std::cout << "У вас нема пасажирських кораблів!" << std::endl;
+                            std::cout << "РЈ РІР°СЃ РЅРµРјР° РїР°СЃР°Р¶РёСЂСЃСЊРєРёС… РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                             std::cout << std::endl;
                         }
                         else {
@@ -330,7 +330,7 @@ int main() {
                         }
 
                         if (cargoShips.empty()) {
-                            std::cout << "У вас нема вантажних кораблів!" << std::endl;
+                            std::cout << "РЈ РІР°СЃ РЅРµРјР° РІР°РЅС‚Р°Р¶РЅРёС… РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                             std::cout << std::endl;
                         }
                         else {
@@ -338,7 +338,7 @@ int main() {
                         }
 
                         if (warShips.empty()) {
-                            std::cout << "У вас нема військових кораблів!" << std::endl;
+                            std::cout << "РЈ РІР°СЃ РЅРµРјР° РІС–Р№СЃСЊРєРѕРІРёС… РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                             std::cout << std::endl;
                         }
                         else {
@@ -348,14 +348,14 @@ int main() {
                     break;
                 case 5:
                     if (passengerShips.empty() && cargoShips.empty() && warShips.empty()) {
-                        std::cout << "У вас нема кораблів!" << std::endl;
+                        std::cout << "РЈ РІР°СЃ РЅРµРјР° РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                         std::cout << std::endl;
                     }
                     else {
-                        std::cout << "Кораблем якого типу ви будете керувати?" << std::endl;
-                        std::cout << "1. Пасажирським" << std::endl;
-                        std::cout << "2. Вантажним" << std::endl;
-                        std::cout << "3. Військовиим" << std::endl;
+                        std::cout << "РљРѕСЂР°Р±Р»РµРј СЏРєРѕРіРѕ С‚РёРїСѓ РІРё Р±СѓРґРµС‚Рµ РєРµСЂСѓРІР°С‚Рё?" << std::endl;
+                        std::cout << "1. РџР°СЃР°Р¶РёСЂСЃСЊРєРёРј" << std::endl;
+                        std::cout << "2. Р’Р°РЅС‚Р°Р¶РЅРёРј" << std::endl;
+                        std::cout << "3. Р’С–Р№СЃСЊРєРѕРІРёРёРј" << std::endl;
                         int choiceDrive;
                         std::cin >> choiceDrive;
                         std::cout << std::endl;
@@ -363,12 +363,12 @@ int main() {
                         switch (choiceDrive) {
                             case 1:
                                 if (passengerShips.empty()) {
-                                    std::cout << "У вас нема пасажирських кораблів!" << std::endl;
+                                    std::cout << "РЈ РІР°СЃ РЅРµРјР° РїР°СЃР°Р¶РёСЂСЃСЊРєРёС… РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                                     std::cout << std::endl;
                                 }
                                 else {
                                     showPassengerShips(passengerShips);
-                                    std::cout << "Введіть ID корабля, яким ви будете керувати: ";
+                                    std::cout << "Р’РІРµРґС–С‚СЊ ID РєРѕСЂР°Р±Р»СЏ, СЏРєРёРј РІРё Р±СѓРґРµС‚Рµ РєРµСЂСѓРІР°С‚Рё: ";
                                     int pSID;
                                     std::cin >> pSID;
                                     std::cout << std::endl;
@@ -376,29 +376,29 @@ int main() {
                                     for (int i = 0; i < ports.size(); i++) {
                                         if (ports[i].ifShipAlreadyInThePort(passengerShips[pSID - 1])) {
                                             checkIfShipInPort = true;
-                                            std::cout << "Корабель вже знаходиться в порту " << "\"" << ports[i].GetPortName() << "\" " << std::endl;
-                                            std::cout << "Вирушить до іншого порту?" << std::endl;
-                                            std::cout << "1. Так" << std::endl;
-                                            std::cout << "2. Ні" << std::endl;
-                                            std::cout << "3. Вийти з порту" << std::endl;
+                                            std::cout << "РљРѕСЂР°Р±РµР»СЊ РІР¶Рµ Р·РЅР°С…РѕРґРёС‚СЊСЃСЏ РІ РїРѕСЂС‚Сѓ " << "\"" << ports[i].GetPortName() << "\" " << std::endl;
+                                            std::cout << "Р’РёСЂСѓС€РёС‚СЊ РґРѕ С–РЅС€РѕРіРѕ РїРѕСЂС‚Сѓ?" << std::endl;
+                                            std::cout << "1. РўР°Рє" << std::endl;
+                                            std::cout << "2. РќС–" << std::endl;
+                                            std::cout << "3. Р’РёР№С‚Рё Р· РїРѕСЂС‚Сѓ" << std::endl;
                                             int choiceMove;
                                             std::cin >> choiceMove;
                                             std::cout << std::endl;
                                             if (choiceMove == 1) {
                                                 showPorts(ports);
                                                 ports[i].ShipLeftPort(passengerShips[pSID - 1]);
-                                                std::cout << "Оберіть порт, в який ви бажаєте відправити корабель: ";
+                                                std::cout << "РћР±РµСЂС–С‚СЊ РїРѕСЂС‚, РІ СЏРєРёР№ РІРё Р±Р°Р¶Р°С”С‚Рµ РІС–РґРїСЂР°РІРёС‚Рё РєРѕСЂР°Р±РµР»СЊ: ";
                                                 std::cin >> portsID;
                                                 std::cout << std::endl;
                                                 ports[portsID - 1].ShipEnteredPort(passengerShips[pSID - 1]);
-                                                std::cout << "Вітаю! Корабель зайшов в порт!" << std::endl;
+                                                std::cout << "Р’С–С‚Р°СЋ! РљРѕСЂР°Р±РµР»СЊ Р·Р°Р№С€РѕРІ РІ РїРѕСЂС‚!" << std::endl;
                                                 std::cout << std::endl;
                                                 break;
                                             }
                                             else if (choiceMove == 3)
                                             {
                                                 ports[i].ShipLeftPort(passengerShips[pSID - 1]);
-                                                std::cout << "Корабель вийшов з порту " << "\"" << ports[i].GetPortName() << "\"" << std::endl;
+                                                std::cout << "РљРѕСЂР°Р±РµР»СЊ РІРёР№С€РѕРІ Р· РїРѕСЂС‚Сѓ " << "\"" << ports[i].GetPortName() << "\"" << std::endl;
                                                 std::cout << std::endl;
                                                 break;
                                             }
@@ -409,11 +409,11 @@ int main() {
                                     }
                                     if (!checkIfShipInPort) {
                                         showPorts(ports);
-                                        std::cout << "Оберіть порт, в який ви бажаєте відправити корабель: ";
+                                        std::cout << "РћР±РµСЂС–С‚СЊ РїРѕСЂС‚, РІ СЏРєРёР№ РІРё Р±Р°Р¶Р°С”С‚Рµ РІС–РґРїСЂР°РІРёС‚Рё РєРѕСЂР°Р±РµР»СЊ: ";
                                         std::cin >> portsID;
                                         std::cout << std::endl;
                                         ports[portsID - 1].ShipEnteredPort(passengerShips[pSID - 1]);
-                                        std::cout << "Вітаю! Корабель зайшов в порт!" << std::endl;
+                                        std::cout << "Р’С–С‚Р°СЋ! РљРѕСЂР°Р±РµР»СЊ Р·Р°Р№С€РѕРІ РІ РїРѕСЂС‚!" << std::endl;
                                         std::cout << std::endl;
                                     }
                                 }
@@ -421,12 +421,12 @@ int main() {
 
                             case 2:
                                 if (cargoShips.empty()) {
-                                    std::cout << "У вас нема вантажних кораблів!" << std::endl;
+                                    std::cout << "РЈ РІР°СЃ РЅРµРјР° РІР°РЅС‚Р°Р¶РЅРёС… РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                                     std::cout << std::endl;
                                 }
                                 else {
                                     showCargoShips(cargoShips);
-                                    std::cout << "Введіть ID корабля, яким ви будете керувати: ";
+                                    std::cout << "Р’РІРµРґС–С‚СЊ ID РєРѕСЂР°Р±Р»СЏ, СЏРєРёРј РІРё Р±СѓРґРµС‚Рµ РєРµСЂСѓРІР°С‚Рё: ";
                                     int cSID;
                                     std::cin >> cSID;
                                     std::cout << std::endl;
@@ -434,29 +434,29 @@ int main() {
                                     for (int i = 0; i < ports.size(); i++) {
                                         if (ports[i].ifShipAlreadyInThePort(cargoShips[cSID - 1])) {
                                             checkIfShipInPort = true;
-                                            std::cout << "Корабель вже знаходиться в порту " << "\"" << ports[i].GetPortName() << "\" " << std::endl;
-                                            std::cout << "Вирушить до іншого порту?" << std::endl;
-                                            std::cout << "1. Так" << std::endl;
-                                            std::cout << "2. Ні" << std::endl;
-                                            std::cout << "3. Вийти з порту" << std::endl;
+                                            std::cout << "РљРѕСЂР°Р±РµР»СЊ РІР¶Рµ Р·РЅР°С…РѕРґРёС‚СЊСЃСЏ РІ РїРѕСЂС‚Сѓ " << "\"" << ports[i].GetPortName() << "\" " << std::endl;
+                                            std::cout << "Р’РёСЂСѓС€РёС‚СЊ РґРѕ С–РЅС€РѕРіРѕ РїРѕСЂС‚Сѓ?" << std::endl;
+                                            std::cout << "1. РўР°Рє" << std::endl;
+                                            std::cout << "2. РќС–" << std::endl;
+                                            std::cout << "3. Р’РёР№С‚Рё Р· РїРѕСЂС‚Сѓ" << std::endl;
                                             int choiceMove;
                                             std::cin >> choiceMove;
                                             std::cout << std::endl;
                                             if (choiceMove == 1) {
                                                 showPorts(ports);
                                                 ports[i].ShipLeftPort(cargoShips[cSID - 1]);
-                                                std::cout << "Оберіть порт, в який ви бажаєте відправити корабель: ";
+                                                std::cout << "РћР±РµСЂС–С‚СЊ РїРѕСЂС‚, РІ СЏРєРёР№ РІРё Р±Р°Р¶Р°С”С‚Рµ РІС–РґРїСЂР°РІРёС‚Рё РєРѕСЂР°Р±РµР»СЊ: ";
                                                 std::cin >> portsID;
                                                 std::cout << std::endl;
                                                 ports[portsID - 1].ShipEnteredPort(cargoShips[cSID - 1]);
-                                                std::cout << "Вітаю! Корабель зайшов в порт!" << std::endl;
+                                                std::cout << "Р’С–С‚Р°СЋ! РљРѕСЂР°Р±РµР»СЊ Р·Р°Р№С€РѕРІ РІ РїРѕСЂС‚!" << std::endl;
                                                 std::cout << std::endl;
                                                 break;
                                             }
                                             else if (choiceMove == 3)
                                             {
                                                 ports[i].ShipLeftPort(cargoShips[cSID - 1]);
-                                                std::cout << "Корабель вийшов з порту " << "\"" << ports[i].GetPortName() << "\"" << std::endl;
+                                                std::cout << "РљРѕСЂР°Р±РµР»СЊ РІРёР№С€РѕРІ Р· РїРѕСЂС‚Сѓ " << "\"" << ports[i].GetPortName() << "\"" << std::endl;
                                                 std::cout << std::endl;
                                                 break;
                                             }
@@ -467,23 +467,23 @@ int main() {
                                     }
                                     if (!checkIfShipInPort) {
                                         showPorts(ports);
-                                        std::cout << "Оберіть порт, в який ви бажаєте відправити корабель: ";
+                                        std::cout << "РћР±РµСЂС–С‚СЊ РїРѕСЂС‚, РІ СЏРєРёР№ РІРё Р±Р°Р¶Р°С”С‚Рµ РІС–РґРїСЂР°РІРёС‚Рё РєРѕСЂР°Р±РµР»СЊ: ";
                                         std::cin >> portsID;
                                         std::cout << std::endl;
                                         ports[portsID - 1].ShipEnteredPort(cargoShips[cSID - 1]);
-                                        std::cout << "Вітаю! Корабель зайшов в порт!" << std::endl;
+                                        std::cout << "Р’С–С‚Р°СЋ! РљРѕСЂР°Р±РµР»СЊ Р·Р°Р№С€РѕРІ РІ РїРѕСЂС‚!" << std::endl;
                                         std::cout << std::endl;
                                     }
                                 }
                                 break;
                             case 3:
                                 if (warShips.empty()) {
-                                    std::cout << "У вас нема військових кораблів!" << std::endl;
+                                    std::cout << "РЈ РІР°СЃ РЅРµРјР° РІС–Р№СЃСЊРєРѕРІРёС… РєРѕСЂР°Р±Р»С–РІ!" << std::endl;
                                     std::cout << std::endl;
                                 }
                                 else {
                                     showWarShips(warShips);
-                                    std::cout << "Введіть ID корабля, яким ви будете керувати: ";
+                                    std::cout << "Р’РІРµРґС–С‚СЊ ID РєРѕСЂР°Р±Р»СЏ, СЏРєРёРј РІРё Р±СѓРґРµС‚Рµ РєРµСЂСѓРІР°С‚Рё: ";
                                     int wSID;
                                     std::cin >> wSID;
                                     std::cout << std::endl;
@@ -491,29 +491,29 @@ int main() {
                                     for (int i = 0; i < ports.size(); i++) {
                                         if (ports[i].ifShipAlreadyInThePort(warShips.at(wSID - 1))) {
                                             checkIfShipInPort = true;
-                                            std::cout << "Корабель вже знаходиться в порту " << "\"" << ports[i].GetPortName() << "\" " << std::endl;
-                                            std::cout << "Вирушить до іншого порту?" << std::endl;
-                                            std::cout << "1. Так" << std::endl;
-                                            std::cout << "2. Ні" << std::endl;
-                                            std::cout << "3. Вийти з порту" << std::endl;
+                                            std::cout << "РљРѕСЂР°Р±РµР»СЊ РІР¶Рµ Р·РЅР°С…РѕРґРёС‚СЊСЃСЏ РІ РїРѕСЂС‚Сѓ " << "\"" << ports[i].GetPortName() << "\" " << std::endl;
+                                            std::cout << "Р’РёСЂСѓС€РёС‚СЊ РґРѕ С–РЅС€РѕРіРѕ РїРѕСЂС‚Сѓ?" << std::endl;
+                                            std::cout << "1. РўР°Рє" << std::endl;
+                                            std::cout << "2. РќС–" << std::endl;
+                                            std::cout << "3. Р’РёР№С‚Рё Р· РїРѕСЂС‚Сѓ" << std::endl;
                                             int choiceMove;
                                             std::cin >> choiceMove;
                                             std::cout << std::endl;
                                             if (choiceMove == 1) {
                                                 showPorts(ports);
                                                 ports[i].ShipLeftPort(warShips.at(wSID - 1));
-                                                std::cout << "Оберіть порт, в який ви бажаєте відправити корабель: ";
+                                                std::cout << "РћР±РµСЂС–С‚СЊ РїРѕСЂС‚, РІ СЏРєРёР№ РІРё Р±Р°Р¶Р°С”С‚Рµ РІС–РґРїСЂР°РІРёС‚Рё РєРѕСЂР°Р±РµР»СЊ: ";
                                                 std::cin >> portsID;
                                                 std::cout << std::endl;
                                                 ports.at(portsID - 1).ShipEnteredPort(warShips.at(wSID - 1));
-                                                std::cout << "Вітаю! Корабель зайшов в порт!" << std::endl;
+                                                std::cout << "Р’С–С‚Р°СЋ! РљРѕСЂР°Р±РµР»СЊ Р·Р°Р№С€РѕРІ РІ РїРѕСЂС‚!" << std::endl;
                                                 std::cout << std::endl;
                                                 break;
                                             }
                                             else if (choiceMove == 3)
                                             {
                                                 ports[i].ShipLeftPort(warShips.at(wSID - 1));
-                                                std::cout << "Корабель вийшов з порту " << "\"" << ports[i].GetPortName() << "\"" << std::endl;
+                                                std::cout << "РљРѕСЂР°Р±РµР»СЊ РІРёР№С€РѕРІ Р· РїРѕСЂС‚Сѓ " << "\"" << ports[i].GetPortName() << "\"" << std::endl;
                                                 std::cout << std::endl;
                                                 break;
                                             }
@@ -524,11 +524,11 @@ int main() {
                                     }
                                     if (!checkIfShipInPort) {
                                         showPorts(ports);
-                                        std::cout << "Оберіть порт, в який ви бажаєте відправити корабель: ";
+                                        std::cout << "РћР±РµСЂС–С‚СЊ РїРѕСЂС‚, РІ СЏРєРёР№ РІРё Р±Р°Р¶Р°С”С‚Рµ РІС–РґРїСЂР°РІРёС‚Рё РєРѕСЂР°Р±РµР»СЊ: ";
                                         std::cin >> portsID;
                                         std::cout << std::endl;
                                         ports.at(portsID - 1).ShipEnteredPort(warShips.at(wSID - 1));
-                                        std::cout << "Вітаю! Корабель зайшов в порт!" << std::endl;
+                                        std::cout << "Р’С–С‚Р°СЋ! РљРѕСЂР°Р±РµР»СЊ Р·Р°Р№С€РѕРІ РІ РїРѕСЂС‚!" << std::endl;
                                         std::cout << std::endl;
                                     }
                                 }
@@ -552,32 +552,32 @@ int main() {
 }
 
 void showPorts(std::vector<Port>& ports) {
-    std::cout << "--Доступні порти--" << std::endl;
+    std::cout << "--Р”РѕСЃС‚СѓРїРЅС– РїРѕСЂС‚Рё--" << std::endl;
     for (int i = 0; i < ports.size(); i++) {
-        std::cout << "ID порту: " << i + 1 << std::endl;
+        std::cout << "ID РїРѕСЂС‚Сѓ: " << i + 1 << std::endl;
         std::cout << ports[i].PortInfo();
         ports[i].Print();
     }
 }
 
 void showPassengerShips(std::vector<PassengerShip*>& ships) {
-    std::cout << "---Пасажирські кораблі---" << std::endl;
+    std::cout << "---РџР°СЃР°Р¶РёСЂСЃСЊРєС– РєРѕСЂР°Р±Р»С–---" << std::endl;
     for (unsigned i = 0; i < ships.size(); i++) {
-        std::cout << "ID корабля: " << i + 1 << std::endl;
+        std::cout << "ID РєРѕСЂР°Р±Р»СЏ: " << i + 1 << std::endl;
         std::cout << ships[i]->Info() << std::endl;
     }
 }
 void showCargoShips(std::vector<CargoShip*>& ships) {
-    std::cout << "---Вантажні кораблі---" << std::endl;
+    std::cout << "---Р’Р°РЅС‚Р°Р¶РЅС– РєРѕСЂР°Р±Р»С–---" << std::endl;
     for (unsigned i = 0; i < ships.size(); i++) {
-        std::cout << "ID корабля: " << i + 1 << std::endl;
+        std::cout << "ID РєРѕСЂР°Р±Р»СЏ: " << i + 1 << std::endl;
         std::cout << ships[i]->Info() << std::endl;
     }
 }
 void showWarShips(std::vector<WarShip*>& ships) {
-    std::cout << "---Військові кораблі---" << std::endl;
+    std::cout << "---Р’С–Р№СЃСЊРєРѕРІС– РєРѕСЂР°Р±Р»С–---" << std::endl;
     for (unsigned i = 0; i < ships.size(); i++) {
-        std::cout << "ID корабля: " << i + 1 << std::endl;
+        std::cout << "ID РєРѕСЂР°Р±Р»СЏ: " << i + 1 << std::endl;
         std::cout << ships[i]->Info() << std::endl;
     }
 }
@@ -593,51 +593,51 @@ void createPassengerShip(std::vector<PassengerShip*>& ships) {
 
     int numberOfBoats;
 
-    std::cout << "--Введіть дані вашого корабля--" << std::endl;
-    std::cout << "Назва корабля: ";
+    std::cout << "--Р’РІРµРґС–С‚СЊ РґР°РЅС– РІР°С€РѕРіРѕ РєРѕСЂР°Р±Р»СЏ--" << std::endl;
+    std::cout << "РќР°Р·РІР° РєРѕСЂР°Р±Р»СЏ: ";
     std::cin >> name;
     for (auto ship : ships)
     {
         if (name == ship->GetName()) {
-            std::cout << "Пасажирський корабель з такою назвою вже існує!" << std::endl;
+            std::cout << "РџР°СЃР°Р¶РёСЂСЃСЊРєРёР№ РєРѕСЂР°Р±РµР»СЊ Р· С‚Р°РєРѕСЋ РЅР°Р·РІРѕСЋ РІР¶Рµ С–СЃРЅСѓС”!" << std::endl;
             return;
         }
     }
-    std::cout << "Порт приписки: ";
+    std::cout << "РџРѕСЂС‚ РїСЂРёРїРёСЃРєРё: ";
     std::cin >> homePort;
-    std::cout << "Потужність двигуна в кВт: ";
+    std::cout << "РџРѕС‚СѓР¶РЅС–СЃС‚СЊ РґРІРёРіСѓРЅР° РІ РєР’С‚: ";
     std::cin >> enginePower;
-    std::cout << "Водотоннажність в тоннах: ";
+    std::cout << "Р’РѕРґРѕС‚РѕРЅРЅР°Р¶РЅС–СЃС‚СЊ РІ С‚РѕРЅРЅР°С…: ";
     std::cin >> displacement;
-    std::cout << "Чисельність екіпажу: ";
+    std::cout << "Р§РёСЃРµР»СЊРЅС–СЃС‚СЊ РµРєС–РїР°Р¶Сѓ: ";
     std::cin >> numberOfCrew;
-    std::cout << "Кількість пассажирів: ";
+    std::cout << "РљС–Р»СЊРєС–СЃС‚СЊ РїР°СЃСЃР°Р¶РёСЂС–РІ: ";
     std::cin >> numberOfPassengers;
     std::cout << std::endl;
-    std::cout << "Попередження!!! Далі треба ввести кількість човнів. Якщо човнів буде недостатньо для всіх людей на борту, програма автоматично додасть недостатню кількість" << std::endl;
-    std::cout << "Також пам'ятайте, що за міжнародним кодексом розмір човна не може бути меньшим за 25 та більше 150!" << std::endl;
+    std::cout << "РџРѕРїРµСЂРµРґР¶РµРЅРЅСЏ!!! Р”Р°Р»С– С‚СЂРµР±Р° РІРІРµСЃС‚Рё РєС–Р»СЊРєС–СЃС‚СЊ С‡РѕРІРЅС–РІ. РЇРєС‰Рѕ С‡РѕРІРЅС–РІ Р±СѓРґРµ РЅРµРґРѕСЃС‚Р°С‚РЅСЊРѕ РґР»СЏ РІСЃС–С… Р»СЋРґРµР№ РЅР° Р±РѕСЂС‚Сѓ, РїСЂРѕРіСЂР°РјР° Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ РґРѕРґР°СЃС‚СЊ РЅРµРґРѕСЃС‚Р°С‚РЅСЋ РєС–Р»СЊРєС–СЃС‚СЊ" << std::endl;
+    std::cout << "РўР°РєРѕР¶ РїР°Рј'СЏС‚Р°Р№С‚Рµ, С‰Рѕ Р·Р° РјС–Р¶РЅР°СЂРѕРґРЅРёРј РєРѕРґРµРєСЃРѕРј СЂРѕР·РјС–СЂ С‡РѕРІРЅР° РЅРµ РјРѕР¶Рµ Р±СѓС‚Рё РјРµРЅСЊС€РёРј Р·Р° 25 С‚Р° Р±С–Р»СЊС€Рµ 150!" << std::endl;
     std::cout << std::endl;
-    std::cout << "Кількість човнів: ";
+    std::cout << "РљС–Р»СЊРєС–СЃС‚СЊ С‡РѕРІРЅС–РІ: ";
     std::cin >> numberOfBoats;
     std::cout << std::endl;
 
     if (numberOfBoats == 1) {
         int capacity;
-        std::cout << "Місткість човна: ";
+        std::cout << "РњС–СЃС‚РєС–СЃС‚СЊ С‡РѕРІРЅР°: ";
         std::cin >> capacity;
         boats.push_back(new Boat(capacity));
     }
 
     else {
-        std::cout << "Зробити човни однакової місткості?" << std::endl;
-        std::cout << "1. Так" << std::endl;
-        std::cout << "2. Ні, я введу місткість всіх човнів самостійно" << std::endl;
+        std::cout << "Р—СЂРѕР±РёС‚Рё С‡РѕРІРЅРё РѕРґРЅР°РєРѕРІРѕС— РјС–СЃС‚РєРѕСЃС‚С–?" << std::endl;
+        std::cout << "1. РўР°Рє" << std::endl;
+        std::cout << "2. РќС–, СЏ РІРІРµРґСѓ РјС–СЃС‚РєС–СЃС‚СЊ РІСЃС–С… С‡РѕРІРЅС–РІ СЃР°РјРѕСЃС‚С–Р№РЅРѕ" << std::endl;
         int choiceBoat;
         std::cin >> choiceBoat;
         std::cout << std::endl;
         int capacity;
         if (choiceBoat == 1) {
-            std::cout << "Місткість човна: ";
+            std::cout << "РњС–СЃС‚РєС–СЃС‚СЊ С‡РѕРІРЅР°: ";
             std::cin >> capacity;
             for (int i = 0; i < numberOfBoats; i++) {
                 boats.push_back(new Boat(capacity));
@@ -645,9 +645,9 @@ void createPassengerShip(std::vector<PassengerShip*>& ships) {
         }
         else if (choiceBoat == 2) {
             while (numberOfBoats > 0) {
-                std::cout << "Місткість човна: ";
+                std::cout << "РњС–СЃС‚РєС–СЃС‚СЊ С‡РѕРІРЅР°: ";
                 std::cin >> capacity;
-                std::cout << "Кількість човнів з місткістю " << capacity << ": ";
+                std::cout << "РљС–Р»СЊРєС–СЃС‚СЊ С‡РѕРІРЅС–РІ Р· РјС–СЃС‚РєС–СЃС‚СЋ " << capacity << ": ";
                 int numBoatsWithSameCapacity;
                 std::cin >> numBoatsWithSameCapacity;
                 for (int i = 0; i < numBoatsWithSameCapacity; i++) {
@@ -655,7 +655,7 @@ void createPassengerShip(std::vector<PassengerShip*>& ships) {
                 }
                 numberOfBoats -= numBoatsWithSameCapacity;
                 if (numberOfBoats > 0)
-                    std::cout << "Кільксть човнів, що залишилось створити: " << numberOfBoats << std::endl;
+                    std::cout << "РљС–Р»СЊРєСЃС‚СЊ С‡РѕРІРЅС–РІ, С‰Рѕ Р·Р°Р»РёС€РёР»РѕСЃСЊ СЃС‚РІРѕСЂРёС‚Рё: " << numberOfBoats << std::endl;
             }
         }
     }
@@ -663,7 +663,7 @@ void createPassengerShip(std::vector<PassengerShip*>& ships) {
     ships.push_back(new PassengerShip(name, homePort, enginePower, displacement, numberOfCrew, numberOfPassengers, boats));
     ships[ships.size() - 1]->AddBoatsToSafeNumber();
     std::cout << std::endl;
-    std::cout << "Вітаю!! Було створено пасажирський корабель!" << std::endl;
+    std::cout << "Р’С–С‚Р°СЋ!! Р‘СѓР»Рѕ СЃС‚РІРѕСЂРµРЅРѕ РїР°СЃР°Р¶РёСЂСЃСЊРєРёР№ РєРѕСЂР°Р±РµР»СЊ!" << std::endl;
 }
 void createCargoShip(std::vector<CargoShip*>& ships) {
     std::string name;
@@ -673,30 +673,30 @@ void createCargoShip(std::vector<CargoShip*>& ships) {
     int numberOfCrew;
     int loadCapacity;
 
-    std::cout << "--Введіть дані вашого корабля--" << std::endl;
-    std::cout << "Назва корабля: ";
+    std::cout << "--Р’РІРµРґС–С‚СЊ РґР°РЅС– РІР°С€РѕРіРѕ РєРѕСЂР°Р±Р»СЏ--" << std::endl;
+    std::cout << "РќР°Р·РІР° РєРѕСЂР°Р±Р»СЏ: ";
     std::cin >> name;
     for (auto ship : ships)
     {
         if (name == ship->GetName()) {
-            std::cout << "Вантажний корабель з такою назвою вже існує!" << std::endl;
+            std::cout << "Р’Р°РЅС‚Р°Р¶РЅРёР№ РєРѕСЂР°Р±РµР»СЊ Р· С‚Р°РєРѕСЋ РЅР°Р·РІРѕСЋ РІР¶Рµ С–СЃРЅСѓС”!" << std::endl;
             return;
         }
     }
-    std::cout << "Порт приписки: ";
+    std::cout << "РџРѕСЂС‚ РїСЂРёРїРёСЃРєРё: ";
     std::cin >> homePort;
-    std::cout << "Потужність двигуна в кВт: ";
+    std::cout << "РџРѕС‚СѓР¶РЅС–СЃС‚СЊ РґРІРёРіСѓРЅР° РІ РєР’С‚: ";
     std::cin >> enginePower;
-    std::cout << "Водотоннажність в тоннах: ";
+    std::cout << "Р’РѕРґРѕС‚РѕРЅРЅР°Р¶РЅС–СЃС‚СЊ РІ С‚РѕРЅРЅР°С…: ";
     std::cin >> displacement;
-    std::cout << "Чисельність екіпажу: ";
+    std::cout << "Р§РёСЃРµР»СЊРЅС–СЃС‚СЊ РµРєС–РїР°Р¶Сѓ: ";
     std::cin >> numberOfCrew;
-    std::cout << "Вантажопідйомність в тонах: ";
+    std::cout << "Р’Р°РЅС‚Р°Р¶РѕРїС–РґР№РѕРјРЅС–СЃС‚СЊ РІ С‚РѕРЅР°С…: ";
     std::cin >> loadCapacity;
 
     ships.push_back(new CargoShip(name, homePort, enginePower, displacement, numberOfCrew, loadCapacity));
     std::cout << std::endl;
-    std::cout << "Вітаю!! Було створено вантажний корабель!" << std::endl;
+    std::cout << "Р’С–С‚Р°СЋ!! Р‘СѓР»Рѕ СЃС‚РІРѕСЂРµРЅРѕ РІР°РЅС‚Р°Р¶РЅРёР№ РєРѕСЂР°Р±РµР»СЊ!" << std::endl;
 }
 void createWarShip(std::vector<WarShip*>& ships) {
     std::string name;
@@ -706,30 +706,30 @@ void createWarShip(std::vector<WarShip*>& ships) {
     int numberOfCrew;
     WeaponType weaponType;
 
-    std::cout << "--Введіть дані вашого корабля--" << std::endl;
-    std::cout << "Назва корабля: ";
+    std::cout << "--Р’РІРµРґС–С‚СЊ РґР°РЅС– РІР°С€РѕРіРѕ РєРѕСЂР°Р±Р»СЏ--" << std::endl;
+    std::cout << "РќР°Р·РІР° РєРѕСЂР°Р±Р»СЏ: ";
     std::cin >> name;
     for (auto ship : ships)
     {
         if (name == ship->GetName()) {
-            std::cout << "Військовий корабель з такою назвою вже існує!" << std::endl;
+            std::cout << "Р’С–Р№СЃСЊРєРѕРІРёР№ РєРѕСЂР°Р±РµР»СЊ Р· С‚Р°РєРѕСЋ РЅР°Р·РІРѕСЋ РІР¶Рµ С–СЃРЅСѓС”!" << std::endl;
             return;
         }
     }
-    std::cout << "Порт приписки: ";
+    std::cout << "РџРѕСЂС‚ РїСЂРёРїРёСЃРєРё: ";
     std::cin >> homePort;
-    std::cout << "Потужність двигуна в кВт: ";
+    std::cout << "РџРѕС‚СѓР¶РЅС–СЃС‚СЊ РґРІРёРіСѓРЅР° РІ РєР’С‚: ";
     std::cin >> enginePower;
-    std::cout << "Водотоннажність в тоннах: ";
+    std::cout << "Р’РѕРґРѕС‚РѕРЅРЅР°Р¶РЅС–СЃС‚СЊ РІ С‚РѕРЅРЅР°С…: ";
     std::cin >> displacement;
-    std::cout << "Чисельність екіпажу: ";
+    std::cout << "Р§РёСЃРµР»СЊРЅС–СЃС‚СЊ РµРєС–РїР°Р¶Сѓ: ";
     std::cin >> numberOfCrew;
-    std::cout << "---Оберіть тип зброї--- " << std::endl;
-    std::cout << "1. Ракетний" << std::endl;
-    std::cout << "2. Артилерійський" << std::endl;
-    std::cout << "3. Торпедний" << std::endl;
-    std::cout << "4. Мінний" << std::endl;
-    std::cout << "5. Протичовнової" << std::endl;
+    std::cout << "---РћР±РµСЂС–С‚СЊ С‚РёРї Р·Р±СЂРѕС—--- " << std::endl;
+    std::cout << "1. Р Р°РєРµС‚РЅРёР№" << std::endl;
+    std::cout << "2. РђСЂС‚РёР»РµСЂС–Р№СЃСЊРєРёР№" << std::endl;
+    std::cout << "3. РўРѕСЂРїРµРґРЅРёР№" << std::endl;
+    std::cout << "4. РњС–РЅРЅРёР№" << std::endl;
+    std::cout << "5. РџСЂРѕС‚РёС‡РѕРІРЅРѕРІРѕС—" << std::endl;
     int weaponChoice;
     std::cin >> weaponChoice;
     switch (weaponChoice)
@@ -752,51 +752,51 @@ void createWarShip(std::vector<WarShip*>& ships) {
     }
     ships.push_back(new WarShip(name, homePort, enginePower, displacement, numberOfCrew, weaponType));
     std::cout << std::endl;
-    std::cout << "Вітаю!! Створено військовий корабель!" << std::endl;
+    std::cout << "Р’С–С‚Р°СЋ!! РЎС‚РІРѕСЂРµРЅРѕ РІС–Р№СЃСЊРєРѕРІРёР№ РєРѕСЂР°Р±РµР»СЊ!" << std::endl;
 }
 
 void modifyPassengerShip(int choice, int ID, std::vector<PassengerShip*>& ships) {
     switch (choice) {
         case 1: {
             std::string newHomePort;
-            std::cout << "Введіть новий порт приписки: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІРёР№ РїРѕСЂС‚ РїСЂРёРїРёСЃРєРё: ";
             std::cin >> newHomePort;
             ships[ID - 1]->ChangeHomePort(newHomePort);
             break;
         }
         case 2:
-            std::cout << "Введіть нову потужність двигуна: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІСѓ РїРѕС‚СѓР¶РЅС–СЃС‚СЊ РґРІРёРіСѓРЅР°: ";
             int newEnginePower;
             std::cin >> newEnginePower;
             ships[ID - 1]->ChangeEnginePower(newEnginePower);
             break;
         case 3:
-            std::cout << "Введіть нову водотонажність: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІСѓ РІРѕРґРѕС‚РѕРЅР°Р¶РЅС–СЃС‚СЊ: ";
             int newDisplacement;
             std::cin >> newDisplacement;
             ships[ID - 1]->ChangeDisplacement(newDisplacement);
             break;
         case 4:
-            std::cout << "Введіть нову кількість екіпажу: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІСѓ РєС–Р»СЊРєС–СЃС‚СЊ РµРєС–РїР°Р¶Сѓ: ";
             int newNumberOfCrew;
             std::cin >> newNumberOfCrew;
             ships[ID - 1]->ChangeNumberOfCrew(newNumberOfCrew);
             break;
         case 5:
-            std::cout << "Введіть нову кількість пасажирів: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІСѓ РєС–Р»СЊРєС–СЃС‚СЊ РїР°СЃР°Р¶РёСЂС–РІ: ";
             int newNumberOfPassengers;
             std::cin >> newNumberOfPassengers;
             ships[ID - 1]->ChangeNumberOfPassengers(newNumberOfPassengers);
             break;
         case 6:
-            std::cout << "Попередження!!! Якщо човнів буде недостатньо для всіх людей на борту, програма автоматично додасть недостатню кількість" << std::endl;
-            std::cout << "Також пам'ятайте, що за міжнародним кодексом розмір човна не може бути меньшим за 25 та більше 150!" << std::endl;
-            std::cout << "Скільки човнів ви бажаєте додати на корабель?" << std::endl;
+            std::cout << "РџРѕРїРµСЂРµРґР¶РµРЅРЅСЏ!!! РЇРєС‰Рѕ С‡РѕРІРЅС–РІ Р±СѓРґРµ РЅРµРґРѕСЃС‚Р°С‚РЅСЊРѕ РґР»СЏ РІСЃС–С… Р»СЋРґРµР№ РЅР° Р±РѕСЂС‚Сѓ, РїСЂРѕРіСЂР°РјР° Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ РґРѕРґР°СЃС‚СЊ РЅРµРґРѕСЃС‚Р°С‚РЅСЋ РєС–Р»СЊРєС–СЃС‚СЊ" << std::endl;
+            std::cout << "РўР°РєРѕР¶ РїР°Рј'СЏС‚Р°Р№С‚Рµ, С‰Рѕ Р·Р° РјС–Р¶РЅР°СЂРѕРґРЅРёРј РєРѕРґРµРєСЃРѕРј СЂРѕР·РјС–СЂ С‡РѕРІРЅР° РЅРµ РјРѕР¶Рµ Р±СѓС‚Рё РјРµРЅСЊС€РёРј Р·Р° 25 С‚Р° Р±С–Р»СЊС€Рµ 150!" << std::endl;
+            std::cout << "РЎРєС–Р»СЊРєРё С‡РѕРІРЅС–РІ РІРё Р±Р°Р¶Р°С”С‚Рµ РґРѕРґР°С‚Рё РЅР° РєРѕСЂР°Р±РµР»СЊ?" << std::endl;
             int numBoats;
             std::cin >> numBoats;
             std::cout << std::endl;
             if (numBoats == 1) {
-                std::cout << "Введіть місткість човна: ";
+                std::cout << "Р’РІРµРґС–С‚СЊ РјС–СЃС‚РєС–СЃС‚СЊ С‡РѕРІРЅР°: ";
                 int capacity;
                 std::cin >> capacity;
                 ships[ID - 1]->AddBoats(new Boat(capacity), 1);
@@ -805,25 +805,25 @@ void modifyPassengerShip(int choice, int ID, std::vector<PassengerShip*>& ships)
             else {
                 while (numBoats)
                 {
-                    std::cout << "Місткість човна: ";
+                    std::cout << "РњС–СЃС‚РєС–СЃС‚СЊ С‡РѕРІРЅР°: ";
                     int capacity;
                     std::cin >> capacity;
-                    std::cout << "Кількість човнів з місткістю " << capacity << ": ";
+                    std::cout << "РљС–Р»СЊРєС–СЃС‚СЊ С‡РѕРІРЅС–РІ Р· РјС–СЃС‚РєС–СЃС‚СЋ " << capacity << ": ";
                     int numBoatsWithSameCapacity;
                     std::cin >> numBoatsWithSameCapacity;
                     ships[ID - 1]->AddBoats(new Boat(capacity), numBoatsWithSameCapacity);
                     numBoats -= numBoatsWithSameCapacity;
                     if (numBoats > 0)
-                        std::cout << "Кільксть човнів, що залишилось створити: " << numBoats << std::endl;
+                        std::cout << "РљС–Р»СЊРєСЃС‚СЊ С‡РѕРІРЅС–РІ, С‰Рѕ Р·Р°Р»РёС€РёР»РѕСЃСЊ СЃС‚РІРѕСЂРёС‚Рё: " << numBoats << std::endl;
                 }
             }
             break;
         case 7:
             std::cout << std::endl;
-            std::cout << "Попередження!!! Якщо човнів буде недостатньо для всіх людей на борту, програма автоматично додасть недостатню кількість" << std::endl;
+            std::cout << "РџРѕРїРµСЂРµРґР¶РµРЅРЅСЏ!!! РЇРєС‰Рѕ С‡РѕРІРЅС–РІ Р±СѓРґРµ РЅРµРґРѕСЃС‚Р°С‚РЅСЊРѕ РґР»СЏ РІСЃС–С… Р»СЋРґРµР№ РЅР° Р±РѕСЂС‚Сѓ, РїСЂРѕРіСЂР°РјР° Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ РґРѕРґР°СЃС‚СЊ РЅРµРґРѕСЃС‚Р°С‚РЅСЋ РєС–Р»СЊРєС–СЃС‚СЊ" << std::endl;
             std::cout << std::endl;
             ships[ID - 1]->PrintBoats();
-            std::cout << "Введіть ID човну, який ви хочете видалити: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ ID С‡РѕРІРЅСѓ, СЏРєРёР№ РІРё С…РѕС‡РµС‚Рµ РІРёРґР°Р»РёС‚Рё: ";
             int boatID;
             std::cin >> boatID;
             ships[ID - 1]->DeleteBoat(boatID - 1);
@@ -834,31 +834,31 @@ void modifyCargoShip(int choice, int ID, std::vector<CargoShip*>& ships) {
     switch (choice) {
         case 1: {
             std::string newHomePort;
-            std::cout << "Введіть новий порт приписки: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІРёР№ РїРѕСЂС‚ РїСЂРёРїРёСЃРєРё: ";
             std::cin >> newHomePort;
             ships[ID - 1]->ChangeHomePort(newHomePort);
             break;
         }
         case 2:
-            std::cout << "Введіть нову потужність двигуна: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІСѓ РїРѕС‚СѓР¶РЅС–СЃС‚СЊ РґРІРёРіСѓРЅР°: ";
             int newEnginePower;
             std::cin >> newEnginePower;
             ships[ID - 1]->ChangeEnginePower(newEnginePower);
             break;
         case 3:
-            std::cout << "Введіть нову водотонажність: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІСѓ РІРѕРґРѕС‚РѕРЅР°Р¶РЅС–СЃС‚СЊ: ";
             int newDisplacement;
             std::cin >> newDisplacement;
             ships[ID - 1]->ChangeDisplacement(newDisplacement);
             break;
         case 4:
-            std::cout << "Введіть нову кількість екіпажу: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІСѓ РєС–Р»СЊРєС–СЃС‚СЊ РµРєС–РїР°Р¶Сѓ: ";
             int newNumberOfCrew;
             std::cin >> newNumberOfCrew;
             ships[ID - 1]->ChangeNumberOfCrew(newNumberOfCrew);
             break;
         case 5:
-            std::cout << "Введіть нову вантажопідйомність: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІСѓ РІР°РЅС‚Р°Р¶РѕРїС–РґР№РѕРјРЅС–СЃС‚СЊ: ";
             int newLoadCapacity;
             std::cin >> newLoadCapacity;
             ships[ID - 1]->ChangeLoadCapacity(newLoadCapacity);
@@ -869,36 +869,36 @@ void modifyWarShip(int choice, int ID, std::vector<WarShip*>& ships) {
     switch (choice) {
         case 1: {
             std::string newHomePort;
-            std::cout << "Введіть новий порт приписки: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІРёР№ РїРѕСЂС‚ РїСЂРёРїРёСЃРєРё: ";
             std::cin >> newHomePort;
             ships[ID - 1]->ChangeHomePort(newHomePort);
             break;
         }
         case 2:
-            std::cout << "Введіть нову потужність двигуна: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІСѓ РїРѕС‚СѓР¶РЅС–СЃС‚СЊ РґРІРёРіСѓРЅР°: ";
             int newEnginePower;
             std::cin >> newEnginePower;
             ships[ID - 1]->ChangeEnginePower(newEnginePower);
             break;
         case 3:
-            std::cout << "Введіть нову водотонажність: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІСѓ РІРѕРґРѕС‚РѕРЅР°Р¶РЅС–СЃС‚СЊ: ";
             int newDisplacement;
             std::cin >> newDisplacement;
             ships[ID - 1]->ChangeDisplacement(newDisplacement);
             break;
         case 4:
-            std::cout << "Введіть нову кількість екіпажу: ";
+            std::cout << "Р’РІРµРґС–С‚СЊ РЅРѕРІСѓ РєС–Р»СЊРєС–СЃС‚СЊ РµРєС–РїР°Р¶Сѓ: ";
             int newNumberOfCrew;
             std::cin >> newNumberOfCrew;
             ships[ID - 1]->ChangeNumberOfCrew(newNumberOfCrew);
             break;
         case 5:
-            std::cout << "---Оберіть новий тип зброї--- " << std::endl;
-            std::cout << "1. Ракетний" << std::endl;
-            std::cout << "2. Артилерійський" << std::endl;
-            std::cout << "3. Торпедний" << std::endl;
-            std::cout << "4. Мінний" << std::endl;
-            std::cout << "5. Протичовнової" << std::endl;
+            std::cout << "---РћР±РµСЂС–С‚СЊ РЅРѕРІРёР№ С‚РёРї Р·Р±СЂРѕС—--- " << std::endl;
+            std::cout << "1. Р Р°РєРµС‚РЅРёР№" << std::endl;
+            std::cout << "2. РђСЂС‚РёР»РµСЂС–Р№СЃСЊРєРёР№" << std::endl;
+            std::cout << "3. РўРѕСЂРїРµРґРЅРёР№" << std::endl;
+            std::cout << "4. РњС–РЅРЅРёР№" << std::endl;
+            std::cout << "5. РџСЂРѕС‚РёС‡РѕРІРЅРѕРІРѕС—" << std::endl;
             int weaponChoice;
             WeaponType newWeaponType;
             std::cin >> weaponChoice;

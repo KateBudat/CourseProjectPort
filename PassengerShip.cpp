@@ -9,7 +9,7 @@ PassengerShip::PassengerShip(const std::string& name, std::string& homePort, int
     int numberOfCrew, int numberOfPassengers, std::vector<Boat*>& boats) : BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
     numberOfPassengers(numberOfPassengers), boats(boats) {
     if (numberOfPassengers < 0)
-        throw std::invalid_argument("Кількість пасажирів не може бути від’ємною!");
+        throw std::invalid_argument("РљС–Р»СЊРєС–СЃС‚СЊ РїР°СЃР°Р¶РёСЂС–РІ РЅРµ РјРѕР¶Рµ Р±СѓС‚Рё РІС–РґвЂ™С”РјРЅРѕСЋ!");
 
 }
 
@@ -56,12 +56,12 @@ std::string PassengerShip::Info() const {
                 nB += 1;
             }
         }
-        boatInfo = "Кількість човнів місткістю " + std::to_string(boats[i]->GetBoatCapacity()) + ": " + std::to_string(nB) + ";\n";
+        boatInfo = "РљС–Р»СЊРєС–СЃС‚СЊ С‡РѕРІРЅС–РІ РјС–СЃС‚РєС–СЃС‚СЋ " + std::to_string(boats[i]->GetBoatCapacity()) + ": " + std::to_string(nB) + ";\n";
         if (fullBoatsInfo.find(boatInfo) == std::string::npos) fullBoatsInfo += boatInfo;
     }
 
-    return ("Тип корабля: пасажирський;\n" + BasicShip::Info() + "Кількість пасажирів: " + std::to_string(numberOfPassengers) + ";\n"
-        + "Сумарна кількість човнів: " + std::to_string(boats.size()) + ";\n" + fullBoatsInfo);
+    return ("РўРёРї РєРѕСЂР°Р±Р»СЏ: РїР°СЃР°Р¶РёСЂСЃСЊРєРёР№;\n" + BasicShip::Info() + "РљС–Р»СЊРєС–СЃС‚СЊ РїР°СЃР°Р¶РёСЂС–РІ: " + std::to_string(numberOfPassengers) + ";\n"
+        + "РЎСѓРјР°СЂРЅР° РєС–Р»СЊРєС–СЃС‚СЊ С‡РѕРІРЅС–РІ: " + std::to_string(boats.size()) + ";\n" + fullBoatsInfo);
 }
 
 void PassengerShip::ChangeNumberOfPassengers(const int& numberOfPassengers) {
@@ -73,7 +73,7 @@ void PassengerShip::DeleteBoat(int ID) {
         boats.erase(boats.begin() + ID);
     }
     else {
-        throw std::invalid_argument("Такого човна не існує!");
+        throw std::invalid_argument("РўР°РєРѕРіРѕ С‡РѕРІРЅР° РЅРµ С–СЃРЅСѓС”!");
     }
 }
 
@@ -85,7 +85,7 @@ void PassengerShip::AddBoats(Boat* b, int n) {
 void PassengerShip::PrintBoats() const {
     for (int i = 0; i < boats.size(); i++)
     {
-        std::cout << "ID човна: " << i + 1 << std::endl;
+        std::cout << "ID С‡РѕРІРЅР°: " << i + 1 << std::endl;
         std::cout << boats[i]->GetBoatInfo() << std::endl;
         std::cout << std::endl;
     }

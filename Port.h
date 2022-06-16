@@ -8,20 +8,20 @@
 class Port {
 public:
     Port(const std::string& name, const int maxNumberOfShips);
-    void ShipEnteredPort(BasicShip* bS); // корабель зайшов в порт
-    void ShipLeftPort(BasicShip* bS); // корабель залишив порт
-    void Print(); // виведення списку кораблів, які зараз знаходяться в порту
+    void ShipEnteredPort(BasicShip* bS); // РєРѕСЂР°Р±РµР»СЊ Р·Р°Р№С€РѕРІ РІ РїРѕСЂС‚
+    void ShipLeftPort(BasicShip* bS); // РєРѕСЂР°Р±РµР»СЊ Р·Р°Р»РёС€РёРІ РїРѕСЂС‚
+    void Print(); // РІРёРІРµРґРµРЅРЅСЏ СЃРїРёСЃРєСѓ РєРѕСЂР°Р±Р»С–РІ, СЏРєС– Р·Р°СЂР°Р· Р·РЅР°С…РѕРґСЏС‚СЊСЃСЏ РІ РїРѕСЂС‚Сѓ
 
     std::string GetPortName() const { return name; }
     int GetMaxNumber() const { return maxNumberOfShips; }
     int GetNumberOfShips() const { return ships.size(); }
-    bool ifShipAlreadyInThePort(BasicShip* bS) const; // перевірка чи знаходиться корабель вже в порту
+    bool ifShipAlreadyInThePort(BasicShip* bS) const; // РїРµСЂРµРІС–СЂРєР° С‡Рё Р·РЅР°С…РѕРґРёС‚СЊСЃСЏ РєРѕСЂР°Р±РµР»СЊ РІР¶Рµ РІ РїРѕСЂС‚Сѓ
 
-    std::string PortInfo() const; // інформація про порт
+    std::string PortInfo() const; // С–РЅС„РѕСЂРјР°С†С–СЏ РїСЂРѕ РїРѕСЂС‚
 
 private:
-    const std::string name; // назва порту
-    const int maxNumberOfShips; // максимальна кількість кораблів, які може прийняти порт
+    const std::string name; // РЅР°Р·РІР° РїРѕСЂС‚Сѓ
+    const int maxNumberOfShips; // РјР°РєСЃРёРјР°Р»СЊРЅР° РєС–Р»СЊРєС–СЃС‚СЊ РєРѕСЂР°Р±Р»С–РІ, СЏРєС– РјРѕР¶Рµ РїСЂРёР№РЅСЏС‚Рё РїРѕСЂС‚
     std::vector <BasicShip*> ships;
 };
 

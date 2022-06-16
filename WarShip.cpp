@@ -10,23 +10,23 @@ std::string WarShip::Info() const {
     switch (weaponType)
     {
     case WeaponType::missile:
-        enumToString = "ракетний";
+        enumToString = "СЂР°РєРµС‚РЅРёР№";
         break;
     case WeaponType::artillery:
-        enumToString = "артилерійський";
+        enumToString = "Р°СЂС‚РёР»РµСЂС–Р№СЃСЊРєРёР№";
         break;
     case WeaponType::torpedo:
-        enumToString = "торпедний";
+        enumToString = "С‚РѕСЂРїРµРґРЅРёР№";
         break;
     case WeaponType::mine:
-        enumToString = "мінний";
+        enumToString = "РјС–РЅРЅРёР№";
         break;
     case WeaponType::antiSubmarine:
-        enumToString = "протичовновий";
+        enumToString = "РїСЂРѕС‚РёС‡РѕРІРЅРѕРІРёР№";
         break;
     }
 
-    return ("Тип корабля: військовий;\n" + BasicShip::Info() + "Тип зброї: " + enumToString + ";\n");
+    return ("РўРёРї РєРѕСЂР°Р±Р»СЏ: РІС–Р№СЃСЊРєРѕРІРёР№;\n" + BasicShip::Info() + "РўРёРї Р·Р±СЂРѕС—: " + enumToString + ";\n");
 }
 
 void WarShip::ChangeWeaponType(const WeaponType& weaponType) {

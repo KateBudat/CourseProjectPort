@@ -4,31 +4,31 @@
 #include <string>
 
 
-// базовий корабель
+// Р±Р°Р·РѕРІРёР№ РєРѕСЂР°Р±РµР»СЊ
 class BasicShip {
 
 protected:
     BasicShip(const std::string& name, std::string& homePort, int enginePower, int displacement, int numberOfCrew);
 
 public:
-    std::string GetName() const; // геттер назви
-    int GetNumberOfCrew() const; // геттер чисельності екіпажу
-    virtual std::string Info() const; // інформація про корабель
+    std::string GetName() const; // РіРµС‚С‚РµСЂ РЅР°Р·РІРё
+    int GetNumberOfCrew() const; // РіРµС‚С‚РµСЂ С‡РёСЃРµР»СЊРЅРѕСЃС‚С– РµРєС–РїР°Р¶Сѓ
+    virtual std::string Info() const; // С–РЅС„РѕСЂРјР°С†С–СЏ РїСЂРѕ РєРѕСЂР°Р±РµР»СЊ
     virtual ~BasicShip() = default;
 
-    //модифікація кораблів
-    void ChangeHomePort(const std::string& homePort); // змінити порт приписки
-    void ChangeEnginePower(const int& enginePower); // змінити потужність двигуна
-    void ChangeDisplacement(const int& displacement); // змінити водотонажність
-    void ChangeNumberOfCrew(const int& numberOfCrew); // змінити кількість екіпажу
+    //РјРѕРґРёС„С–РєР°С†С–СЏ РєРѕСЂР°Р±Р»С–РІ
+    void ChangeHomePort(const std::string& homePort); // Р·РјС–РЅРёС‚Рё РїРѕСЂС‚ РїСЂРёРїРёСЃРєРё
+    void ChangeEnginePower(const int& enginePower); // Р·РјС–РЅРёС‚Рё РїРѕС‚СѓР¶РЅС–СЃС‚СЊ РґРІРёРіСѓРЅР°
+    void ChangeDisplacement(const int& displacement); // Р·РјС–РЅРёС‚Рё РІРѕРґРѕС‚РѕРЅР°Р¶РЅС–СЃС‚СЊ
+    void ChangeNumberOfCrew(const int& numberOfCrew); // Р·РјС–РЅРёС‚Рё РєС–Р»СЊРєС–СЃС‚СЊ РµРєС–РїР°Р¶Сѓ
 
 
 private:
-    const std::string name; // назва
-    std::string homePort; // порт приписки
-    int enginePower; // потужність двигуна
-    int displacement; // водотоннажність
-    int numberOfCrew; // чисельність екіпажу
+    const std::string name; // РЅР°Р·РІР°
+    std::string homePort; // РїРѕСЂС‚ РїСЂРёРїРёСЃРєРё
+    int enginePower; // РїРѕС‚СѓР¶РЅС–СЃС‚СЊ РґРІРёРіСѓРЅР°
+    int displacement; // РІРѕРґРѕС‚РѕРЅРЅР°Р¶РЅС–СЃС‚СЊ
+    int numberOfCrew; // С‡РёСЃРµР»СЊРЅС–СЃС‚СЊ РµРєС–РїР°Р¶Сѓ
 };
 
 

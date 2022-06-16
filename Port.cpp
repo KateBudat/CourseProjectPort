@@ -8,7 +8,7 @@
 
 Port::Port(const std::string& name, const int maxNumberOfShips) : name(name), maxNumberOfShips(maxNumberOfShips) {
     if (maxNumberOfShips <= 0)
-        throw std::invalid_argument("Порт не може приймати нульову чи негативну кількість кораблі!");
+        throw std::invalid_argument("РџРѕСЂС‚ РЅРµ РјРѕР¶Рµ РїСЂРёР№РјР°С‚Рё РЅСѓР»СЊРѕРІСѓ С‡Рё РЅРµРіР°С‚РёРІРЅСѓ РєС–Р»СЊРєС–СЃС‚СЊ РєРѕСЂР°Р±Р»С–!");
 }
 
 bool Port::ifShipAlreadyInThePort(BasicShip* bS) const {
@@ -18,16 +18,16 @@ bool Port::ifShipAlreadyInThePort(BasicShip* bS) const {
 
 void Port::ShipEnteredPort(BasicShip* bS) {
     if (ifShipAlreadyInThePort(bS))
-        throw std::invalid_argument("Цей корабель вже в порту!");
+        throw std::invalid_argument("Р¦РµР№ РєРѕСЂР°Р±РµР»СЊ РІР¶Рµ РІ РїРѕСЂС‚Сѓ!");
     else if (ships.size() + 1 > maxNumberOfShips)
-        throw std::invalid_argument("Порт не може прийняти більше кораблів!");
+        throw std::invalid_argument("РџРѕСЂС‚ РЅРµ РјРѕР¶Рµ РїСЂРёР№РЅСЏС‚Рё Р±С–Р»СЊС€Рµ РєРѕСЂР°Р±Р»С–РІ!");
     else ships.push_back(bS);
 }
 
 void Port::ShipLeftPort(BasicShip* bS) {
 
     if (!ifShipAlreadyInThePort(bS))
-        throw std::invalid_argument("Такий корабель відсутній в порту!");
+        throw std::invalid_argument("РўР°РєРёР№ РєРѕСЂР°Р±РµР»СЊ РІС–РґСЃСѓС‚РЅС–Р№ РІ РїРѕСЂС‚Сѓ!");
 
     else {
         ships.erase(std::find(ships.begin(), ships.end(), bS));
@@ -37,7 +37,7 @@ void Port::ShipLeftPort(BasicShip* bS) {
 void Port::Print() {
     if (!ships.empty()) {
         std::sort(ships.begin(), ships.end());
-        std::cout << "--Кораблі, які зараз знаходяться в порту--" << std::endl;
+        std::cout << "--РљРѕСЂР°Р±Р»С–, СЏРєС– Р·Р°СЂР°Р· Р·РЅР°С…РѕРґСЏС‚СЊСЃСЏ РІ РїРѕСЂС‚Сѓ--" << std::endl;
         for (int i = 0; i < ships.size(); i++) {
             std::cout << "ID: " << i + 1 << ";" << std::endl;
             std::cout << ships[i]->Info() << std::endl;
@@ -49,8 +49,8 @@ void Port::Print() {
 }
 
 std::string Port::PortInfo() const {
-    return ("Назва порту: " + name + ";\n" + "Кількість кораблів зараз в порту: " + std::to_string(ships.size()) + ";\n" +
-            "Максимальна кількість кораблів, які може прийняти порт: " + std::to_string(maxNumberOfShips) + ";\n");
+    return ("РќР°Р·РІР° РїРѕСЂС‚Сѓ: " + name + ";\n" + "РљС–Р»СЊРєС–СЃС‚СЊ РєРѕСЂР°Р±Р»С–РІ Р·Р°СЂР°Р· РІ РїРѕСЂС‚Сѓ: " + std::to_string(ships.size()) + ";\n" +
+            "РњР°РєСЃРёРјР°Р»СЊРЅР° РєС–Р»СЊРєС–СЃС‚СЊ РєРѕСЂР°Р±Р»С–РІ, СЏРєС– РјРѕР¶Рµ РїСЂРёР№РЅСЏС‚Рё РїРѕСЂС‚: " + std::to_string(maxNumberOfShips) + ";\n");
 }
 
 

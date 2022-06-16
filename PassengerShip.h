@@ -6,20 +6,20 @@
 #include "BasicShip.h"
 #include "Boat.h"
 
-// пасажирський корабель
+// РїР°СЃР°Р¶РёСЂСЃСЊРєРёР№ РєРѕСЂР°Р±РµР»СЊ
 class PassengerShip : public BasicShip {
 
 public:
     PassengerShip(const std::string& name, std::string& homePort, int enginePower, int displacement,
         int numberOfCrew, int numberOfPassengers, std::vector<Boat*>& boats);
-    int GetFullBoatsCapacity() const; // місткість усіх човнів
-    int GetFullNumberOfPeople() const; // сума всіх людей на кораблі (пасажирів і екіпажу)
-    bool IsBoatsEnough() const; // чи достатньо човнів на усіх людей
+    int GetFullBoatsCapacity() const; // РјС–СЃС‚РєС–СЃС‚СЊ СѓСЃС–С… С‡РѕРІРЅС–РІ
+    int GetFullNumberOfPeople() const; // СЃСѓРјР° РІСЃС–С… Р»СЋРґРµР№ РЅР° РєРѕСЂР°Р±Р»С– (РїР°СЃР°Р¶РёСЂС–РІ С– РµРєС–РїР°Р¶Сѓ)
+    bool IsBoatsEnough() const; // С‡Рё РґРѕСЃС‚Р°С‚РЅСЊРѕ С‡РѕРІРЅС–РІ РЅР° СѓСЃС–С… Р»СЋРґРµР№
     void PrintBoats() const;
-    std::string Info() const override; // інформація про пасажирський корабель
+    std::string Info() const override; // С–РЅС„РѕСЂРјР°С†С–СЏ РїСЂРѕ РїР°СЃР°Р¶РёСЂСЃСЊРєРёР№ РєРѕСЂР°Р±РµР»СЊ
     void AddBoatsToSafeNumber();
 
-    //модифікація кораблів
+    //РјРѕРґРёС„С–РєР°С†С–СЏ РєРѕСЂР°Р±Р»С–РІ
     void ChangeNumberOfPassengers(const int& numberOfPassengers);
     void DeleteBoat(int ID);
     void AddBoats(Boat* b, int n);

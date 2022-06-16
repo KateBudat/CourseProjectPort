@@ -7,11 +7,11 @@ CargoShip::CargoShip(const std::string& name, std::string& homePort, int engineP
     int numberOfCrew, int loadCapacity) : BasicShip(name, homePort, enginePower, displacement, numberOfCrew),
     loadCapacity(loadCapacity) {
     if (loadCapacity <= 0)
-        throw std::invalid_argument("Âàíòàæîï³äéîìí³ñòü íå ìîæå áóòè â³ä’ºìíîþ àáî íóëüîâîþ!");
+        throw std::invalid_argument("Ð’Ð°Ð½Ñ‚Ð°Ð¶Ð¾Ð¿Ñ–Ð´Ð¹Ð¾Ð¼Ð½Ñ–ÑÑ‚ÑŒ Ð½Ðµ Ð¼Ð¾Ð¶Ðµ Ð±ÑƒÑ‚Ð¸ Ð²Ñ–Ð´â€™Ñ”Ð¼Ð½Ð¾ÑŽ Ð°Ð±Ð¾ Ð½ÑƒÐ»ÑŒÐ¾Ð²Ð¾ÑŽ!");
 }
 
 std::string CargoShip::Info() const {
-    return ("Òèï êîðàáëÿ: âàíòàæíèé;\n" + BasicShip::Info() + "Âàíòàæîï³äéîìí³ñòü â òîíàõ: " + std::to_string(loadCapacity) + ";\n");
+    return ("Ð¢Ð¸Ð¿ ÐºÐ¾Ñ€Ð°Ð±Ð»Ñ: Ð²Ð°Ð½Ñ‚Ð°Ð¶Ð½Ð¸Ð¹;\n" + BasicShip::Info() + "Ð’Ð°Ð½Ñ‚Ð°Ð¶Ð¾Ð¿Ñ–Ð´Ð¹Ð¾Ð¼Ð½Ñ–ÑÑ‚ÑŒ Ð² Ñ‚Ð¾Ð½Ð°Ñ…: " + std::to_string(loadCapacity) + ";\n");
 }
 
 void CargoShip::ChangeLoadCapacity(const int& loadCapacity) {
