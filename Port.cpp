@@ -36,23 +36,23 @@ void Port::ShipLeftPort(BasicShip* bS) {
 
 void Port::Print() {
     if (!ships.empty()) {
+        std::sort(ships.begin(), ships.end());
         std::cout << "--Кораблі, які зараз знаходяться в порту--" << std::endl;
         for (int i = 0; i < ships.size(); i++) {
             std::cout << "ID: " << i + 1 << ";" << std::endl;
             std::cout << ships[i]->Info() << std::endl;
         }
     }
-
     else {
         std::cout << std::endl;
     }
 }
 
-
 std::string Port::PortInfo() const {
     return ("Назва порту: " + name + ";\n" + "Кількість кораблів зараз в порту: " + std::to_string(ships.size()) + ";\n" +
-        "Максимальна кількість кораблів, які може прийняти порт: " + std::to_string(maxNumberOfShips) + ";\n");
+            "Максимальна кількість кораблів, які може прийняти порт: " + std::to_string(maxNumberOfShips) + ";\n");
 }
+
 
 
 
